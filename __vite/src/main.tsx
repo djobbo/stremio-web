@@ -7,7 +7,7 @@ import i18n from "i18next"
 import { initReactI18next } from "react-i18next"
 import stremioTranslations from "stremio-translations"
 
-if (typeof process.env.SENTRY_DSN === "string") {
+if (typeof import.meta.env.SENTRY_DSN === "string") {
   import("@sentry/browser").then((Sentry) =>
     Sentry.init({ dsn: process.env.SENTRY_DSN }),
   )

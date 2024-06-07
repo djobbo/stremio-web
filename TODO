@@ -1,3 +1,4 @@
 - PWA
 - <%= htmlWebpackPlugin.tags.headTags %>
 - <%= htmlWebpackPlugin.tags.bodyTags %>
+- process.env -> import.meta.env
