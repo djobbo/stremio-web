@@ -33,13 +33,13 @@ const HorizontalNavBar = React.memo(({ className, route, query, title, backButto
                         <Icon className={styles['icon']} name={'chevron-back'} />
                     </Button>
                     :
-                    <div className={styles['logo-container']}>
+                    <Button className={styles['logo-container']} href="#/">
                         <Image
                             className={styles['logo']}
                             src={require('/images/stremio_symbol.png')}
                             alt={' '}
                         />
-                    </div>
+                    </Button>
             }
             {
                 typeof title === 'string' && title.length > 0 ?
