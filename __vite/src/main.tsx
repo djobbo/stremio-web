@@ -1,16 +1,16 @@
 import React from "react"
 import ReactDOM from "react-dom/client"
-import { App } from "./App.tsx"
+import App from "./App"
 import Bowser from "bowser"
 
 import i18n from "i18next"
 import { initReactI18next } from "react-i18next"
 import stremioTranslations from "stremio-translations"
 
-if (typeof import.meta.env.SENTRY_DSN === "string") {
-  import("@sentry/browser").then((Sentry) =>
-    Sentry.init({ dsn: process.env.SENTRY_DSN }),
-  )
+const SENTRY_DSN = import.meta.env.SENTRY_DSN
+
+if (typeof SENTRY_DSN === "string") {
+  import("@sentry/browser").then((Sentry) => Sentry.init({ dsn: SENTRY_DSN }))
 }
 
 const browser = Bowser.parse(window.navigator?.userAgent || "")
