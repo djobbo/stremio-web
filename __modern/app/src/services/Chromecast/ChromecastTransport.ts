@@ -1,7 +1,6 @@
 // Copyright (C) 2017-2023 Smart code 203358507
 
 import EventEmitter from "eventemitter3"
-
 import hat from "hat"
 
 const MESSAGE_NAMESPACE = "urn:x-cast:com.stremio"

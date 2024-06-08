@@ -1,10 +1,10 @@
 // Copyright (C) 2017-2023 Smart code 203358507
 
 import magnet from "magnet-uri"
-import { useServices } from "stremio/services"
+import { useCallback, useEffect, useRef } from "react"
 import useToast from "stremio/common/Toast/useToast"
 import useStreamingServer from "stremio/common/useStreamingServer"
-import { useRef, useCallback, useEffect } from "react"
+import { useServices } from "stremio/services"
 
 const useTorrent = () => {
   const { core } = useServices()

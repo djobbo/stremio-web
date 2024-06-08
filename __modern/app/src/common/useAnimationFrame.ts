@@ -1,6 +1,6 @@
 // Copyright (C) 2017-2023 Smart code 203358507
 
-import { useRef, useCallback } from "react"
+import { useCallback, useRef } from "react"
 
 const useAnimationFrame = () => {
   const animationFrameId = useRef(null)

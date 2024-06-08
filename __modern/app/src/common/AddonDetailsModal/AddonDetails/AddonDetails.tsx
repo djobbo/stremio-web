@@ -1,8 +1,9 @@
-import classnames from "classnames"
 import { default as Icon } from "@stremio/stremio-icons/react"
-import Image from "stremio/common/Image"
-import styles from "./styles.module.less"
+import classnames from "classnames"
 import { useCallback } from "react"
+import Image from "stremio/common/Image"
+
+import styles from "./styles.module.less"
 
 type AddonDetailsProps = {
   className?: string

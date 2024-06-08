@@ -1,8 +1,9 @@
-import classnames from "classnames"
 import { default as Icon } from "@stremio/stremio-icons/react"
+import classnames from "classnames"
+import { useCallback, useMemo } from "react"
 import Button from "stremio/common/Button"
+
 import styles from "./styles.module.less"
-import { useMemo, useCallback } from "react"
 
 type ToastItemProps = {
   type?: "success" | "alert" | "info" | "error"

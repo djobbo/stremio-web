@@ -1,5 +1,7 @@
+import type { ReactNode } from "react"
+import { useState } from "react"
+
 import ModalsContainerContext from "./ModalsContainerContext"
-import { ReactNode, useState } from "react"
 
 type ModalsContainerProviderProps = {
   children?: ReactNode

@@ -26,4 +26,4 @@ const isMobile = () => {
   return name === "ios" || name === "android"
 }
 
-export { name, isMobile }
+export { isMobile, name }

@@ -1,13 +1,13 @@
-import classnames from "classnames"
 import { default as Icon } from "@stremio/stremio-icons/react"
-import { Button } from "stremio/common"
-import { useServices } from "stremio/services"
-import SeekBar from "./SeekBar"
-import VolumeSlider from "./VolumeSlider"
-import styles from "./styles.module.less"
-import { useBinaryState } from "stremio/common"
+import classnames from "classnames"
 import { t } from "i18next"
-import { useState, useCallback, useEffect } from "react"
+import { useCallback, useEffect, useState } from "react"
+import { Button, useBinaryState } from "stremio/common"
+import { useServices } from "stremio/services"
+
+import SeekBar from "./SeekBar"
+import styles from "./styles.module.less"
+import VolumeSlider from "./VolumeSlider"
 
 type ControlBarProps = {
   className?: string

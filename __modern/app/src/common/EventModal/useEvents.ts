@@ -1,7 +1,6 @@
 // Copyright (C) 2017-2023 Smart code 203358507
 
 import useModelState from "stremio/common/useModelState"
-
 import { useServices } from "stremio/services"
 
 const map = (ctx) => ({

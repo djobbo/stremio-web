@@ -1,14 +1,15 @@
 import classnames from "classnames"
+import { t } from "i18next"
+import { memo, useCallback, useMemo } from "react"
 import {
   Button,
   CONSTANTS,
   comparatorWithPriorities,
   languageNames,
 } from "stremio/common"
+
 import DiscreteSelectInput from "./DiscreteSelectInput"
 import styles from "./styles.module.less"
-import { t } from "i18next"
-import { memo, useMemo, useCallback } from "react"
 
 const ORIGIN_PRIORITIES = {
   EMBEDDED: 2,

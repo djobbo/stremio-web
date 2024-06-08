@@ -1,8 +1,7 @@
 // Copyright (C) 2017-2023 Smart code 203358507
 
-import * as routes from "stremio/routes"
-
 import { routesRegexp } from "stremio/common"
+import * as routes from "stremio/routes"
 
 const routerViewsConfig = [
   [

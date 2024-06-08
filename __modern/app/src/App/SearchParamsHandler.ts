@@ -1,8 +1,8 @@
 // Copyright (C) 2017-2023 Smart code 203358507
 
 import isEqual from "lodash.isequal"
-import { useState, useEffect } from "react"
-import { withCoreSuspender, useProfile, useToast } from "stremio/common"
+import { useEffect, useState } from "react"
+import { useProfile, useToast, withCoreSuspender } from "stremio/common"
 import { useServices } from "stremio/services"
 
 const SearchParamsHandler = () => {

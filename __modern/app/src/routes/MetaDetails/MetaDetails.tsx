@@ -1,23 +1,22 @@
 import classnames from "classnames"
-import { useServices } from "stremio/services"
-
+import { Fragment, useCallback, useMemo } from "react"
 import {
-  VerticalNavBar,
+  DelayedRenderer,
   HorizontalNavBar,
+  Image,
   MetaPreview,
   ModalDialog,
-  Image,
-  DelayedRenderer,
+  VerticalNavBar,
   withCoreSuspender,
 } from "stremio/common"
+import { useServices } from "stremio/services"
 
 import StreamsList from "./StreamsList"
-import VideosList from "./VideosList"
-import useMetaDetails from "./useMetaDetails"
-import useSeason from "./useSeason"
-import useMetaExtensionTabs from "./useMetaExtensionTabs"
 import styles from "./styles.module.less"
-import { useMemo, useCallback, Fragment } from "react"
+import useMetaDetails from "./useMetaDetails"
+import useMetaExtensionTabs from "./useMetaExtensionTabs"
+import useSeason from "./useSeason"
+import VideosList from "./VideosList"
 
 type MetaDetailsProps = {
   urlParams?: {

@@ -1,8 +1,8 @@
 import classnames from "classnames"
+import { forwardRef, useCallback } from "react"
 import { Button, Checkbox } from "stremio/common"
+
 import styles from "./styles.module.less"
-import { forwardRef } from "react"
-import { useCallback } from "react"
 
 type ConsentCheckboxProps = {
   className?: string

@@ -1,7 +1,7 @@
 import classnames from "classnames"
+import { forwardRef, useCallback } from "react"
+
 import styles from "./styles.module.less"
-import { forwardRef } from "react"
-import { useCallback } from "react"
 
 type TextInputProps = {
   className?: string

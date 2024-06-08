@@ -1,14 +1,20 @@
 // Copyright (C) 2017-2023 Smart code 203358507
 
 import AddonDetailsModal from "./AddonDetailsModal"
-
 import Button from "./Button"
 import Checkbox from "./Checkbox"
 import { default as Chips } from "./Chips"
 import ColorInput from "./ColorInput"
+import comparatorWithPriorities from "./comparatorWithPriorities"
+import * as CONSTANTS from "./CONSTANTS"
 import ContinueWatchingItem from "./ContinueWatchingItem"
+import { useCoreSuspender, withCoreSuspender } from "./CoreSuspender"
 import DelayedRenderer from "./DelayedRenderer"
+import EventModal from "./EventModal"
+import getVisibleChildrenRange from "./getVisibleChildrenRange"
 import Image from "./Image"
+import interfaceLanguages from "./interfaceLanguages.json"
+import languageNames from "./languageNames.json"
 import LibItem from "./LibItem"
 import MainNavBars from "./MainNavBars"
 import MetaItem from "./MetaItem"
@@ -18,22 +24,17 @@ import ModalDialog from "./ModalDialog"
 import Multiselect from "./Multiselect"
 import { HorizontalNavBar, VerticalNavBar } from "./NavBar"
 import PaginationInput from "./PaginationInput"
+import * as platform from "./platform"
 import PlayIconCircleCentered from "./PlayIconCircleCentered"
 import Popup from "./Popup"
+import routesRegexp from "./routesRegexp"
 import SearchBar from "./SearchBar"
-import StreamingServerWarning from "./StreamingServerWarning"
 import SharePrompt from "./SharePrompt"
 import Slider from "./Slider"
+import StreamingServerWarning from "./StreamingServerWarning"
 import TextInput from "./TextInput"
 import { ToastProvider, useToast } from "./Toast"
-import { TooltipProvider, Tooltip } from "./Tooltips"
-import comparatorWithPriorities from "./comparatorWithPriorities"
-import * as CONSTANTS from "./CONSTANTS"
-import { withCoreSuspender, useCoreSuspender } from "./CoreSuspender"
-import getVisibleChildrenRange from "./getVisibleChildrenRange"
-import interfaceLanguages from "./interfaceLanguages.json"
-import languageNames from "./languageNames.json"
-import routesRegexp from "./routesRegexp"
+import { Tooltip, TooltipProvider } from "./Tooltips"
 import useAnimationFrame from "./useAnimationFrame"
 import useBinaryState from "./useBinaryState"
 import useFullscreen from "./useFullscreen"
@@ -45,8 +46,6 @@ import useProfile from "./useProfile"
 import useStreamingServer from "./useStreamingServer"
 import useTorrent from "./useTorrent"
 import useTranslate from "./useTranslate"
-import * as platform from "./platform"
-import EventModal from "./EventModal"
 
 export {
   AddonDetailsModal,
@@ -54,9 +53,16 @@ export {
   Checkbox,
   Chips,
   ColorInput,
+  comparatorWithPriorities,
+  CONSTANTS,
   ContinueWatchingItem,
   DelayedRenderer,
+  EventModal,
+  getVisibleChildrenRange,
+  HorizontalNavBar,
   Image,
+  interfaceLanguages,
+  languageNames,
   LibItem,
   MainNavBars,
   MetaItem,
@@ -64,30 +70,22 @@ export {
   MetaRow,
   ModalDialog,
   Multiselect,
-  HorizontalNavBar,
-  VerticalNavBar,
   PaginationInput,
+  platform,
   PlayIconCircleCentered,
   Popup,
+  routesRegexp,
   SearchBar,
-  StreamingServerWarning,
   SharePrompt,
   Slider,
+  StreamingServerWarning,
   TextInput,
   ToastProvider,
-  useToast,
-  TooltipProvider,
   Tooltip,
-  comparatorWithPriorities,
-  CONSTANTS,
-  withCoreSuspender,
-  useCoreSuspender,
-  getVisibleChildrenRange,
-  interfaceLanguages,
-  languageNames,
-  routesRegexp,
+  TooltipProvider,
   useAnimationFrame,
   useBinaryState,
+  useCoreSuspender,
   useFullscreen,
   useLiveRef,
   useModelState,
@@ -95,8 +93,9 @@ export {
   useOnScrollToBottom,
   useProfile,
   useStreamingServer,
+  useToast,
   useTorrent,
   useTranslate,
-  platform,
-  EventModal,
+  VerticalNavBar,
+  withCoreSuspender,
 }

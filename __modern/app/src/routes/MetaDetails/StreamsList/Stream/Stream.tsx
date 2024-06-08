@@ -1,10 +1,11 @@
-import classnames from "classnames"
 import { default as Icon } from "@stremio/stremio-icons/react"
-import { Button, Image, useProfile, platform, useToast } from "stremio/common"
+import classnames from "classnames"
+import { useCallback, useMemo } from "react"
+import { Button, Image, platform, useProfile, useToast } from "stremio/common"
 import { useServices } from "stremio/services"
+
 import StreamPlaceholder from "./StreamPlaceholder"
 import styles from "./styles.module.less"
-import { useMemo, useCallback } from "react"
 
 type StreamProps = {
   className?: string

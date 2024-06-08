@@ -1,7 +1,6 @@
 // Copyright (C) 2017-2023 Smart code 203358507
 
 import Chromecast from "./Chromecast"
-
 import Core from "./Core"
 import DragAndDrop from "./DragAndDrop"
 import KeyboardShortcuts from "./KeyboardShortcuts"
@@ -14,6 +13,6 @@ export {
   DragAndDrop,
   KeyboardShortcuts,
   ServicesProvider,
-  useServices,
   Shell,
+  useServices,
 }

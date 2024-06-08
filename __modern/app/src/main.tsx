@@ -1,11 +1,11 @@
-import ReactDOM from "react-dom/client"
-import App from "./App"
 import Bowser from "bowser"
-
 import i18n from "i18next"
+import { StrictMode } from "react"
+import ReactDOM from "react-dom/client"
 import { initReactI18next } from "react-i18next"
 import stremioTranslations from "stremio-translations"
-import { StrictMode } from "react"
+
+import App from "./App"
 
 const SENTRY_DSN = import.meta.env.SENTRY_DSN
 

@@ -1,6 +1,6 @@
 // Copyright (C) 2017-2023 Smart code 203358507
 
-import { useMemo, useState, useCallback } from "react"
+import { useCallback, useMemo, useState } from "react"
 
 const useMetaExtensionTabs = (metaExtensions) => {
   const tabs = useMemo(() => {

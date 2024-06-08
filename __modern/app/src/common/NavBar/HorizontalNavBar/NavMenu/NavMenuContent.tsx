@@ -1,15 +1,16 @@
-import classnames from "classnames"
-import { useTranslation } from "react-i18next"
 import { default as Icon } from "@stremio/stremio-icons/react"
-import { useServices } from "stremio/services"
+import classnames from "classnames"
+import { useCallback } from "react"
+import { useTranslation } from "react-i18next"
 import Button from "stremio/common/Button"
+import { withCoreSuspender } from "stremio/common/CoreSuspender"
 import useFullscreen from "stremio/common/useFullscreen"
 import useProfile from "stremio/common/useProfile"
 import usePWA from "stremio/common/usePWA"
 import useTorrent from "stremio/common/useTorrent"
-import { withCoreSuspender } from "stremio/common/CoreSuspender"
+import { useServices } from "stremio/services"
+
 import styles from "./styles.module.less"
-import { useCallback } from "react"
 
 type NavMenuContentProps = {
   onClick?: (...args: unknown[]) => unknown

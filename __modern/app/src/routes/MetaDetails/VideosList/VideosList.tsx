@@ -1,10 +1,11 @@
 import classnames from "classnames"
 import { t } from "i18next"
-import { Image, SearchBar, Checkbox } from "stremio/common"
+import { Fragment, useCallback, useMemo, useState } from "react"
+import { Checkbox, Image, SearchBar } from "stremio/common"
+
 import SeasonsBar from "./SeasonsBar"
-import Video from "./Video"
 import styles from "./styles.module.less"
-import { useMemo, useState, useCallback, Fragment } from "react"
+import Video from "./Video"
 
 type VideosListProps = {
   className?: string

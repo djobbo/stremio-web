@@ -1,20 +1,19 @@
+import { default as Icon } from "@stremio/stremio-icons/react"
 import classnames from "classnames"
 import debounce from "lodash.debounce"
+import { useCallback, useLayoutEffect, useMemo, useRef } from "react"
 import { useTranslation } from "react-i18next"
-import { default as Icon } from "@stremio/stremio-icons/react"
-
 import {
   Image,
   MainNavBars,
-  MetaRow,
   MetaItem,
-  withCoreSuspender,
+  MetaRow,
   getVisibleChildrenRange,
+  withCoreSuspender,
 } from "stremio/common"
 
-import useSearch from "./useSearch"
 import styles from "./styles.module.less"
-import { useCallback, useLayoutEffect, useMemo, useRef } from "react"
+import useSearch from "./useSearch"
 
 const THRESHOLD = 100
 

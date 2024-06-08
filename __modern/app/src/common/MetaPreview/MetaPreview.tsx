@@ -1,23 +1,24 @@
-import classnames from "classnames"
-import UrlUtils from "url"
-import { useTranslation } from "react-i18next"
 import { default as Icon } from "@stremio/stremio-icons/react"
+import classnames from "classnames"
+import { Fragment, useCallback, useMemo } from "react"
+import { useTranslation } from "react-i18next"
 import Button from "stremio/common/Button"
-import Image from "stremio/common/Image"
-import ModalDialog from "stremio/common/ModalDialog"
-import SharePrompt from "stremio/common/SharePrompt"
-import routesRegexp from "stremio/common/routesRegexp"
-import useBinaryState from "stremio/common/useBinaryState"
-import ActionButton from "./ActionButton"
-import MetaLinks from "./MetaLinks"
-import MetaPreviewPlaceholder from "./MetaPreviewPlaceholder"
-import styles from "./styles.module.less"
-import { useMemo, useCallback, Fragment } from "react"
 import {
   IMDB_LINK_CATEGORY,
   SHARE_LINK_CATEGORY,
   WRITERS_LINK_CATEGORY,
 } from "stremio/common/CONSTANTS"
+import Image from "stremio/common/Image"
+import ModalDialog from "stremio/common/ModalDialog"
+import routesRegexp from "stremio/common/routesRegexp"
+import SharePrompt from "stremio/common/SharePrompt"
+import useBinaryState from "stremio/common/useBinaryState"
+import UrlUtils from "url"
+
+import ActionButton from "./ActionButton"
+import MetaLinks from "./MetaLinks"
+import MetaPreviewPlaceholder from "./MetaPreviewPlaceholder"
+import styles from "./styles.module.less"
 
 const ALLOWED_LINK_REDIRECTS = [
   routesRegexp.search.regexp,

@@ -1,4 +1,5 @@
 import classnames from "classnames"
+
 import styles from "./styles.module.less"
 
 type VideoPlaceholderProps = {

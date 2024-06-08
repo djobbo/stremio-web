@@ -1,8 +1,9 @@
-import classnames from "classnames"
 import { default as Icon } from "@stremio/stremio-icons/react"
-import { Button } from "stremio/common"
-import styles from "./styles.module.less"
+import classnames from "classnames"
 import { useCallback } from "react"
+import { Button } from "stremio/common"
+
+import styles from "./styles.module.less"
 
 type OptionProps = {
   icon?: string

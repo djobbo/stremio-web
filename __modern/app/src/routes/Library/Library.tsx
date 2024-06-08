@@ -1,25 +1,24 @@
 import classnames from "classnames"
-import NotFound from "stremio/routes/NotFound"
-
+import { useCallback, useLayoutEffect, useMemo, useRef } from "react"
 import {
   Button,
   Chips,
   DelayedRenderer,
-  Multiselect,
-  MainNavBars,
-  LibItem,
   Image,
-  useProfile,
-  useNotifications,
+  LibItem,
+  MainNavBars,
+  Multiselect,
   routesRegexp,
+  useNotifications,
   useOnScrollToBottom,
+  useProfile,
   withCoreSuspender,
 } from "stremio/common"
+import NotFound from "stremio/routes/NotFound"
 
+import styles from "./styles.module.less"
 import useLibrary from "./useLibrary"
 import useSelectableInputs from "./useSelectableInputs"
-import styles from "./styles.module.less"
-import { useMemo, useRef, useCallback, useLayoutEffect } from "react"
 
 const SCROLL_TO_BOTTOM_TRESHOLD = 400
 

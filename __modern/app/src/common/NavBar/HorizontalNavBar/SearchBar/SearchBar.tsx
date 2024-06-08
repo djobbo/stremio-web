@@ -1,17 +1,18 @@
+import { default as Icon } from "@stremio/stremio-icons/react"
 import classnames from "classnames"
 import debounce from "lodash.debounce"
+import { memo, useCallback, useEffect, useRef, useState } from "react"
 import { useTranslation } from "react-i18next"
-import { default as Icon } from "@stremio/stremio-icons/react"
-import { useRouteFocused } from "stremio-router"
 import Button from "stremio/common/Button"
-import TextInput from "stremio/common/TextInput"
-import useTorrent from "stremio/common/useTorrent"
 import { withCoreSuspender } from "stremio/common/CoreSuspender"
-import useSearchHistory from "./useSearchHistory"
-import useLocalSearch from "./useLocalSearch"
-import styles from "./styles.module.less"
+import TextInput from "stremio/common/TextInput"
 import useBinaryState from "stremio/common/useBinaryState"
-import { memo, useState, useRef, useCallback, useEffect } from "react"
+import useTorrent from "stremio/common/useTorrent"
+import { useRouteFocused } from "stremio-router"
+
+import styles from "./styles.module.less"
+import useLocalSearch from "./useLocalSearch"
+import useSearchHistory from "./useSearchHistory"
 
 type SearchBarProps = {
   className?: string

@@ -1,10 +1,11 @@
 import classnames from "classnames"
 import debounce from "lodash.debounce"
+import { useCallback, useEffect, useLayoutEffect, useState } from "react"
+import { Button, Slider, useBinaryState } from "stremio/common"
 import { useRouteFocused } from "stremio-router"
-import { Slider, Button, useBinaryState } from "stremio/common"
+
 import formatTime from "./formatTime"
 import styles from "./styles.module.less"
-import { useState, useCallback, useLayoutEffect, useEffect } from "react"
 
 type SeekBarProps = {
   className?: string

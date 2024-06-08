@@ -1,6 +1,7 @@
 // Copyright (C) 2017-2023 Smart code 203358507
 
-import { Image, HorizontalNavBar } from "stremio/common"
+import { HorizontalNavBar, Image } from "stremio/common"
+
 import styles from "./styles.module.less"
 
 const NotFound = () => {

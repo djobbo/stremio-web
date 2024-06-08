@@ -1,6 +1,7 @@
 import classNames from "classnames"
+import { memo, useCallback, useEffect, useRef, useState } from "react"
+
 import styles from "./styles.module.less"
-import { memo, useRef, useState, useCallback, useEffect } from "react"
 
 type TooltipItemProps = {
   className?: string

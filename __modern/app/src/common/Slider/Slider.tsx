@@ -1,9 +1,10 @@
 import classnames from "classnames"
-import { useRouteFocused } from "stremio-router"
+import { useCallback, useLayoutEffect, useRef } from "react"
 import useAnimationFrame from "stremio/common/useAnimationFrame"
 import useLiveRef from "stremio/common/useLiveRef"
+import { useRouteFocused } from "stremio-router"
+
 import styles from "./styles.module.less"
-import { useRef, useCallback, useLayoutEffect } from "react"
 
 type SliderProps = {
   className?: string

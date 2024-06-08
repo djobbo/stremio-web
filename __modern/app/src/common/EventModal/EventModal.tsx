@@ -1,12 +1,13 @@
 // Copyright (C) 2017-2023 Smart code 203358507
 
+import { default as Icon } from "@stremio/stremio-icons/react"
+import { useCallback, useEffect, useMemo } from "react"
 import { useTranslation } from "react-i18next"
 import Button from "stremio/common/Button"
 import ModalDialog from "stremio/common/ModalDialog"
-import useEvents from "./useEvents"
+
 import styles from "./styles.module.less"
-import { default as Icon } from "@stremio/stremio-icons/react"
-import { useMemo, useCallback, useEffect } from "react"
+import useEvents from "./useEvents"
 
 const EventModal = () => {
   const { t } = useTranslation()

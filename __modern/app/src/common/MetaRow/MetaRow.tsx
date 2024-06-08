@@ -1,14 +1,16 @@
 // Copyright (C) 2017-2023 Smart code 203358507
 
-import ReactIs from "react-is"
-import classnames from "classnames"
 import { default as Icon } from "@stremio/stremio-icons/react"
+import classnames from "classnames"
+import type { ElementType } from "react"
+import { createElement, useMemo } from "react"
+import ReactIs from "react-is"
 import Button from "stremio/common/Button"
 import { CATALOG_PREVIEW_SIZE } from "stremio/common/CONSTANTS"
 import useTranslate from "stremio/common/useTranslate"
+
 import MetaRowPlaceholder from "./MetaRowPlaceholder"
 import styles from "./styles.module.less"
-import { ElementType, createElement, useMemo } from "react"
 
 type MetaRowProps = {
   className?: string

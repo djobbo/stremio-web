@@ -1,6 +1,7 @@
 import classnames from "classnames"
 import { useTranslation } from "react-i18next"
 import Button from "stremio/common/Button"
+
 import styles from "./styles.module.less"
 
 type MetaLinksProps = {

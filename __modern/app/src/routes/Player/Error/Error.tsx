@@ -1,11 +1,12 @@
 // Copyright (C) 2017-2023 Smart code 203358507
 
-import { useTranslation } from "react-i18next"
-import classNames from "classnames"
 import { default as Icon } from "@stremio/stremio-icons/react"
-import Button from "stremio/common/Button"
-import styles from "./styles.module.less"
+import classNames from "classnames"
 import { useMemo } from "react"
+import { useTranslation } from "react-i18next"
+import Button from "stremio/common/Button"
+
+import styles from "./styles.module.less"
 
 type ErrorProps = {
   className?: string

@@ -1,10 +1,11 @@
+import { default as Icon } from "@stremio/stremio-icons/react"
 import classnames from "classnames"
 import { t } from "i18next"
-import { default as Icon } from "@stremio/stremio-icons/react"
+import { useCallback, useMemo } from "react"
 import { Button, Multiselect } from "stremio/common"
+
 import SeasonsBarPlaceholder from "./SeasonsBarPlaceholder"
 import styles from "./styles.module.less"
-import { useMemo, useCallback } from "react"
 
 type SeasonsBarProps = {
   className?: string

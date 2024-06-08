@@ -1,20 +1,16 @@
 // Copyright (C) 2017-2023 Smart code 203358507
 
-import ReactIs from "react-is"
 import classnames from "classnames"
-import UrlUtils from "url"
 import isEqual from "lodash.isequal"
-import { RouteFocusedProvider } from "../RouteFocusedContext"
+import type { ElementType } from "react"
+import { createElement, useLayoutEffect, useMemo, useState } from "react"
+import ReactIs from "react-is"
+import UrlUtils from "url"
+
 import Route from "../Route"
+import { RouteFocusedProvider } from "../RouteFocusedContext"
 import routeConfigForPath from "./routeConfigForPath"
 import urlParamsForPath from "./urlParamsForPath"
-import {
-  ElementType,
-  createElement,
-  useLayoutEffect,
-  useMemo,
-  useState,
-} from "react"
 
 type RouterProps = {
   className?: string

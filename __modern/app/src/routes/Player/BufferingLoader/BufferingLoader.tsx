@@ -1,5 +1,6 @@
 import classnames from "classnames"
 import { Image } from "stremio/common"
+
 import styles from "./styles.module.less"
 
 type BufferingLoaderProps = {

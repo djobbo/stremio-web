@@ -1,9 +1,8 @@
 // Copyright (C) 2017-2023 Smart code 203358507
 
-import { useRouteFocused } from "./RouteFocusedContext"
-
-import { useModalsContainer } from "./ModalsContainerContext"
 import Modal from "./Modal"
+import { useModalsContainer } from "./ModalsContainerContext"
+import { useRouteFocused } from "./RouteFocusedContext"
 import Router from "./Router"
 
-export { useRouteFocused, useModalsContainer, Modal, Router }
+export { Modal, Router, useModalsContainer, useRouteFocused }

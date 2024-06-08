@@ -1,10 +1,11 @@
 import classnames from "classnames"
+import { useCallback, useMemo } from "react"
 import { useTranslation } from "react-i18next"
 import { useToast } from "stremio/common"
 import { useServices } from "stremio/services"
+
 import Option from "./Option"
 import styles from "./styles.module.less"
-import { useMemo, useCallback } from "react"
 
 type OptionsMenuProps = {
   className?: string

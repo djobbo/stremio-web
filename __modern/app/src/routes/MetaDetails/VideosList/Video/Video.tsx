@@ -1,12 +1,13 @@
+import { default as Icon } from "@stremio/stremio-icons/react"
 import classnames from "classnames"
 import { t } from "i18next"
+import { useCallback, useEffect, useMemo } from "react"
+import { Button, Image, Popup, useBinaryState } from "stremio/common"
 import { useServices } from "stremio/services"
 import { useRouteFocused } from "stremio-router"
-import { default as Icon } from "@stremio/stremio-icons/react"
-import { Button, Image, Popup, useBinaryState } from "stremio/common"
-import VideoPlaceholder from "./VideoPlaceholder"
+
 import styles from "./styles.module.less"
-import { useCallback, useMemo, useEffect } from "react"
+import VideoPlaceholder from "./VideoPlaceholder"
 
 type VideoProps = {
   className?: string

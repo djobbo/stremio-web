@@ -1,10 +1,11 @@
 import classnames from "classnames"
-import { useRouteFocused } from "stremio-router"
+import { useCallback, useEffect, useMemo } from "react"
 import Popup from "stremio/common/Popup"
 import useBinaryState from "stremio/common/useBinaryState"
+import { useRouteFocused } from "stremio-router"
+
 import NavMenuContent from "./NavMenuContent"
 import styles from "./styles.module.less"
-import { useCallback, useMemo, useEffect } from "react"
 
 type NavMenuProps = {
   renderLabel?: (...args: unknown[]) => unknown

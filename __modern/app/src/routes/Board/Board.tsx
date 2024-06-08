@@ -2,25 +2,24 @@
 
 import classnames from "classnames"
 import debounce from "lodash.debounce"
+import { useCallback, useLayoutEffect, useRef } from "react"
 import { useTranslation } from "react-i18next"
-
 import {
-  MainNavBars,
-  MetaRow,
   ContinueWatchingItem,
-  MetaItem,
-  StreamingServerWarning,
-  useStreamingServer,
-  useNotifications,
-  withCoreSuspender,
-  getVisibleChildrenRange,
   EventModal,
+  MainNavBars,
+  MetaItem,
+  MetaRow,
+  StreamingServerWarning,
+  getVisibleChildrenRange,
+  useNotifications,
+  useStreamingServer,
+  withCoreSuspender,
 } from "stremio/common"
 
+import styles from "./styles.module.less"
 import useBoard from "./useBoard"
 import useContinueWatchingPreview from "./useContinueWatchingPreview"
-import styles from "./styles.module.less"
-import { useRef, useCallback, useLayoutEffect } from "react"
 
 const THRESHOLD = 5
 

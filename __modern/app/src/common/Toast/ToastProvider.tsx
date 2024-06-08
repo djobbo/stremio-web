@@ -1,6 +1,8 @@
-import ToastItem from "./ToastItem"
+import type { ReactNode } from "react"
+import { useCallback, useMemo, useReducer, useState } from "react"
+
 import ToastContext from "./ToastContext"
-import { useState, useReducer, useCallback, useMemo, ReactNode } from "react"
+import ToastItem from "./ToastItem"
 
 const DEFAULT_TIMEOUT = 3000
 

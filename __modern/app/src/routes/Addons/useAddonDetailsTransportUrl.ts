@@ -1,6 +1,6 @@
 // Copyright (C) 2017-2023 Smart code 203358507
 
-import { useMemo, useCallback } from "react"
+import { useCallback, useMemo } from "react"
 
 const useAddonDetailsTransportUrl = (urlParams, queryParams) => {
   const transportUrl = useMemo(() => {

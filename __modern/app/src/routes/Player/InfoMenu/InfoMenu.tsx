@@ -1,11 +1,10 @@
 import classnames from "classnames"
-
+import { useCallback, useMemo } from "react"
 // import Stream from 'stremio/routes/MetaDetails/StreamsList/Stream'
 // import AddonDetails from 'stremio/common/AddonDetailsModal/AddonDetails'
-import { MetaPreview, CONSTANTS } from "stremio/common"
+import { CONSTANTS, MetaPreview } from "stremio/common"
 
 import styles from "./styles.module.less"
-import { useMemo, useCallback } from "react"
 
 type InfoMenuProps = {
   className?: string

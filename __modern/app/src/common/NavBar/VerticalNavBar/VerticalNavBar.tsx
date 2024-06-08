@@ -1,10 +1,11 @@
 // Copyright (C) 2017-2023 Smart code 203358507
 
 import classnames from "classnames"
+import { memo } from "react"
 import { useTranslation } from "react-i18next"
+
 import NavTabButton from "./NavTabButton"
 import styles from "./styles.module.less"
-import { memo } from "react"
 
 type VerticalNavBarProps = {
   className?: string

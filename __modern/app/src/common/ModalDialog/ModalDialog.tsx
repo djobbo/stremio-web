@@ -1,10 +1,11 @@
-import classnames from "classnames"
-import { useRouteFocused, useModalsContainer } from "stremio-router"
-import Button from "stremio/common/Button"
 import { default as Icon } from "@stremio/stremio-icons/react"
-import { Modal } from "stremio-router"
+import classnames from "classnames"
+import type { ReactNode } from "react"
+import { useCallback, useEffect, useRef } from "react"
+import Button from "stremio/common/Button"
+import { Modal, useModalsContainer, useRouteFocused } from "stremio-router"
+
 import styles from "./styles.module.less"
-import { useRef, useCallback, useEffect, ReactNode } from "react"
 
 type ModalDialogProps = {
   className?: string

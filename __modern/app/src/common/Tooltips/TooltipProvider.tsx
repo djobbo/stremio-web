@@ -1,6 +1,8 @@
+import type { ReactNode } from "react"
+import { useState } from "react"
+
 import TooltipContext from "./TooltipContext"
 import TooltipItem from "./TooltipItem"
-import { ReactNode, useState } from "react"
 
 type TooltipProviderProps = {
   children?: ReactNode

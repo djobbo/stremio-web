@@ -1,7 +1,9 @@
 import classnames from "classnames"
+import type { ReactNode } from "react"
+import { forwardRef } from "react"
 import Button from "stremio/common/Button"
+
 import styles from "./styles.module.less"
-import { ReactNode, forwardRef } from "react"
 
 type CheckboxProps = {
   className?: string

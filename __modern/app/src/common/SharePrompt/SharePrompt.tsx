@@ -1,13 +1,14 @@
-import classnames from "classnames"
-import { useTranslation } from "react-i18next"
 import { default as Icon } from "@stremio/stremio-icons/react"
-import { useRouteFocused } from "stremio-router"
-import { useServices } from "stremio/services"
-import useToast from "stremio/common/Toast/useToast"
+import classnames from "classnames"
+import { useCallback, useEffect, useRef } from "react"
+import { useTranslation } from "react-i18next"
 import Button from "stremio/common/Button"
 import TextInput from "stremio/common/TextInput"
+import useToast from "stremio/common/Toast/useToast"
+import { useServices } from "stremio/services"
+import { useRouteFocused } from "stremio-router"
+
 import styles from "./styles.module.less"
-import { useRef, useCallback, useEffect } from "react"
 
 type SharePromptProps = {
   className?: string

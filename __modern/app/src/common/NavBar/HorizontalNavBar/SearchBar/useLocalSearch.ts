@@ -1,8 +1,8 @@
 // Copyright (C) 2017-2023 Smart code 203358507
 
-import { useServices } from "stremio/services"
+import { useCallback, useMemo } from "react"
 import useModelState from "stremio/common/useModelState"
-import { useMemo, useCallback } from "react"
+import { useServices } from "stremio/services"
 
 const useLocalSearch = () => {
   const { core } = useServices()

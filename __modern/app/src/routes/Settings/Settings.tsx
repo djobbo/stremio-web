@@ -1,31 +1,8 @@
 // Copyright (C) 2017-2023 Smart code 203358507
 
+import { default as Icon } from "@stremio/stremio-icons/react"
 import classnames from "classnames"
 import throttle from "lodash.throttle"
-import { useTranslation } from "react-i18next"
-import { default as Icon } from "@stremio/stremio-icons/react"
-import { useRouteFocused } from "stremio-router"
-import { useServices } from "stremio/services"
-
-import {
-  Button,
-  Checkbox,
-  MainNavBars,
-  Multiselect,
-  ColorInput,
-  TextInput,
-  ModalDialog,
-  useProfile,
-  useStreamingServer,
-  useBinaryState,
-  withCoreSuspender,
-  useToast,
-} from "stremio/common"
-
-import useProfileSettingsInputs from "./useProfileSettingsInputs"
-import useStreamingServerSettingsInputs from "./useStreamingServerSettingsInputs"
-import useDataExport from "./useDataExport"
-import styles from "./styles.module.less"
 import {
   useCallback,
   useEffect,
@@ -34,6 +11,28 @@ import {
   useRef,
   useState,
 } from "react"
+import { useTranslation } from "react-i18next"
+import {
+  Button,
+  Checkbox,
+  ColorInput,
+  MainNavBars,
+  ModalDialog,
+  Multiselect,
+  TextInput,
+  useBinaryState,
+  useProfile,
+  useStreamingServer,
+  useToast,
+  withCoreSuspender,
+} from "stremio/common"
+import { useServices } from "stremio/services"
+import { useRouteFocused } from "stremio-router"
+
+import styles from "./styles.module.less"
+import useDataExport from "./useDataExport"
+import useProfileSettingsInputs from "./useProfileSettingsInputs"
+import useStreamingServerSettingsInputs from "./useStreamingServerSettingsInputs"
 
 const GENERAL_SECTION = "general"
 const PLAYER_SECTION = "player"

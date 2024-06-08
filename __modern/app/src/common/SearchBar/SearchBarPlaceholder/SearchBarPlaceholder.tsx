@@ -1,5 +1,6 @@
-import classnames from "classnames"
 import { default as Icon } from "@stremio/stremio-icons/react"
+import classnames from "classnames"
+
 import styles from "./styles.module.less"
 
 type SearchBarPlaceholderProps = {

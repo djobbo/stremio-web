@@ -1,8 +1,8 @@
 // Copyright (C) 2017-2023 Smart code 203358507
 
-import { useServices } from "stremio/services"
-import { useModelState, useCoreSuspender } from "stremio/common"
 import { useCallback, useMemo } from "react"
+import { useCoreSuspender, useModelState } from "stremio/common"
+import { useServices } from "stremio/services"
 
 const map = (player) => ({
   ...player,

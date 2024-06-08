@@ -1,8 +1,9 @@
-import { useRouteFocused } from "stremio-router"
+import { useCallback, useEffect, useMemo, useRef, useState } from "react"
 import { ModalDialog } from "stremio/common"
+import { useRouteFocused } from "stremio-router"
+
 import CredentialsTextInput from "../CredentialsTextInput"
 import styles from "./styles.module.less"
-import { useState, useRef, useCallback, useMemo, useEffect } from "react"
 
 type PasswordResetModalProps = {
   email?: string

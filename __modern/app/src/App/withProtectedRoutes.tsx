@@ -1,8 +1,8 @@
 // Copyright (C) 2017-2023 Smart code 203358507
 
-import { Intro } from "stremio/routes"
+import { useCallback, useEffect, useRef } from "react"
 import { useProfile } from "stremio/common"
-import { useRef, useEffect, useCallback } from "react"
+import { Intro } from "stremio/routes"
 
 const withProtectedRoutes = (Component) => {
   return function withProtectedRoutes(props) {

@@ -1,7 +1,9 @@
 import classnames from "classnames"
-import { VerticalNavBar, HorizontalNavBar } from "stremio/common/NavBar"
+import type { ReactNode } from "react"
+import { memo } from "react"
+import { HorizontalNavBar, VerticalNavBar } from "stremio/common/NavBar"
+
 import styles from "./styles.module.less"
-import { ReactNode, memo } from "react"
 
 const TABS = [
   { id: "board", label: "Board", icon: "home", href: "#/" },

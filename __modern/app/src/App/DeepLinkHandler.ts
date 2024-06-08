@@ -1,7 +1,7 @@
 // Copyright (C) 2017-2023 Smart code 203358507
 
 import { useEffect } from "react"
-import { withCoreSuspender, useStreamingServer } from "stremio/common"
+import { useStreamingServer, withCoreSuspender } from "stremio/common"
 
 const DeepLinkHandler = () => {
   const streamingServer = useStreamingServer()

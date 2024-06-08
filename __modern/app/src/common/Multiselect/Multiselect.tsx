@@ -1,11 +1,12 @@
-import classnames from "classnames"
 import { default as Icon } from "@stremio/stremio-icons/react"
+import classnames from "classnames"
+import { Fragment, useCallback, useLayoutEffect, useMemo, useRef } from "react"
 import Button from "stremio/common/Button"
-import Popup from "stremio/common/Popup"
 import ModalDialog from "stremio/common/ModalDialog"
+import Popup from "stremio/common/Popup"
 import useBinaryState from "stremio/common/useBinaryState"
+
 import styles from "./styles.module.less"
-import { useMemo, useCallback, useRef, useLayoutEffect, Fragment } from "react"
 
 type MultiselectProps = {
   className?: string

@@ -1,11 +1,12 @@
 // Copyright (C) 2017-2023 Smart code 203358507
 
-import VolumeSlider from "../ControlBar/VolumeSlider"
 import { default as Icon } from "@stremio/stremio-icons/react"
 import { default as classNames } from "classnames"
-import styles from "./styles.module.less"
-import { useBinaryState } from "stremio/common"
 import { Fragment, memo, useEffect, useMemo, useRef } from "react"
+import { useBinaryState } from "stremio/common"
+
+import VolumeSlider from "../ControlBar/VolumeSlider"
+import styles from "./styles.module.less"
 
 type VolumeChangeIndicatorProps = {
   muted?: boolean

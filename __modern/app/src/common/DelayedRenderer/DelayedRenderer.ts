@@ -1,4 +1,5 @@
-import { useState, useEffect, ReactNode } from "react"
+import type { ReactNode } from "react"
+import { useEffect, useState } from "react"
 
 type DelayedRendererProps = {
   children?: ReactNode

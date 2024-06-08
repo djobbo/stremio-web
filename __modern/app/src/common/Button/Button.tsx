@@ -1,15 +1,11 @@
 // Copyright (C) 2017-2023 Smart code 203358507
 
 import classnames from "classnames"
-import styles from "./styles.module.less"
+import type { AnchorHTMLAttributes, MouseEvent } from "react"
+import { createElement, forwardRef, useCallback } from "react"
 import { useLongPress } from "use-long-press"
-import {
-  AnchorHTMLAttributes,
-  createElement,
-  forwardRef,
-  useCallback,
-  MouseEvent,
-} from "react"
+
+import styles from "./styles.module.less"
 
 type ButtonProps = {
   disabled?: boolean

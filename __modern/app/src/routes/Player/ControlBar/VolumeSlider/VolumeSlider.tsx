@@ -1,9 +1,10 @@
 import classnames from "classnames"
 import debounce from "lodash.debounce"
-import { useRouteFocused } from "stremio-router"
+import { useCallback, useEffect, useLayoutEffect, useState } from "react"
 import { Slider } from "stremio/common"
+import { useRouteFocused } from "stremio-router"
+
 import styles from "./styles.module.less"
-import { useState, useCallback, useLayoutEffect, useEffect } from "react"
 
 type VolumeSliderProps = {
   className?: string

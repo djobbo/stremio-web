@@ -1,5 +1,6 @@
 import classnames from "classnames"
 import PlayIconCircleCentered from "stremio/common/PlayIconCircleCentered"
+
 import styles from "./styles.module.less"
 
 type StreamPlaceholderProps = {

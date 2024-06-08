@@ -1,7 +1,6 @@
 // Copyright (C) 2017-2023 Smart code 203358507
 
 import { useCallback } from "react"
-
 import { useTranslation } from "react-i18next"
 
 const useTranslate = () => {

@@ -1,7 +1,8 @@
 import classnames from "classnames"
+import { useCallback, useMemo } from "react"
+
 import Video from "../../MetaDetails/VideosList/Video"
 import styles from "./styles.module.less"
-import { useCallback, useMemo } from "react"
 
 type VideosMenuProps = {
   className?: string

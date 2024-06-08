@@ -1,27 +1,26 @@
-import classnames from "classnames"
 import { default as Icon } from "@stremio/stremio-icons/react"
-import { useServices } from "stremio/services"
-
+import classnames from "classnames"
+import { useCallback, useEffect, useMemo, useRef, useState } from "react"
 import {
   AddonDetailsModal,
-  DelayedRenderer,
   Button,
+  CONSTANTS,
+  DelayedRenderer,
+  Image,
   MainNavBars,
   MetaItem,
-  Image,
   MetaPreview,
-  Multiselect,
   ModalDialog,
-  CONSTANTS,
+  Multiselect,
   useBinaryState,
   useOnScrollToBottom,
   withCoreSuspender,
 } from "stremio/common"
+import { useServices } from "stremio/services"
 
+import styles from "./styles.module.less"
 import useDiscover from "./useDiscover"
 import useSelectableInputs from "./useSelectableInputs"
-import styles from "./styles.module.less"
-import { useState, useRef, useEffect, useMemo, useCallback } from "react"
 
 const SCROLL_TO_BOTTOM_TRESHOLD = 400
 

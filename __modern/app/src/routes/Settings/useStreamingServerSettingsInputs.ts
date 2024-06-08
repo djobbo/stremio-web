@@ -1,9 +1,9 @@
 // Copyright (C) 2017-2023 Smart code 203358507
 
-import { useTranslation } from "react-i18next"
 import isEqual from "lodash.isequal"
-import { useServices } from "stremio/services"
 import { useMemo } from "react"
+import { useTranslation } from "react-i18next"
+import { useServices } from "stremio/services"
 
 const CACHE_SIZES = [0, 2147483648, 5368709120, 10737418240, null]
 

@@ -1,28 +1,27 @@
-import classnames from "classnames"
-import { useTranslation } from "react-i18next"
 import { default as Icon } from "@stremio/stremio-icons/react"
-
+import classnames from "classnames"
+import { useCallback, useLayoutEffect, useMemo, useRef, useState } from "react"
+import { useTranslation } from "react-i18next"
 import {
   AddonDetailsModal,
   Button,
   Image,
-  Multiselect,
   MainNavBars,
-  TextInput,
+  ModalDialog,
+  Multiselect,
   SearchBar,
   SharePrompt,
-  ModalDialog,
+  TextInput,
   useBinaryState,
   withCoreSuspender,
 } from "stremio/common"
 
 import Addon from "./Addon"
+import styles from "./styles.module.less"
+import useAddonDetailsTransportUrl from "./useAddonDetailsTransportUrl"
 import useInstalledAddons from "./useInstalledAddons"
 import useRemoteAddons from "./useRemoteAddons"
-import useAddonDetailsTransportUrl from "./useAddonDetailsTransportUrl"
 import useSelectableInputs from "./useSelectableInputs"
-import styles from "./styles.module.less"
-import { useRef, useCallback, useMemo, useState, useLayoutEffect } from "react"
 
 type AddonsProps = {
   urlParams?: {

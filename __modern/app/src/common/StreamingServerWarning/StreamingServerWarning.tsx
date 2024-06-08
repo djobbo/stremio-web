@@ -1,13 +1,14 @@
 // Copyright (C) 2017-2023 Smart code 203358507
 
-import { useServices } from "stremio/services"
 import classnames from "classnames"
+import { useCallback } from "react"
 import { useTranslation } from "react-i18next"
 import Button from "stremio/common/Button"
-import useProfile from "stremio/common/useProfile"
 import { withCoreSuspender } from "stremio/common/CoreSuspender"
+import useProfile from "stremio/common/useProfile"
+import { useServices } from "stremio/services"
+
 import styles from "./styles.module.less"
-import { useCallback } from "react"
 
 type StreamingServerWarningProps = {
   className?: string

@@ -1,8 +1,9 @@
-import classnames from "classnames"
 import { default as Icon } from "@stremio/stremio-icons/react"
-import { Image, Button, CONSTANTS } from "stremio/common"
+import classnames from "classnames"
+import { useCallback, useLayoutEffect, useMemo, useRef, useState } from "react"
+import { Button, CONSTANTS, Image } from "stremio/common"
+
 import styles from "./styles.module.less"
-import { useRef, useState, useMemo, useCallback, useLayoutEffect } from "react"
 
 type NextVideoPopupProps = {
   className?: string

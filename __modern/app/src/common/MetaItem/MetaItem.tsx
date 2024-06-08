@@ -1,14 +1,15 @@
-import classnames from "classnames"
-import { useTranslation } from "react-i18next"
-import { default as filterInvalidDOMProps } from "filter-invalid-dom-props"
 import { default as Icon } from "@stremio/stremio-icons/react"
+import classnames from "classnames"
+import { default as filterInvalidDOMProps } from "filter-invalid-dom-props"
+import { memo, useCallback, useMemo } from "react"
+import { useTranslation } from "react-i18next"
 import Button from "stremio/common/Button"
+import { ICON_FOR_TYPE } from "stremio/common/CONSTANTS"
 import Image from "stremio/common/Image"
 import Multiselect from "stremio/common/Multiselect"
 import useBinaryState from "stremio/common/useBinaryState"
-import { ICON_FOR_TYPE } from "stremio/common/CONSTANTS"
+
 import styles from "./styles.module.less"
-import { memo, useMemo, useCallback } from "react"
 
 type MetaItemProps = {
   className?: string

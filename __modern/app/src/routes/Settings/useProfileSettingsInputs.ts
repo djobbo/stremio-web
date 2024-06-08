@@ -1,14 +1,14 @@
 // Copyright (C) 2017-2023 Smart code 203358507
 
+import { useMemo } from "react"
 import { useTranslation } from "react-i18next"
-import { useServices } from "stremio/services"
 import {
   CONSTANTS,
   interfaceLanguages,
   languageNames,
   platform,
 } from "stremio/common"
-import { useMemo } from "react"
+import { useServices } from "stremio/services"
 
 const useProfileSettingsInputs = (profile) => {
   const { t } = useTranslation()

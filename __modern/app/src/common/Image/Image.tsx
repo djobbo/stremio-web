@@ -1,12 +1,7 @@
 // Copyright (C) 2017-2023 Smart code 203358507
 
-import {
-  useState,
-  useCallback,
-  useLayoutEffect,
-  SyntheticEvent,
-  ReactNode,
-} from "react"
+import type { ReactNode, SyntheticEvent } from "react"
+import { useCallback, useLayoutEffect, useState } from "react"
 
 type ImageProps = {
   className?: string

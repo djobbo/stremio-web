@@ -1,11 +1,12 @@
-import classnames from "classnames"
-import { useTranslation } from "react-i18next"
 import { default as Icon } from "@stremio/stremio-icons/react"
+import classnames from "classnames"
+import { Fragment, useCallback, useMemo, useState } from "react"
+import { useTranslation } from "react-i18next"
 import { Button, Image, Multiselect } from "stremio/common"
 import { useServices } from "stremio/services"
+
 import Stream from "./Stream"
 import styles from "./styles.module.less"
-import { useState, useCallback, useMemo, Fragment } from "react"
 
 const ALL_ADDONS_KEY = "ALL"
 

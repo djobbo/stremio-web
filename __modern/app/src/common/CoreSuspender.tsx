@@ -85,4 +85,4 @@ const withCoreSuspender = (Component, Fallback = () => {}) => {
   }
 }
 
-export { withCoreSuspender, useCoreSuspender }
+export { useCoreSuspender, withCoreSuspender }

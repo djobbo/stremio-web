@@ -1,9 +1,10 @@
-import classnames from "classnames"
-import { useTranslation } from "react-i18next"
 import { default as Icon } from "@stremio/stremio-icons/react"
-import { Button, Image } from "stremio/common"
-import styles from "./styles.module.less"
+import classnames from "classnames"
 import { useCallback } from "react"
+import { useTranslation } from "react-i18next"
+import { Button, Image } from "stremio/common"
+
+import styles from "./styles.module.less"
 
 type AddonProps = {
   className?: string

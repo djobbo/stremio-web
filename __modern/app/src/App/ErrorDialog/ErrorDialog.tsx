@@ -1,10 +1,11 @@
 // Copyright (C) 2017-2023 Smart code 203358507
 
-import { useTranslation } from "react-i18next"
 import classnames from "classnames"
+import { useCallback, useState } from "react"
+import { useTranslation } from "react-i18next"
 import { Button, Image } from "stremio/common"
+
 import styles from "./styles.module.less"
-import { useState, useCallback } from "react"
 
 type ErrorDialogProps = {
   className?: string

@@ -1,8 +1,8 @@
 // Copyright (C) 2017-2023 Smart code 203358507
 
-import { useServices } from "stremio/services"
-import { useModelState } from "stremio/common"
 import { useCallback } from "react"
+import { useModelState } from "stremio/common"
+import { useServices } from "stremio/services"
 
 const map = (dataExport) => ({
   ...dataExport,

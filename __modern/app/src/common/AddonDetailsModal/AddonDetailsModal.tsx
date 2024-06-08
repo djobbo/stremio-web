@@ -1,11 +1,11 @@
-import ModalDialog from "stremio/common/ModalDialog"
-import { withCoreSuspender } from "stremio/common/CoreSuspender"
-import { useServices } from "stremio/services"
-import AddonDetails from "./AddonDetails"
-
-import useAddonDetails from "./useAddonDetails"
-import styles from "./styles.module.less"
 import { useMemo } from "react"
+import { withCoreSuspender } from "stremio/common/CoreSuspender"
+import ModalDialog from "stremio/common/ModalDialog"
+import { useServices } from "stremio/services"
+
+import AddonDetails from "./AddonDetails"
+import styles from "./styles.module.less"
+import useAddonDetails from "./useAddonDetails"
 
 function withRemoteAndLocalAddon(AddonDetails) {
   const withRemoteAndLocalAddon = ({ remoteAddon, localAddon, ...props }) => {

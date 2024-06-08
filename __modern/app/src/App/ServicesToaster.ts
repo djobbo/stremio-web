@@ -1,8 +1,8 @@
 // Copyright (C) 2017-2023 Smart code 203358507
 
-import { useServices } from "stremio/services"
-import { useToast } from "stremio/common"
 import { useEffect } from "react"
+import { useToast } from "stremio/common"
+import { useServices } from "stremio/services"
 
 const ServicesToaster = () => {
   const { core, dragAndDrop } = useServices()

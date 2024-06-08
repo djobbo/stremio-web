@@ -1,10 +1,12 @@
 // Copyright (C) 2017-2023 Smart code 203358507
 
-import ReactDOM from "react-dom"
 import classnames from "classnames"
+import type { ReactNode } from "react"
+import { forwardRef } from "react"
+import ReactDOM from "react-dom"
 import { default as FocusLock } from "react-focus-lock"
+
 import { useModalsContainer } from "../ModalsContainerContext"
-import { ReactNode, forwardRef } from "react"
 
 type ModalProps = {
   className?: string

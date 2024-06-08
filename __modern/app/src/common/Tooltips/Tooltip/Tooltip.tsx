@@ -1,6 +1,7 @@
+import { useEffect, useLayoutEffect, useRef } from "react"
+
 import useTooltip from "../useTooltip"
 import styles from "./styles.module.less"
-import { useRef, useEffect, useLayoutEffect } from "react"
 
 const createId = () => (Math.random() + 1).toString(36).substring(7)
 

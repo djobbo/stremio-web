@@ -1,9 +1,8 @@
 // Copyright (C) 2017-2023 Smart code 203358507
 
-import EventEmitter from "eventemitter3"
-
 import Bridge from "@stremio/stremio-core-web/bridge"
 import Worker from "@stremio/stremio-core-web/worker?worker"
+import EventEmitter from "eventemitter3"
 
 function CoreTransport(args) {
   const events = new EventEmitter()

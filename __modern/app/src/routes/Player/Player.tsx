@@ -1,44 +1,43 @@
 import classnames from "classnames"
-import debounce from "lodash.debounce"
 import langs from "langs"
+import debounce from "lodash.debounce"
+import {
+  useCallback,
+  useEffect,
+  useLayoutEffect,
+  useMemo,
+  useRef,
+  useState,
+} from "react"
 import { useTranslation } from "react-i18next"
-import { useRouteFocused } from "stremio-router"
-import { useServices } from "stremio/services"
-
 import {
   HorizontalNavBar,
-  useFullscreen,
   useBinaryState,
-  useToast,
+  useFullscreen,
   useStreamingServer,
+  useToast,
   withCoreSuspender,
 } from "stremio/common"
+import { useServices } from "stremio/services"
+import { useRouteFocused } from "stremio-router"
 
 import BufferingLoader from "./BufferingLoader"
-import VolumeChangeIndicator from "./VolumeChangeIndicator"
-import Error from "./Error"
 import ControlBar from "./ControlBar"
-import NextVideoPopup from "./NextVideoPopup"
-import StatisticsMenu from "./StatisticsMenu"
+import Error from "./Error"
 import InfoMenu from "./InfoMenu"
+import NextVideoPopup from "./NextVideoPopup"
 import OptionsMenu from "./OptionsMenu"
-import VideosMenu from "./VideosMenu"
-import SubtitlesMenu from "./SubtitlesMenu"
 import SpeedMenu from "./SpeedMenu"
+import StatisticsMenu from "./StatisticsMenu"
+import styles from "./styles.module.less"
+import SubtitlesMenu from "./SubtitlesMenu"
 import usePlayer from "./usePlayer"
 import useSettings from "./useSettings"
 import useStatistics from "./useStatistics"
 import useVideo from "./useVideo"
-import styles from "./styles.module.less"
 import Video from "./Video"
-import {
-  useMemo,
-  useState,
-  useCallback,
-  useRef,
-  useEffect,
-  useLayoutEffect,
-} from "react"
+import VideosMenu from "./VideosMenu"
+import VolumeChangeIndicator from "./VolumeChangeIndicator"
 
 type PlayerProps = {
   urlParams?: {

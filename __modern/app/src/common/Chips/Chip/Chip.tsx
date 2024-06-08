@@ -1,8 +1,10 @@
 // Copyright (C) 2017-2024 Smart code 203358507
 
-import { MouseEvent, memo, useCallback, useEffect, useRef } from "react"
 import classNames from "classnames"
+import type { MouseEvent } from "react"
+import { memo, useCallback, useEffect, useRef } from "react"
 import Button from "stremio/common/Button"
+
 import styles from "./Chip.module.less"
 
 type Props = {

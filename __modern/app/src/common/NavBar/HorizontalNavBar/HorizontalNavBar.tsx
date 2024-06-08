@@ -1,14 +1,15 @@
-import classnames from "classnames"
 import { default as Icon } from "@stremio/stremio-icons/react"
+import classnames from "classnames"
+import { t } from "i18next"
+import { memo, useCallback } from "react"
 import Button from "stremio/common/Button"
 import Image from "stremio/common/Image"
 import useFullscreen from "stremio/common/useFullscreen"
 import usePWA from "stremio/common/usePWA"
-import SearchBar from "./SearchBar"
+
 import NavMenu from "./NavMenu"
+import SearchBar from "./SearchBar"
 import styles from "./styles.module.less"
-import { t } from "i18next"
-import { memo, useCallback } from "react"
 
 type HorizontalNavBarProps = {
   className?: string

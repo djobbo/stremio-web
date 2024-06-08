@@ -1,9 +1,11 @@
-import { defineConfig } from "vite"
+import { execSync } from "node:child_process"
+
 import react from "@vitejs/plugin-react-swc"
 import path from "path"
-import wasm from "vite-plugin-wasm"
+import { defineConfig } from "vite"
 import topLevelAwait from "vite-plugin-top-level-await"
-import { execSync } from "node:child_process"
+import wasm from "vite-plugin-wasm"
+
 import packageJson from "./package.json"
 
 const COMMIT_HASH = execSync("git rev-parse HEAD").toString().trim()

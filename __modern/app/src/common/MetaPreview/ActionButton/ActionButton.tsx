@@ -1,8 +1,9 @@
-import classnames from "classnames"
 import { default as Icon } from "@stremio/stremio-icons/react"
+import classnames from "classnames"
 import Button from "stremio/common/Button"
-import styles from "./styles.module.less"
 import { Tooltip } from "stremio/common/Tooltips"
+
+import styles from "./styles.module.less"
 
 type ActionButtonProps = {
   className?: string

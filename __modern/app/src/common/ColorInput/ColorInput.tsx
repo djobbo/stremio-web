@@ -1,12 +1,13 @@
-import classnames from "classnames"
 import AColorPicker from "a-color-picker"
+import classnames from "classnames"
+import { useCallback, useLayoutEffect, useMemo, useState } from "react"
 import { useTranslation } from "react-i18next"
 import Button from "stremio/common/Button"
 import ModalDialog from "stremio/common/ModalDialog"
 import useBinaryState from "stremio/common/useBinaryState"
+
 import ColorPicker from "./ColorPicker"
 import styles from "./styles.module.less"
-import { useState, useMemo, useCallback, useLayoutEffect } from "react"
 
 const parseColor = (value) => {
   const color = AColorPicker.parseColor(value, "hexcss4")

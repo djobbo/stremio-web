@@ -1,6 +1,7 @@
-import classnames from "classnames"
 import { default as Icon } from "@stremio/stremio-icons/react"
+import classnames from "classnames"
 import TextInput from "stremio/common/TextInput"
+
 import SearchBarPlaceholder from "./SearchBarPlaceholder"
 import styles from "./styles.module.less"
 

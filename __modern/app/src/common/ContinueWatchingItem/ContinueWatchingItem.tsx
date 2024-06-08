@@ -1,6 +1,6 @@
-import { useServices } from "stremio/services"
-import LibItem from "stremio/common/LibItem"
 import { useCallback } from "react"
+import LibItem from "stremio/common/LibItem"
+import { useServices } from "stremio/services"
 
 type ContinueWatchingItemProps = {
   _id?: string

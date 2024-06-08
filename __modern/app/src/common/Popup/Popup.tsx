@@ -1,14 +1,15 @@
 import classnames from "classnames"
-import { default as FocusLock } from "react-focus-lock"
-import { useRouteFocused } from "stremio-router"
-import styles from "./styles.module.less"
 import {
-  useRef,
-  useState,
   useCallback,
   useEffect,
   useLayoutEffect,
+  useRef,
+  useState,
 } from "react"
+import { default as FocusLock } from "react-focus-lock"
+import { useRouteFocused } from "stremio-router"
+
+import styles from "./styles.module.less"
 
 const getAnchorElement = (element) => {
   if (element === document.documentElement) {

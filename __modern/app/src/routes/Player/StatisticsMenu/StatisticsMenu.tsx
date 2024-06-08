@@ -1,6 +1,7 @@
 // Copyright (C) 2017-2023 Smart code 203358507
 
 import classNames from "classnames"
+
 import styles from "./styles.module.less"
 
 type StatisticsMenuProps = {

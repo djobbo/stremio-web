@@ -1,7 +1,8 @@
-import classnames from "classnames"
 import AColorPicker from "a-color-picker"
+import classnames from "classnames"
+import { useLayoutEffect, useRef } from "react"
+
 import styles from "./styles.module.less"
-import { useRef, useLayoutEffect } from "react"
 
 const parseColor = (value) => {
   return AColorPicker.parseColor(value, "hexcss4")

@@ -1,6 +1,7 @@
 import classnames from "classnames"
-import styles from "./styles.module.less"
 import { forwardRef } from "react"
+
+import styles from "./styles.module.less"
 
 type VideoProps = {
   className?: string

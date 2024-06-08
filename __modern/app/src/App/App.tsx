@@ -2,31 +2,32 @@
 
 import "spatial-navigation-polyfill"
 
+import { useCallback, useEffect, useMemo, useState } from "react"
 import { useTranslation } from "react-i18next"
-import { Router } from "stremio-router"
 import {
-  Core,
-  Shell,
+  CONSTANTS,
+  ToastProvider,
+  TooltipProvider,
+  withCoreSuspender,
+} from "stremio/common"
+import { NotFound } from "stremio/routes"
+import {
   Chromecast,
+  Core,
   DragAndDrop,
   KeyboardShortcuts,
   ServicesProvider,
+  Shell,
 } from "stremio/services"
-import { NotFound } from "stremio/routes"
-import {
-  ToastProvider,
-  TooltipProvider,
-  CONSTANTS,
-  withCoreSuspender,
-} from "stremio/common"
-import ServicesToaster from "./ServicesToaster"
+import { Router } from "stremio-router"
+
 import DeepLinkHandler from "./DeepLinkHandler"
-import SearchParamsHandler from "./SearchParamsHandler"
 import ErrorDialog from "./ErrorDialog"
-import withProtectedRoutes from "./withProtectedRoutes"
 import routerViewsConfig from "./routerViewsConfig"
+import SearchParamsHandler from "./SearchParamsHandler"
+import ServicesToaster from "./ServicesToaster"
 import styles from "./styles.module.less"
-import { useCallback, useEffect, useMemo, useState } from "react"
+import withProtectedRoutes from "./withProtectedRoutes"
 
 const RouterWithProtectedRoutes = withCoreSuspender(withProtectedRoutes(Router))
 

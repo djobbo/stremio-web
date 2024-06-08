@@ -1,7 +1,8 @@
 import classnames from "classnames"
-import { Button } from "stremio/common"
-import styles from "./styles.module.less"
 import { useCallback } from "react"
+import { Button } from "stremio/common"
+
+import styles from "./styles.module.less"
 
 type OptionButtonProps = {
   className?: string

@@ -1,12 +1,12 @@
 // Copyright (C) 2017-2023 Smart code 203358507
 
-import throttle from "lodash.throttle"
-import isEqual from "lodash.isequal"
 import intersection from "lodash.intersection"
+import isEqual from "lodash.isequal"
+import throttle from "lodash.throttle"
+import { useInsertionEffect, useMemo, useReducer, useRef } from "react"
 import { useCoreSuspender } from "stremio/common/CoreSuspender"
-import { useRouteFocused } from "stremio-router"
 import { useServices } from "stremio/services"
-import { useRef, useMemo, useReducer, useInsertionEffect } from "react"
+import { useRouteFocused } from "stremio-router"
 
 type useModelStateArgs = {
   model: string
