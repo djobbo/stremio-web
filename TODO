@@ -3,3 +3,4 @@
 - <%= htmlWebpackPlugin.tags.bodyTags %>
 - process.env -> import.meta.env
 - fonts
+- buffer dependency

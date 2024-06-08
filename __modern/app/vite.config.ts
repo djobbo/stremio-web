@@ -43,4 +43,29 @@ export default defineConfig({
     "import.meta.env.VERSION": JSON.stringify(packageJson.version),
     "import.meta.env.COMMIT_HASH": JSON.stringify(COMMIT_HASH),
   },
+  // assetsInclude: ["../**/*.wasm"],
+  optimizeDeps: {
+    exclude: ["@stremio/stremio-core-web"],
+  },
+  worker: {
+    plugins: () => [],
+    format: "es",
+  },
+  // build: {
+  //   outDir: "public",
+  //   sourcemap: process.env.NODE_ENV === "production" || "inline",
+  //   rollupOptions: {
+  //     input: {
+  //       // main: path.resolve(__dirname, "src/index.js"),
+  //       // worker: path.resolve(
+  //       //   __dirname,
+  //       //   "node_modules/@stremio/stremio-core-web/worker.js",
+  //       // ),
+  //     },
+  //     output: {
+  //       dir: path.resolve(__dirname, "build"),
+  //       entryFileNames: `${COMMIT_HASH}/scripts/[name].js`,
+  //     },
+  //   },
+  // },
 })

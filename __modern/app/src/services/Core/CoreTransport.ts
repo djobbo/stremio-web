@@ -3,10 +3,12 @@
 import EventEmitter from "eventemitter3"
 
 import Bridge from "@stremio/stremio-core-web/bridge"
+import Worker from "@stremio/stremio-core-web/worker?worker"
 
 function CoreTransport(args) {
   const events = new EventEmitter()
-  const worker = new Worker(`${import.meta.env.COMMIT_HASH}/scripts/worker.js`)
+  const worker = new Worker()
+
   const bridge = new Bridge(window, worker)
 
   window.onCoreEvent = ({ name, args }) => {

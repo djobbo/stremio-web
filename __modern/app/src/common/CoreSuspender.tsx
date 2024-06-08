@@ -1,6 +1,7 @@
 // Copyright (C) 2017-2023 Smart code 203358507
 
 import {
+  Suspense,
   createContext,
   useCallback,
   useContext,
@@ -75,11 +76,11 @@ const withCoreSuspender = (Component, Fallback = () => {}) => {
       }
     }, [])
     return render ? (
-      <React.Suspense fallback={<Fallback {...props} />}>
+      <Suspense fallback={<Fallback {...props} />}>
         <CoreSuspenderContext.Provider value={suspender}>
           <Component {...props} />
         </CoreSuspenderContext.Provider>
-      </React.Suspense>
+      </Suspense>
     ) : null
   }
 }
