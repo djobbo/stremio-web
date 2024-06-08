@@ -3,7 +3,7 @@
 import { MouseEvent, memo, useCallback, useEffect, useRef } from "react"
 import classNames from "classnames"
 import Button from "stremio/common/Button"
-import * as styles from "./Chip.module.less"
+import styles from "./Chip.module.less"
 
 type Props = {
   label: string

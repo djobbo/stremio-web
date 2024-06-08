@@ -1,7 +1,7 @@
 // Copyright (C) 2017-2023 Smart code 203358507
 
 import classnames from "classnames"
-import * as styles from "./styles.module.less"
+import styles from "./styles.module.less"
 import { useLongPress } from "use-long-press"
 import {
   AnchorHTMLAttributes,

@@ -10,7 +10,7 @@ import Image from "stremio/common/Image"
 import Multiselect from "stremio/common/Multiselect"
 import useBinaryState from "stremio/common/useBinaryState"
 import { ICON_FOR_TYPE } from "stremio/common/CONSTANTS"
-import * as styles from "./styles.module.less"
+import styles from "./styles.module.less"
 import { memo, useMemo, useCallback } from "react"
 
 const MetaItem = memo(

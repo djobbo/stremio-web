@@ -5,7 +5,7 @@ import PropTypes from "prop-types"
 import classNames from "classnames"
 import { default as Icon } from "@stremio/stremio-icons/react"
 import Button from "stremio/common/Button"
-import * as styles from "./styles.module.less"
+import styles from "./styles.module.less"
 import { useMemo } from "react"
 
 const Error = ({ className, code, message, stream }) => {

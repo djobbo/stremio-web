@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next"
 import Button from "stremio/common/Button"
 import ModalDialog from "stremio/common/ModalDialog"
 import useEvents from "./useEvents"
-import * as styles from "./styles.module.less"
+import styles from "./styles.module.less"
 import { default as Icon } from "@stremio/stremio-icons/react"
 import { useMemo, useCallback, useEffect } from "react"
 

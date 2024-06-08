@@ -2,7 +2,7 @@
 
 import PropTypes from "prop-types"
 import useTooltip from "../useTooltip"
-import * as styles from "./styles.module.less"
+import styles from "./styles.module.less"
 import { useRef, useEffect, useLayoutEffect } from "react"
 
 const createId = () => (Math.random() + 1).toString(36).substring(7)

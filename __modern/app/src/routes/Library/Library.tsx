@@ -21,7 +21,7 @@ import {
 
 import useLibrary from "./useLibrary"
 import useSelectableInputs from "./useSelectableInputs"
-import * as styles from "./styles.module.less"
+import styles from "./styles.module.less"
 import { useMemo, useRef, useCallback, useLayoutEffect } from "react"
 
 const SCROLL_TO_BOTTOM_TRESHOLD = 400

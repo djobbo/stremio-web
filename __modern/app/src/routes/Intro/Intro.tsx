@@ -10,7 +10,7 @@ import CredentialsTextInput from "./CredentialsTextInput"
 import ConsentCheckbox from "./ConsentCheckbox"
 import PasswordResetModal from "./PasswordResetModal"
 import useFacebookToken from "./useFacebookToken"
-import * as styles from "./styles.module.less"
+import styles from "./styles.module.less"
 import { useRef, useReducer, useCallback, useEffect, Fragment } from "react"
 
 const SIGNUP_FORM = "signup"

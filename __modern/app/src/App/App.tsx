@@ -25,7 +25,7 @@ import SearchParamsHandler from "./SearchParamsHandler"
 import ErrorDialog from "./ErrorDialog"
 import withProtectedRoutes from "./withProtectedRoutes"
 import routerViewsConfig from "./routerViewsConfig"
-import * as styles from "./styles.module.less"
+import styles from "./styles.module.less"
 import { useCallback, useEffect, useMemo, useState } from "react"
 
 const RouterWithProtectedRoutes = withCoreSuspender(withProtectedRoutes(Router))
@@ -187,13 +187,11 @@ const App = () => {
               <ServicesToaster />
               <DeepLinkHandler />
               <SearchParamsHandler />
-              <div className="aklsijdhsakldjsahdsakljdha">
-                <RouterWithProtectedRoutes
-                  className={styles["router"]}
-                  viewsConfig={routerViewsConfig}
-                  onPathNotMatch={onPathNotMatch}
-                />
-              </div>
+              <RouterWithProtectedRoutes
+                className={styles["router"]}
+                viewsConfig={routerViewsConfig}
+                onPathNotMatch={onPathNotMatch}
+              />
             </TooltipProvider>
           </ToastProvider>
         )

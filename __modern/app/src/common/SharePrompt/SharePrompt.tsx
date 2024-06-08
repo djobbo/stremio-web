@@ -9,7 +9,7 @@ import { useServices } from "stremio/services"
 import useToast from "stremio/common/Toast/useToast"
 import Button from "stremio/common/Button"
 import TextInput from "stremio/common/TextInput"
-import * as styles from "./styles.module.less"
+import styles from "./styles.module.less"
 import { useRef, useCallback, useEffect } from "react"
 
 const SharePrompt = ({ className, url }) => {

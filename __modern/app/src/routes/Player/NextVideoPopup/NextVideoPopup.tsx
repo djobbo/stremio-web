@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 import classnames from "classnames"
 import { default as Icon } from "@stremio/stremio-icons/react"
 import { Image, Button, CONSTANTS } from "stremio/common"
-import * as styles from "./styles.module.less"
+import styles from "./styles.module.less"
 import { useRef, useState, useMemo, useCallback, useLayoutEffect } from "react"
 
 const NextVideoPopup = ({

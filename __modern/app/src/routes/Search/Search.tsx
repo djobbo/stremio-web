@@ -16,7 +16,7 @@ import {
 } from "stremio/common"
 
 import useSearch from "./useSearch"
-import * as styles from "./styles.module.less"
+import styles from "./styles.module.less"
 import { useCallback, useLayoutEffect, useMemo, useRef } from "react"
 
 const THRESHOLD = 100

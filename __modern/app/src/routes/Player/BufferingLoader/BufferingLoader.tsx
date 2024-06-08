@@ -3,7 +3,7 @@
 import PropTypes from "prop-types"
 import classnames from "classnames"
 import { Image } from "stremio/common"
-import * as styles from "./styles.module.less"
+import styles from "./styles.module.less"
 
 const BufferingLoader = ({ className, logo }) => {
   return (

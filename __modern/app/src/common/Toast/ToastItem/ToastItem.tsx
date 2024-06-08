@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 import classnames from "classnames"
 import { default as Icon } from "@stremio/stremio-icons/react"
 import Button from "stremio/common/Button"
-import * as styles from "./styles.module.less"
+import styles from "./styles.module.less"
 import { useMemo, useCallback } from "react"
 
 const ToastItem = ({

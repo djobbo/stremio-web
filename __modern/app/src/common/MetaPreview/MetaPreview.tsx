@@ -14,7 +14,7 @@ import useBinaryState from "stremio/common/useBinaryState"
 import ActionButton from "./ActionButton"
 import MetaLinks from "./MetaLinks"
 import MetaPreviewPlaceholder from "./MetaPreviewPlaceholder"
-import * as styles from "./styles.module.less"
+import styles from "./styles.module.less"
 import { useMemo, useCallback, Fragment } from "react"
 import {
   IMDB_LINK_CATEGORY,

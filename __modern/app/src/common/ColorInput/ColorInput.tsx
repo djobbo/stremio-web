@@ -8,7 +8,7 @@ import Button from "stremio/common/Button"
 import ModalDialog from "stremio/common/ModalDialog"
 import useBinaryState from "stremio/common/useBinaryState"
 import ColorPicker from "./ColorPicker"
-import * as styles from "./styles.module.less"
+import styles from "./styles.module.less"
 import { useState, useMemo, useCallback, useLayoutEffect } from "react"
 
 const parseColor = (value) => {

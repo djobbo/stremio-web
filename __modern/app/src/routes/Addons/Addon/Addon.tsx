@@ -5,7 +5,7 @@ import classnames from "classnames"
 import { useTranslation } from "react-i18next"
 import { default as Icon } from "@stremio/stremio-icons/react"
 import { Button, Image } from "stremio/common"
-import * as styles from "./styles.module.less"
+import styles from "./styles.module.less"
 import { useCallback } from "react"
 
 const Addon = ({

@@ -17,6 +17,9 @@ export default defineConfig({
         javascriptEnabled: true,
       },
     },
+    modules: {
+      generateScopedName: "[local]-[hash:8]",
+    },
   },
   resolve: {
     alias: [

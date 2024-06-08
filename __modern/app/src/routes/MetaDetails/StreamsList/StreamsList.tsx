@@ -7,7 +7,7 @@ import { default as Icon } from "@stremio/stremio-icons/react"
 import { Button, Image, Multiselect } from "stremio/common"
 import { useServices } from "stremio/services"
 import Stream from "./Stream"
-import * as styles from "./styles.module.less"
+import styles from "./styles.module.less"
 import { useState, useCallback, useMemo, Fragment } from "react"
 
 const ALL_ADDONS_KEY = "ALL"

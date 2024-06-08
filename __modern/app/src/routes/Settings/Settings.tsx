@@ -25,7 +25,7 @@ import {
 import useProfileSettingsInputs from "./useProfileSettingsInputs"
 import useStreamingServerSettingsInputs from "./useStreamingServerSettingsInputs"
 import useDataExport from "./useDataExport"
-import * as styles from "./styles.module.less"
+import styles from "./styles.module.less"
 import {
   useCallback,
   useEffect,

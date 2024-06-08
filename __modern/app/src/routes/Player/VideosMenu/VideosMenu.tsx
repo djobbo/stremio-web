@@ -3,7 +3,7 @@
 import PropTypes from "prop-types"
 import classnames from "classnames"
 import Video from "../../MetaDetails/VideosList/Video"
-import * as styles from "./styles.module.less"
+import styles from "./styles.module.less"
 import { useCallback, useMemo } from "react"
 
 const VideosMenu = ({ className, metaItem, seriesInfo }) => {

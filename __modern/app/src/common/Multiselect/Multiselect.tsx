@@ -7,7 +7,7 @@ import Button from "stremio/common/Button"
 import Popup from "stremio/common/Popup"
 import ModalDialog from "stremio/common/ModalDialog"
 import useBinaryState from "stremio/common/useBinaryState"
-import * as styles from "./styles.module.less"
+import styles from "./styles.module.less"
 import { useMemo, useCallback, useRef, useLayoutEffect, Fragment } from "react"
 
 const Multiselect = ({

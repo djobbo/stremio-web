@@ -3,7 +3,7 @@
 import PropTypes from "prop-types"
 import classnames from "classnames"
 import Button from "stremio/common/Button"
-import * as styles from "./styles.module.less"
+import styles from "./styles.module.less"
 import { forwardRef } from "react"
 
 const Checkbox = forwardRef(

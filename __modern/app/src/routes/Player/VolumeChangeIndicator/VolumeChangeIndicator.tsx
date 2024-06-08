@@ -4,7 +4,7 @@ import VolumeSlider from "../ControlBar/VolumeSlider"
 import { default as Icon } from "@stremio/stremio-icons/react"
 import { default as classNames } from "classnames"
 import PropTypes from "prop-types"
-import * as styles from "./styles.module.less"
+import styles from "./styles.module.less"
 import { useBinaryState } from "stremio/common"
 import { Fragment, memo, useEffect, useMemo, useRef } from "react"
 

@@ -7,7 +7,7 @@ import { useServices } from "stremio/services"
 import AddonDetails from "./AddonDetails"
 
 import useAddonDetails from "./useAddonDetails"
-import * as styles from "./styles.module.less"
+import styles from "./styles.module.less"
 import { useMemo } from "react"
 
 function withRemoteAndLocalAddon(AddonDetails) {

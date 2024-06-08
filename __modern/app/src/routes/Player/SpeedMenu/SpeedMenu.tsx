@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 import classnames from "classnames"
 import { useTranslation } from "react-i18next"
 import Option from "./Option"
-import * as styles from "./styles.module.less"
+import styles from "./styles.module.less"
 import { useCallback } from "react"
 
 const RATES = Array.from(Array(8).keys(), (n) => n * 0.25 + 0.25).reverse()

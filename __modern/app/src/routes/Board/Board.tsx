@@ -19,7 +19,7 @@ import {
 
 import useBoard from "./useBoard"
 import useContinueWatchingPreview from "./useContinueWatchingPreview"
-import * as styles from "./styles.module.less"
+import styles from "./styles.module.less"
 import { useRef, useCallback, useLayoutEffect } from "react"
 
 const THRESHOLD = 5

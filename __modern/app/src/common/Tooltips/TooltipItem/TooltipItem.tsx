@@ -2,7 +2,7 @@
 
 import PropTypes from "prop-types"
 import classNames from "classnames"
-import * as styles from "./styles.module.less"
+import styles from "./styles.module.less"
 import { memo, useRef, useState, useCallback, useEffect } from "react"
 
 const TooltipItem = memo(

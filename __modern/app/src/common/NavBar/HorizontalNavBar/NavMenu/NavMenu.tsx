@@ -6,7 +6,7 @@ import { useRouteFocused } from "stremio-router"
 import Popup from "stremio/common/Popup"
 import useBinaryState from "stremio/common/useBinaryState"
 import NavMenuContent from "./NavMenuContent"
-import * as styles from "./styles.module.less"
+import styles from "./styles.module.less"
 import { useCallback, useMemo, useEffect } from "react"
 
 const NavMenu = (props) => {
