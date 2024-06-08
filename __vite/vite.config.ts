@@ -7,19 +7,32 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       less: {
-        math: "always",
-        relativeUrls: true,
+        rewriteUrls: "all",
         javascriptEnabled: true,
-        strictMath: true,
-        ieCompat: false,
       },
     },
   },
   resolve: {
-    alias: {
-      stremio: path.resolve(__dirname, "./src"),
-      "stremio-router": path.resolve(__dirname, "./src/router"),
-    },
+    alias: [
+      {
+        find: /^~?stremio((?=\/.+)|$)/,
+        replacement: path.resolve(__dirname, "./src"),
+      },
+      {
+        find: /^~?stremio-router/,
+        replacement: path.resolve(__dirname, "./src/router"),
+      },
+      {
+        find: /^~/,
+        replacement: "",
+      },
+    ],
   },
   plugins: [react()],
+  define: {
+    "import.meta.env.COMMIT_HASH": JSON.stringify(process.env.COMMIT_HASH),
+    "import.meta.env.SENTRY_DSN": JSON.stringify(process.env.SENTRY_DSN),
+    "import.meta.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV),
+    "import.meta.env.VERSION": JSON.stringify(process.env.VERSION),
+  },
 })

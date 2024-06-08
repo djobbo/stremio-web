@@ -3,7 +3,7 @@
 import React, { memo, useEffect, useRef, useState } from "react"
 import classNames from "classnames"
 import Chip from "./Chip"
-import styles from "./Chips.less"
+import * as styles from "./Chips.less"
 
 type Option = {
   label: string

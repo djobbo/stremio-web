@@ -1,4 +1,3 @@
-import React from "react"
 import ReactDOM from "react-dom/client"
 import App from "./App"
 import Bowser from "bowser"
@@ -6,6 +5,7 @@ import Bowser from "bowser"
 import i18n from "i18next"
 import { initReactI18next } from "react-i18next"
 import stremioTranslations from "stremio-translations"
+import { StrictMode } from "react"
 
 const SENTRY_DSN = import.meta.env.SENTRY_DSN
 
@@ -39,12 +39,12 @@ i18n.use(initReactI18next).init({
 const rootNode = document.getElementById("app")!
 
 ReactDOM.createRoot(rootNode).render(
-  <React.StrictMode>
+  <StrictMode>
     <App />
-  </React.StrictMode>,
+  </StrictMode>,
 )
 
-if (process.env.NODE_ENV === "production" && "serviceWorker" in navigator) {
+if (import.meta.env.NODE_ENV === "production" && "serviceWorker" in navigator) {
   window.addEventListener("load", () => {
     navigator.serviceWorker
       .register("service-worker.js")
