@@ -1,6 +1,12 @@
 import { defineConfig } from "vite"
 import react from "@vitejs/plugin-react-swc"
 import path from "path"
+import wasm from "vite-plugin-wasm"
+import topLevelAwait from "vite-plugin-top-level-await"
+import { execSync } from "node:child_process"
+import packageJson from "./package.json"
+
+const COMMIT_HASH = execSync("git rev-parse HEAD").toString().trim()
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -28,11 +34,11 @@ export default defineConfig({
       },
     ],
   },
-  plugins: [react()],
+  plugins: [react(), wasm(), topLevelAwait()],
   define: {
-    "import.meta.env.COMMIT_HASH": JSON.stringify(process.env.COMMIT_HASH),
-    "import.meta.env.SENTRY_DSN": JSON.stringify(process.env.SENTRY_DSN),
-    "import.meta.env.NODE_ENV": JSON.stringify(process.env.NODE_ENV),
-    "import.meta.env.VERSION": JSON.stringify(process.env.VERSION),
+    "import.meta.env.SENTRY_DSN": process.env.SENTRY_DSN || null,
+    "import.meta.env.DEBUG": process.env.NODE_ENV !== "production",
+    "import.meta.env.VERSION": packageJson.version,
+    "import.meta.env.COMMIT_HASH": COMMIT_HASH,
   },
 })
