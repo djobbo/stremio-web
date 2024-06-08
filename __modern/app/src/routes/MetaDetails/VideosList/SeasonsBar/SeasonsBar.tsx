@@ -6,7 +6,7 @@ import { t } from "i18next"
 import { default as Icon } from "@stremio/stremio-icons/react"
 import { Button, Multiselect } from "stremio/common"
 import SeasonsBarPlaceholder from "./SeasonsBarPlaceholder"
-import * as styles from "./styles.less"
+import * as styles from "./styles.module.less"
 import { useMemo, useCallback } from "react"
 
 const SeasonsBar = ({ className, seasons, season, onSelect }) => {

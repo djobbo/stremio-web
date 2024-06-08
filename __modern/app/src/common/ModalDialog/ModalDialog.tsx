@@ -6,7 +6,7 @@ import { useRouteFocused, useModalsContainer } from "stremio-router"
 import Button from "stremio/common/Button"
 import { default as Icon } from "@stremio/stremio-icons/react"
 import { Modal } from "stremio-router"
-import * as styles from "./styles.less"
+import * as styles from "./styles.module.less"
 import { useRef, useCallback, useEffect } from "react"
 
 const ModalDialog = ({

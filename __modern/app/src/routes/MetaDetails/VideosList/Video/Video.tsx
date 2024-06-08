@@ -8,7 +8,7 @@ import { useRouteFocused } from "stremio-router"
 import { default as Icon } from "@stremio/stremio-icons/react"
 import { Button, Image, Popup, useBinaryState } from "stremio/common"
 import VideoPlaceholder from "./VideoPlaceholder"
-import * as styles from "./styles.less"
+import * as styles from "./styles.module.less"
 import { useCallback, useMemo, useEffect } from "react"
 
 const Video = ({

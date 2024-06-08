@@ -6,7 +6,7 @@ import { useTranslation } from "react-i18next"
 import { useToast } from "stremio/common"
 import { useServices } from "stremio/services"
 import Option from "./Option"
-import * as styles from "./styles.less"
+import * as styles from "./styles.module.less"
 import { useMemo, useCallback } from "react"
 
 const OptionsMenu = ({ className, stream, playbackDevices }) => {

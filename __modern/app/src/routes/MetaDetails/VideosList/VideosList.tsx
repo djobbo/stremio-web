@@ -6,7 +6,7 @@ import { t } from "i18next"
 import { Image, SearchBar, Checkbox } from "stremio/common"
 import SeasonsBar from "./SeasonsBar"
 import Video from "./Video"
-import * as styles from "./styles.less"
+import * as styles from "./styles.module.less"
 import { useMemo, useState, useCallback, Fragment } from "react"
 
 const VideosList = ({

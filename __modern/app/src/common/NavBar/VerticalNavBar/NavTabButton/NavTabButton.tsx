@@ -5,7 +5,7 @@ import classnames from "classnames"
 import { default as Icon } from "@stremio/stremio-icons/react"
 import Button from "stremio/common/Button"
 import Image from "stremio/common/Image"
-import * as styles from "./styles.less"
+import * as styles from "./styles.module.less"
 import { useCallback } from "react"
 
 const NavTabButton = ({

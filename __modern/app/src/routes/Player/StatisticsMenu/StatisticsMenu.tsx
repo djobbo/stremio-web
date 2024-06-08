@@ -2,7 +2,7 @@
 
 import classNames from "classnames"
 import PropTypes from "prop-types"
-import * as styles from "./styles.less"
+import * as styles from "./styles.module.less"
 
 const StatisticsMenu = ({ className, peers, speed, completed, infoHash }) => {
   return (

@@ -9,7 +9,7 @@ import useFullscreen from "stremio/common/useFullscreen"
 import usePWA from "stremio/common/usePWA"
 import SearchBar from "./SearchBar"
 import NavMenu from "./NavMenu"
-import * as styles from "./styles.less"
+import * as styles from "./styles.module.less"
 import { t } from "i18next"
 import { memo, useCallback } from "react"
 

@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 import classnames from "classnames"
 import { default as FocusLock } from "react-focus-lock"
 import { useRouteFocused } from "stremio-router"
-import * as styles from "./styles.less"
+import * as styles from "./styles.module.less"
 import {
   useRef,
   useState,

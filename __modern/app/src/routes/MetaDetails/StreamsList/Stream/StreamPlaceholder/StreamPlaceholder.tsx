@@ -3,7 +3,7 @@
 import PropTypes from "prop-types"
 import classnames from "classnames"
 import PlayIconCircleCentered from "stremio/common/PlayIconCircleCentered"
-import * as styles from "./styles.less"
+import * as styles from "./styles.module.less"
 
 const StreamPlaceholder = ({ className }) => {
   return (

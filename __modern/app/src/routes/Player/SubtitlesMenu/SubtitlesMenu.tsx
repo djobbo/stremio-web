@@ -9,7 +9,7 @@ import {
   languageNames,
 } from "stremio/common"
 import DiscreteSelectInput from "./DiscreteSelectInput"
-import * as styles from "./styles.less"
+import * as styles from "./styles.module.less"
 import { t } from "i18next"
 import { memo, useMemo, useCallback } from "react"
 

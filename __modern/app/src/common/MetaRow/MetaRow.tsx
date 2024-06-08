@@ -8,7 +8,7 @@ import Button from "stremio/common/Button"
 import { CATALOG_PREVIEW_SIZE } from "stremio/common/CONSTANTS"
 import useTranslate from "stremio/common/useTranslate"
 import MetaRowPlaceholder from "./MetaRowPlaceholder"
-import * as styles from "./styles.less"
+import * as styles from "./styles.module.less"
 import { createElement, useMemo } from "react"
 
 const MetaRow = ({

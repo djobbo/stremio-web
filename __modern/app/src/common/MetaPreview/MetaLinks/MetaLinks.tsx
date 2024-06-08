@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 import classnames from "classnames"
 import { useTranslation } from "react-i18next"
 import Button from "stremio/common/Button"
-import * as styles from "./styles.less"
+import * as styles from "./styles.module.less"
 
 const MetaLinks = ({ className, label, links }) => {
   const { t } = useTranslation()

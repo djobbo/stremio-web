@@ -23,7 +23,7 @@ import {
 
 import useDiscover from "./useDiscover"
 import useSelectableInputs from "./useSelectableInputs"
-import * as styles from "./styles.less"
+import * as styles from "./styles.module.less"
 import { useState, useRef, useEffect, useMemo, useCallback } from "react"
 
 const SCROLL_TO_BOTTOM_TRESHOLD = 400

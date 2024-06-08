@@ -6,7 +6,7 @@ import { default as Icon } from "@stremio/stremio-icons/react"
 import { Button, Image, useProfile, platform, useToast } from "stremio/common"
 import { useServices } from "stremio/services"
 import StreamPlaceholder from "./StreamPlaceholder"
-import * as styles from "./styles.less"
+import * as styles from "./styles.module.less"
 import { useMemo, useCallback } from "react"
 
 const Stream = ({

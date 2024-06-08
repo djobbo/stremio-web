@@ -7,7 +7,7 @@ import { useTranslation } from "react-i18next"
 import Button from "stremio/common/Button"
 import useProfile from "stremio/common/useProfile"
 import { withCoreSuspender } from "stremio/common/CoreSuspender"
-import * as styles from "./styles.less"
+import * as styles from "./styles.module.less"
 import { useCallback } from "react"
 
 const StreamingServerWarning = ({ className }) => {

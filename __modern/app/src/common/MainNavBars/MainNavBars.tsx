@@ -3,7 +3,7 @@
 import PropTypes from "prop-types"
 import classnames from "classnames"
 import { VerticalNavBar, HorizontalNavBar } from "stremio/common/NavBar"
-import * as styles from "./styles.less"
+import * as styles from "./styles.module.less"
 import { memo } from "react"
 
 const TABS = [

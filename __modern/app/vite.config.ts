@@ -47,10 +47,6 @@ export default defineConfig({
   optimizeDeps: {
     exclude: ["@stremio/stremio-core-web"],
   },
-  worker: {
-    plugins: () => [],
-    format: "es",
-  },
   // build: {
   //   outDir: "public",
   //   sourcemap: process.env.NODE_ENV === "production" || "inline",

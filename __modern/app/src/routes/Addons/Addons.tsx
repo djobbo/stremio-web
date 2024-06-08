@@ -24,7 +24,7 @@ import useInstalledAddons from "./useInstalledAddons"
 import useRemoteAddons from "./useRemoteAddons"
 import useAddonDetailsTransportUrl from "./useAddonDetailsTransportUrl"
 import useSelectableInputs from "./useSelectableInputs"
-import * as styles from "./styles.less"
+import * as styles from "./styles.module.less"
 import { useRef, useCallback, useMemo, useState, useLayoutEffect } from "react"
 
 const Addons = ({ urlParams, queryParams }) => {

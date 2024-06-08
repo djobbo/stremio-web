@@ -7,7 +7,7 @@ import classnames from "classnames"
 // import AddonDetails from 'stremio/common/AddonDetailsModal/AddonDetails'
 import { MetaPreview, CONSTANTS } from "stremio/common"
 
-import * as styles from "./styles.less"
+import * as styles from "./styles.module.less"
 import { useMemo, useCallback } from "react"
 
 const InfoMenu = ({ className, ...props }) => {

@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 import { useRouteFocused } from "stremio-router"
 import { ModalDialog } from "stremio/common"
 import CredentialsTextInput from "../CredentialsTextInput"
-import * as styles from "./styles.less"
+import * as styles from "./styles.module.less"
 import { useState, useRef, useCallback, useMemo, useEffect } from "react"
 
 const PasswordResetModal = ({ email, onCloseRequest }) => {

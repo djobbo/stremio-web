@@ -5,7 +5,7 @@ import classnames from "classnames"
 import { useRouteFocused } from "stremio-router"
 import useAnimationFrame from "stremio/common/useAnimationFrame"
 import useLiveRef from "stremio/common/useLiveRef"
-import * as styles from "./styles.less"
+import * as styles from "./styles.module.less"
 import { useRef, useCallback, useLayoutEffect } from "react"
 
 const Slider = ({

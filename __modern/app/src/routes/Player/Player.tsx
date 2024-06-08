@@ -32,7 +32,7 @@ import usePlayer from "./usePlayer"
 import useSettings from "./useSettings"
 import useStatistics from "./useStatistics"
 import useVideo from "./useVideo"
-import * as styles from "./styles.less"
+import * as styles from "./styles.module.less"
 import Video from "./Video"
 import {
   useMemo,

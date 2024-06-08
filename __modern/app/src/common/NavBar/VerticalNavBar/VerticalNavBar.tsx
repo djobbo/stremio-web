@@ -3,7 +3,7 @@
 import classnames from "classnames"
 import { useTranslation } from "react-i18next"
 import NavTabButton from "./NavTabButton"
-import * as styles from "./styles.less"
+import * as styles from "./styles.module.less"
 import { memo } from "react"
 
 type VerticalNavBarProps = {

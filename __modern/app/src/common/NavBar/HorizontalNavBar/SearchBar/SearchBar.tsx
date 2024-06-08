@@ -12,7 +12,7 @@ import useTorrent from "stremio/common/useTorrent"
 import { withCoreSuspender } from "stremio/common/CoreSuspender"
 import useSearchHistory from "./useSearchHistory"
 import useLocalSearch from "./useLocalSearch"
-import * as styles from "./styles.less"
+import * as styles from "./styles.module.less"
 import useBinaryState from "stremio/common/useBinaryState"
 import { memo, useState, useRef, useCallback, useEffect } from "react"
 

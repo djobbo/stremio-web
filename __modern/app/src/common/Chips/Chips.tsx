@@ -1,9 +1,9 @@
 // Copyright (C) 2017-2024 Smart code 203358507
 
-import React, { memo, useEffect, useRef, useState } from "react"
+import { memo, useEffect, useRef, useState } from "react"
 import classNames from "classnames"
 import Chip from "./Chip"
-import * as styles from "./Chips.less"
+import * as styles from "./Chips.module.less"
 
 type Option = {
   label: string

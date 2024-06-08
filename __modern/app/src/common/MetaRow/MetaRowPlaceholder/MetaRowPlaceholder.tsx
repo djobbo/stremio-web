@@ -5,7 +5,7 @@ import classnames from "classnames"
 import { useTranslation } from "react-i18next"
 import { default as Icon } from "@stremio/stremio-icons/react"
 import Button from "stremio/common/Button"
-import * as styles from "./styles.less"
+import * as styles from "./styles.module.less"
 import { CATALOG_PREVIEW_SIZE } from "stremio/common/CONSTANTS"
 
 const MetaRowPlaceholder = ({ className, title, deepLinks }) => {

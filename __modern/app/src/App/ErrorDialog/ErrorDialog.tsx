@@ -4,7 +4,7 @@ import { useTranslation } from "react-i18next"
 import PropTypes from "prop-types"
 import classnames from "classnames"
 import { Button, Image } from "stremio/common"
-import * as styles from "./styles.less"
+import * as styles from "./styles.module.less"
 import { useState, useCallback } from "react"
 
 const ErrorDialog = ({ className }) => {

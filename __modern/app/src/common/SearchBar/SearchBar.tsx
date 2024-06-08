@@ -5,7 +5,7 @@ import classnames from "classnames"
 import { default as Icon } from "@stremio/stremio-icons/react"
 import TextInput from "stremio/common/TextInput"
 import SearchBarPlaceholder from "./SearchBarPlaceholder"
-import * as styles from "./styles.less"
+import * as styles from "./styles.module.less"
 
 const SearchBar = ({ className, title, value, onChange }) => {
   return (

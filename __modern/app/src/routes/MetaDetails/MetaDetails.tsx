@@ -19,7 +19,7 @@ import VideosList from "./VideosList"
 import useMetaDetails from "./useMetaDetails"
 import useSeason from "./useSeason"
 import useMetaExtensionTabs from "./useMetaExtensionTabs"
-import * as styles from "./styles.less"
+import * as styles from "./styles.module.less"
 import { useMemo, useCallback, Fragment } from "react"
 
 const MetaDetails = ({ urlParams, queryParams }) => {
