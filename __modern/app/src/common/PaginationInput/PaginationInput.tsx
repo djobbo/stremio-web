@@ -1,13 +1,23 @@
-// Copyright (C) 2017-2023 Smart code 203358507
-
-import PropTypes from "prop-types"
 import classnames from "classnames"
 import { default as Icon } from "@stremio/stremio-icons/react"
 import Button from "stremio/common/Button"
 import styles from "./styles.module.less"
 import { useCallback } from "react"
 
-const PaginationInput = ({ className, label, dataset, onSelect, ...props }) => {
+type PaginationInputProps = {
+  className?: string
+  label?: string
+  dataset?: object
+  onSelect?: (...args: unknown[]) => unknown
+}
+
+const PaginationInput = ({
+  className,
+  label,
+  dataset,
+  onSelect,
+  ...props
+}: PaginationInputProps) => {
   const prevNextButtonOnClick = useCallback(
     (event) => {
       if (typeof onSelect === "function") {
@@ -48,13 +58,6 @@ const PaginationInput = ({ className, label, dataset, onSelect, ...props }) => {
       </Button>
     </div>
   )
-}
-
-PaginationInput.propTypes = {
-  className: PropTypes.string,
-  label: PropTypes.string,
-  dataset: PropTypes.object,
-  onSelect: PropTypes.func,
 }
 
 export default PaginationInput

@@ -12,7 +12,7 @@ type AnalyticsEvent = {
   args: object
 }
 
-interface CoreTransport {
+type CoreTransport = {
   start: (args: object) => Promise<void>
   getState: (model: string) => Promise<object>
   dispatch: (action: Action, model?: string) => Promise<void>
@@ -22,7 +22,7 @@ interface CoreTransport {
   off: (name: string, listener: () => void) => void
 }
 
-interface Core {
+type Core = {
   active: boolean
   transport: CoreTransport
 }

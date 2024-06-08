@@ -1,13 +1,18 @@
-// Copyright (C) 2017-2023 Smart code 203358507
-
-import PropTypes from "prop-types"
 import classnames from "classnames"
 import { default as Icon } from "@stremio/stremio-icons/react"
 import { Button } from "stremio/common"
 import styles from "./styles.module.less"
 import { useCallback } from "react"
 
-const Option = ({ icon, label, deviceId, disabled, onClick }) => {
+type OptionProps = {
+  icon?: string
+  label?: string
+  deviceId?: string
+  disabled?: boolean
+  onClick?: (...args: unknown[]) => unknown
+}
+
+const Option = ({ icon, label, deviceId, disabled, onClick }: OptionProps) => {
   const onButtonClick = useCallback(() => {
     if (typeof onClick === "function") {
       onClick(deviceId)
@@ -23,14 +28,6 @@ const Option = ({ icon, label, deviceId, disabled, onClick }) => {
       <div className={styles["label"]}>{label}</div>
     </Button>
   )
-}
-
-Option.propTypes = {
-  icon: PropTypes.string,
-  label: PropTypes.string,
-  deviceId: PropTypes.string,
-  disabled: PropTypes.bool,
-  onClick: PropTypes.func,
 }
 
 export default Option

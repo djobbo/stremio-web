@@ -1,12 +1,18 @@
-// Copyright (C) 2017-2023 Smart code 203358507
-
-import PropTypes from "prop-types"
 import classnames from "classnames"
 import { useTranslation } from "react-i18next"
 import Button from "stremio/common/Button"
 import styles from "./styles.module.less"
 
-const MetaLinks = ({ className, label, links }) => {
+type MetaLinksProps = {
+  className?: string
+  label?: string
+  links?: {
+    label?: string
+    href?: string
+  }[]
+}
+
+const MetaLinks = ({ className, label, links }: MetaLinksProps) => {
   const { t } = useTranslation()
   return (
     <div className={classnames(className, styles["meta-links-container"])}>
@@ -31,17 +37,6 @@ const MetaLinks = ({ className, label, links }) => {
       ) : null}
     </div>
   )
-}
-
-MetaLinks.propTypes = {
-  className: PropTypes.string,
-  label: PropTypes.string,
-  links: PropTypes.arrayOf(
-    PropTypes.shape({
-      label: PropTypes.string,
-      href: PropTypes.string,
-    }),
-  ),
 }
 
 export default MetaLinks

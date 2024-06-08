@@ -1,10 +1,23 @@
 // Copyright (C) 2017-2023 Smart code 203358507
 
 import classNames from "classnames"
-import PropTypes from "prop-types"
 import styles from "./styles.module.less"
 
-const StatisticsMenu = ({ className, peers, speed, completed, infoHash }) => {
+type StatisticsMenuProps = {
+  className?: string
+  peers?: number
+  speed?: number
+  completed?: number
+  infoHash?: string
+}
+
+const StatisticsMenu = ({
+  className,
+  peers,
+  speed,
+  completed,
+  infoHash,
+}: StatisticsMenuProps) => {
   return (
     <div className={classNames(className, styles["statistics-menu-container"])}>
       <div className={styles["title"]}>Statistics</div>
@@ -28,14 +41,6 @@ const StatisticsMenu = ({ className, peers, speed, completed, infoHash }) => {
       </div>
     </div>
   )
-}
-
-StatisticsMenu.propTypes = {
-  className: PropTypes.string,
-  peers: PropTypes.number,
-  speed: PropTypes.number,
-  completed: PropTypes.number,
-  infoHash: PropTypes.string,
 }
 
 export default StatisticsMenu

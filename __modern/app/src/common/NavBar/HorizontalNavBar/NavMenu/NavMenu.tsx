@@ -1,6 +1,3 @@
-// Copyright (C) 2017-2023 Smart code 203358507
-
-import PropTypes from "prop-types"
 import classnames from "classnames"
 import { useRouteFocused } from "stremio-router"
 import Popup from "stremio/common/Popup"
@@ -9,7 +6,11 @@ import NavMenuContent from "./NavMenuContent"
 import styles from "./styles.module.less"
 import { useCallback, useMemo, useEffect } from "react"
 
-const NavMenu = (props) => {
+type NavMenuProps = {
+  renderLabel?: (...args: unknown[]) => unknown
+}
+
+const NavMenu = (props: NavMenuProps) => {
   const routeFocused = useRouteFocused()
   const [menuOpen, , closeMenu, toggleMenu] = useBinaryState(false)
   const popupLabelOnClick = useCallback(
@@ -53,10 +54,6 @@ const NavMenu = (props) => {
       className={styles["nav-menu-popup-label"]}
     />
   )
-}
-
-NavMenu.propTypes = {
-  renderLabel: PropTypes.func,
 }
 
 export default NavMenu

@@ -1,6 +1,3 @@
-// Copyright (C) 2017-2023 Smart code 203358507
-
-import PropTypes from "prop-types"
 import classnames from "classnames"
 import { default as FocusLock } from "react-focus-lock"
 import { useRouteFocused } from "stremio-router"
@@ -29,6 +26,15 @@ const getAnchorElement = (element) => {
   return getAnchorElement(element.parentElement)
 }
 
+type PopupProps = {
+  open?: boolean
+  direction?: "top-left" | "bottom-left" | "top-right" | "bottom-right"
+  renderLabel: (...args: unknown[]) => unknown
+  renderMenu: (...args: unknown[]) => unknown
+  dataset?: object
+  onCloseRequest?: (...args: unknown[]) => unknown
+}
+
 const Popup = ({
   open,
   direction,
@@ -37,7 +43,7 @@ const Popup = ({
   dataset,
   onCloseRequest,
   ...props
-}) => {
+}: PopupProps) => {
   const routeFocused = useRouteFocused()
   const labelRef = useRef(null)
   const menuRef = useRef(null)
@@ -156,20 +162,6 @@ const Popup = ({
       </FocusLock>
     ) : null,
   })
-}
-
-Popup.propTypes = {
-  open: PropTypes.bool,
-  direction: PropTypes.oneOf([
-    "top-left",
-    "bottom-left",
-    "top-right",
-    "bottom-right",
-  ]),
-  renderLabel: PropTypes.func.isRequired,
-  renderMenu: PropTypes.func.isRequired,
-  dataset: PropTypes.object,
-  onCloseRequest: PropTypes.func,
 }
 
 export default Popup

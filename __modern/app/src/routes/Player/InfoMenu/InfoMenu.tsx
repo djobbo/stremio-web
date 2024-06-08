@@ -1,6 +1,3 @@
-// Copyright (C) 2017-2023 Smart code 203358507
-
-import PropTypes from "prop-types"
 import classnames from "classnames"
 
 // import Stream from 'stremio/routes/MetaDetails/StreamsList/Stream'
@@ -10,7 +7,14 @@ import { MetaPreview, CONSTANTS } from "stremio/common"
 import styles from "./styles.module.less"
 import { useMemo, useCallback } from "react"
 
-const InfoMenu = ({ className, ...props }) => {
+type InfoMenuProps = {
+  className?: string
+  metaItem?: object
+  addon?: object
+  stream?: object
+}
+
+const InfoMenu = ({ className, ...props }: InfoMenuProps) => {
   const metaItem = useMemo(() => {
     return props.metaItem !== null
       ? {
@@ -68,13 +72,6 @@ const InfoMenu = ({ className, ...props }) => {
             } */}
     </div>
   )
-}
-
-InfoMenu.propTypes = {
-  className: PropTypes.string,
-  metaItem: PropTypes.object,
-  addon: PropTypes.object,
-  stream: PropTypes.object,
 }
 
 export default InfoMenu

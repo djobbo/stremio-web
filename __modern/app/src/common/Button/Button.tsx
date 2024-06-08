@@ -8,11 +8,12 @@ import {
   createElement,
   forwardRef,
   useCallback,
+  MouseEvent,
 } from "react"
 
 type ButtonProps = {
   disabled?: boolean
-  onLongPress?: (event: React.MouseEvent<HTMLDivElement>) => void
+  onLongPress?: (event: MouseEvent<HTMLDivElement>) => void
 } & AnchorHTMLAttributes<HTMLAnchorElement>
 
 const Button = forwardRef(function Button(

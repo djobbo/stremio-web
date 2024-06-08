@@ -1,6 +1,3 @@
-// Copyright (C) 2017-2023 Smart code 203358507
-
-import PropTypes from "prop-types"
 import classnames from "classnames"
 import { useServices } from "stremio/services"
 
@@ -22,7 +19,16 @@ import useMetaExtensionTabs from "./useMetaExtensionTabs"
 import styles from "./styles.module.less"
 import { useMemo, useCallback, Fragment } from "react"
 
-const MetaDetails = ({ urlParams, queryParams }) => {
+type MetaDetailsProps = {
+  urlParams?: {
+    type?: string
+    id?: string
+    videoId?: string
+  }
+  queryParams?: URLSearchParams
+}
+
+const MetaDetails = ({ urlParams, queryParams }: MetaDetailsProps) => {
   const { core } = useServices()
   const metaDetails = useMetaDetails(urlParams)
   const [season, setSeason] = useSeason(urlParams, queryParams)
@@ -231,15 +237,6 @@ const MetaDetails = ({ urlParams, queryParams }) => {
       ) : null}
     </div>
   )
-}
-
-MetaDetails.propTypes = {
-  urlParams: PropTypes.shape({
-    type: PropTypes.string,
-    id: PropTypes.string,
-    videoId: PropTypes.string,
-  }),
-  queryParams: PropTypes.instanceOf(URLSearchParams),
 }
 
 const MetaDetailsFallback = () => (

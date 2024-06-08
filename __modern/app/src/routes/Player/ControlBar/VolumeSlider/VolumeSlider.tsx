@@ -1,6 +1,3 @@
-// Copyright (C) 2017-2023 Smart code 203358507
-
-import PropTypes from "prop-types"
 import classnames from "classnames"
 import debounce from "lodash.debounce"
 import { useRouteFocused } from "stremio-router"
@@ -8,7 +5,17 @@ import { Slider } from "stremio/common"
 import styles from "./styles.module.less"
 import { useState, useCallback, useLayoutEffect, useEffect } from "react"
 
-const VolumeSlider = ({ className, volume, onVolumeChangeRequested }) => {
+type VolumeSliderProps = {
+  className?: string
+  volume?: number
+  onVolumeChangeRequested?: (...args: unknown[]) => unknown
+}
+
+const VolumeSlider = ({
+  className,
+  volume,
+  onVolumeChangeRequested,
+}: VolumeSliderProps) => {
   const disabled = volume === null || isNaN(volume)
   const routeFocused = useRouteFocused()
   const [slidingVolume, setSlidingVolume] = useState(null)
@@ -64,12 +71,6 @@ const VolumeSlider = ({ className, volume, onVolumeChangeRequested }) => {
       onComplete={onComplete}
     />
   )
-}
-
-VolumeSlider.propTypes = {
-  className: PropTypes.string,
-  volume: PropTypes.number,
-  onVolumeChangeRequested: PropTypes.func,
 }
 
 export default VolumeSlider

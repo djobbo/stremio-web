@@ -1,10 +1,13 @@
-// Copyright (C) 2017-2023 Smart code 203358507
-
-import PropTypes from "prop-types"
 import ModalsContainerContext from "./ModalsContainerContext"
-import { useState } from "react"
+import { ReactNode, useState } from "react"
 
-const ModalsContainerProvider = ({ children }) => {
+type ModalsContainerProviderProps = {
+  children?: ReactNode
+}
+
+const ModalsContainerProvider = ({
+  children,
+}: ModalsContainerProviderProps) => {
   const [container, setContainer] = useState(null)
   return (
     <ModalsContainerContext.Provider value={container}>
@@ -12,10 +15,6 @@ const ModalsContainerProvider = ({ children }) => {
       <div ref={setContainer} className="modals-container" />
     </ModalsContainerContext.Provider>
   )
-}
-
-ModalsContainerProvider.propTypes = {
-  children: PropTypes.node,
 }
 
 export default ModalsContainerProvider

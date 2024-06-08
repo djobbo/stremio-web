@@ -1,12 +1,31 @@
 // Copyright (C) 2017-2023 Smart code 203358507
 
 import { useServices } from "stremio/services"
-import PropTypes from "prop-types"
 import MetaItem from "stremio/common/MetaItem"
 import { t } from "i18next"
 import { useMemo, useCallback } from "react"
 
-const LibItem = ({ _id, removable, notifications, watched, ...props }) => {
+type LibItemProps = {
+  _id?: string
+  removable?: boolean
+  progress?: number
+  notifications?: object
+  watched?: boolean
+  deepLinks?: {
+    metaDetailsVideos?: string
+    metaDetailsStreams?: string
+    player?: string
+  }
+  optionOnSelect?: (...args: unknown[]) => unknown
+}
+
+const LibItem = ({
+  _id,
+  removable,
+  notifications,
+  watched,
+  ...props
+}: LibItemProps) => {
   const { core } = useServices()
 
   const newVideos = useMemo(() => {
@@ -150,20 +169,6 @@ const LibItem = ({ _id, removable, notifications, watched, ...props }) => {
       optionOnSelect={optionOnSelect}
     />
   )
-}
-
-LibItem.propTypes = {
-  _id: PropTypes.string,
-  removable: PropTypes.bool,
-  progress: PropTypes.number,
-  notifications: PropTypes.object,
-  watched: PropTypes.bool,
-  deepLinks: PropTypes.shape({
-    metaDetailsVideos: PropTypes.string,
-    metaDetailsStreams: PropTypes.string,
-    player: PropTypes.string,
-  }),
-  optionOnSelect: PropTypes.func,
 }
 
 export default LibItem

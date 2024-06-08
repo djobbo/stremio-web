@@ -1,12 +1,18 @@
-// Copyright (C) 2017-2023 Smart code 203358507
-
-import PropTypes from "prop-types"
 import classnames from "classnames"
 import Video from "../../MetaDetails/VideosList/Video"
 import styles from "./styles.module.less"
 import { useCallback, useMemo } from "react"
 
-const VideosMenu = ({ className, metaItem, seriesInfo }) => {
+type VideosMenuProps = {
+  className?: string
+  metaItem?: object
+  seriesInfo?: {
+    season?: number
+    episode?: number
+  }
+}
+
+const VideosMenu = ({ className, metaItem, seriesInfo }: VideosMenuProps) => {
   const onMouseDown = useCallback((event) => {
     event.nativeEvent.videosMenuClosePrevented = true
   }, [])
@@ -39,15 +45,6 @@ const VideosMenu = ({ className, metaItem, seriesInfo }) => {
       ))}
     </div>
   )
-}
-
-VideosMenu.propTypes = {
-  className: PropTypes.string,
-  metaItem: PropTypes.object,
-  seriesInfo: PropTypes.shape({
-    season: PropTypes.number,
-    episode: PropTypes.number,
-  }),
 }
 
 export default VideosMenu

@@ -1,13 +1,16 @@
 // Copyright (C) 2017-2023 Smart code 203358507
 
 import { useTranslation } from "react-i18next"
-import PropTypes from "prop-types"
 import classnames from "classnames"
 import { Button, Image } from "stremio/common"
 import styles from "./styles.module.less"
 import { useState, useCallback } from "react"
 
-const ErrorDialog = ({ className }) => {
+type ErrorDialogProps = {
+  className?: string
+}
+
+const ErrorDialog = ({ className }: ErrorDialogProps) => {
   const { t } = useTranslation()
 
   const [dataCleared, setDataCleared] = useState(false)
@@ -50,9 +53,5 @@ const ErrorDialog = ({ className }) => {
 }
 
 ErrorDialog.displayName = "ErrorDialog"
-
-ErrorDialog.propTypes = {
-  className: PropTypes.string,
-}
 
 export default ErrorDialog

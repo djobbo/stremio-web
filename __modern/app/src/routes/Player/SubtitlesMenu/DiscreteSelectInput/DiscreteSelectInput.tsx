@@ -1,11 +1,17 @@
-// Copyright (C) 2017-2023 Smart code 203358507
-
-import PropTypes from "prop-types"
 import classnames from "classnames"
 import { default as Icon } from "@stremio/stremio-icons/react"
 import { Button } from "stremio/common"
 import styles from "./styles.module.less"
 import { useCallback } from "react"
+
+type DiscreteSelectInputProps = {
+  className?: string
+  value?: string
+  label?: string
+  disabled?: boolean
+  dataset?: object
+  onChange?: (...args: unknown[]) => unknown
+}
 
 const DiscreteSelectInput = ({
   className,
@@ -14,7 +20,7 @@ const DiscreteSelectInput = ({
   disabled,
   dataset,
   onChange,
-}) => {
+}: DiscreteSelectInputProps) => {
   const buttonOnClick = useCallback(
     (event) => {
       if (typeof onChange === "function") {
@@ -64,15 +70,6 @@ const DiscreteSelectInput = ({
       </div>
     </div>
   )
-}
-
-DiscreteSelectInput.propTypes = {
-  className: PropTypes.string,
-  value: PropTypes.string,
-  label: PropTypes.string,
-  disabled: PropTypes.bool,
-  dataset: PropTypes.object,
-  onChange: PropTypes.func,
 }
 
 export default DiscreteSelectInput

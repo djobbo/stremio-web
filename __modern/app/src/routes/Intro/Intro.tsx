@@ -1,6 +1,3 @@
-// Copyright (C) 2017-2023 Smart code 203358507
-
-import PropTypes from "prop-types"
 import classnames from "classnames"
 import { default as Icon } from "@stremio/stremio-icons/react"
 import { Modal, useRouteFocused } from "stremio-router"
@@ -16,7 +13,11 @@ import { useRef, useReducer, useCallback, useEffect, Fragment } from "react"
 const SIGNUP_FORM = "signup"
 const LOGIN_FORM = "login"
 
-const Intro = ({ queryParams }) => {
+type IntroProps = {
+  queryParams?: URLSearchParams
+}
+
+const Intro = ({ queryParams }: IntroProps) => {
   const { core } = useServices()
   const routeFocused = useRouteFocused()
   const getFacebookToken = useFacebookToken()
@@ -465,10 +466,6 @@ const Intro = ({ queryParams }) => {
       ) : null}
     </div>
   )
-}
-
-Intro.propTypes = {
-  queryParams: PropTypes.instanceOf(URLSearchParams),
 }
 
 export default Intro

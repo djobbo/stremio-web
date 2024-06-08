@@ -1,13 +1,17 @@
-// Copyright (C) 2017-2023 Smart code 203358507
-
-import PropTypes from "prop-types"
 import classnames from "classnames"
 import { default as Icon } from "@stremio/stremio-icons/react"
 import TextInput from "stremio/common/TextInput"
 import SearchBarPlaceholder from "./SearchBarPlaceholder"
 import styles from "./styles.module.less"
 
-const SearchBar = ({ className, title, value, onChange }) => {
+type SearchBarProps = {
+  className?: string
+  title?: string
+  value?: string
+  onChange?: (...args: unknown[]) => unknown
+}
+
+const SearchBar = ({ className, title, value, onChange }: SearchBarProps) => {
   return (
     <label
       title={title}
@@ -26,12 +30,5 @@ const SearchBar = ({ className, title, value, onChange }) => {
 }
 
 SearchBar.Placeholder = SearchBarPlaceholder
-
-SearchBar.propTypes = {
-  className: PropTypes.string,
-  title: PropTypes.string,
-  value: PropTypes.string,
-  onChange: PropTypes.func,
-}
 
 export default SearchBar

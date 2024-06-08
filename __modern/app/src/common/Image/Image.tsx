@@ -1,14 +1,20 @@
 // Copyright (C) 2017-2023 Smart code 203358507
 
-import { useState, useCallback, useLayoutEffect } from "react"
+import {
+  useState,
+  useCallback,
+  useLayoutEffect,
+  SyntheticEvent,
+  ReactNode,
+} from "react"
 
 type ImageProps = {
   className?: string
   src?: string
   alt?: string
   fallbackSrc?: string
-  renderFallback?: () => React.ReactNode
-  onError?: (event: React.SyntheticEvent<HTMLImageElement, Event>) => void
+  renderFallback?: () => ReactNode
+  onError?: (event: SyntheticEvent<HTMLImageElement, Event>) => void
 }
 
 const Image = ({

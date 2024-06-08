@@ -1,12 +1,16 @@
-// Copyright (C) 2017-2023 Smart code 203358507
-
-import PropTypes from "prop-types"
 import classnames from "classnames"
 import styles from "./styles.module.less"
 import { forwardRef } from "react"
 import { useCallback } from "react"
 
-const TextInput = forwardRef((props, ref) => {
+type TextInputProps = {
+  className?: string
+  disabled?: boolean
+  onKeyDown?: (...args: unknown[]) => unknown
+  onSubmit?: (...args: unknown[]) => unknown
+}
+
+const TextInput = forwardRef<HTMLElement, TextInputProps>((props, ref) => {
   const onKeyDown = useCallback(
     (event) => {
       if (typeof props.onKeyDown === "function") {
@@ -42,12 +46,5 @@ const TextInput = forwardRef((props, ref) => {
 })
 
 TextInput.displayName = "TextInput"
-
-TextInput.propTypes = {
-  className: PropTypes.string,
-  disabled: PropTypes.bool,
-  onKeyDown: PropTypes.func,
-  onSubmit: PropTypes.func,
-}
 
 export default TextInput

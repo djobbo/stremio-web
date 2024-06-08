@@ -1,6 +1,3 @@
-// Copyright (C) 2017-2023 Smart code 203358507
-
-import PropTypes from "prop-types"
 import classnames from "classnames"
 import { default as Icon } from "@stremio/stremio-icons/react"
 import { Button, Image, useProfile, platform, useToast } from "stremio/common"
@@ -8,6 +5,35 @@ import { useServices } from "stremio/services"
 import StreamPlaceholder from "./StreamPlaceholder"
 import styles from "./styles.module.less"
 import { useMemo, useCallback } from "react"
+
+type StreamProps = {
+  className?: string
+  videoId?: string
+  videoReleased?: Date
+  addonName?: string
+  name?: string
+  description?: string
+  thumbnail?: string
+  progress?: number
+  deepLinks?: {
+    player?: string
+    externalPlayer?: {
+      download?: string
+      streaming?: string
+      playlist?: string
+      fileName?: string
+      web?: string
+      openPlayer?: {
+        ios?: string
+        android?: string
+        windows?: string
+        macos?: string
+        linux?: string
+      }
+    }
+  }
+  onClick?: (...args: unknown[]) => unknown
+}
 
 const Stream = ({
   className,
@@ -20,7 +46,7 @@ const Stream = ({
   progress,
   deepLinks,
   ...props
-}) => {
+}: StreamProps) => {
   const profile = useProfile()
   const toast = useToast()
   const { core } = useServices()
@@ -133,34 +159,5 @@ const Stream = ({
 }
 
 Stream.Placeholder = StreamPlaceholder
-
-Stream.propTypes = {
-  className: PropTypes.string,
-  videoId: PropTypes.string,
-  videoReleased: PropTypes.instanceOf(Date),
-  addonName: PropTypes.string,
-  name: PropTypes.string,
-  description: PropTypes.string,
-  thumbnail: PropTypes.string,
-  progress: PropTypes.number,
-  deepLinks: PropTypes.shape({
-    player: PropTypes.string,
-    externalPlayer: PropTypes.shape({
-      download: PropTypes.string,
-      streaming: PropTypes.string,
-      playlist: PropTypes.string,
-      fileName: PropTypes.string,
-      web: PropTypes.string,
-      openPlayer: PropTypes.shape({
-        ios: PropTypes.string,
-        android: PropTypes.string,
-        windows: PropTypes.string,
-        macos: PropTypes.string,
-        linux: PropTypes.string,
-      }),
-    }),
-  }),
-  onClick: PropTypes.func,
-}
 
 export default Stream

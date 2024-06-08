@@ -1,28 +1,27 @@
-// Copyright (C) 2017-2023 Smart code 203358507
-
-import PropTypes from "prop-types"
 import classnames from "classnames"
 import styles from "./styles.module.less"
 import { forwardRef } from "react"
 
-const Video = forwardRef(({ className, onClick, onDoubleClick }, ref) => {
-  return (
-    <div
-      className={classnames(className, styles["video-container"])}
-      onClick={onClick}
-      onDoubleClick={onDoubleClick}
-    >
-      <div ref={ref} className={styles["video"]} />
-    </div>
-  )
-})
+type VideoProps = {
+  className?: string
+  onClick?: (...args: unknown[]) => unknown
+  onDoubleClick?: (...args: unknown[]) => unknown
+}
+
+const Video = forwardRef<HTMLElement, VideoProps>(
+  ({ className, onClick, onDoubleClick }, ref) => {
+    return (
+      <div
+        className={classnames(className, styles["video-container"])}
+        onClick={onClick}
+        onDoubleClick={onDoubleClick}
+      >
+        <div ref={ref} className={styles["video"]} />
+      </div>
+    )
+  },
+)
 
 Video.displayName = "Video"
-
-Video.propTypes = {
-  className: PropTypes.string,
-  onClick: PropTypes.func,
-  onDoubleClick: PropTypes.func,
-}
 
 export default Video

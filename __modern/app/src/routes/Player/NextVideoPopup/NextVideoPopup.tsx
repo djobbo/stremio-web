@@ -1,11 +1,16 @@
-// Copyright (C) 2017-2023 Smart code 203358507
-
-import PropTypes from "prop-types"
 import classnames from "classnames"
 import { default as Icon } from "@stremio/stremio-icons/react"
 import { Image, Button, CONSTANTS } from "stremio/common"
 import styles from "./styles.module.less"
 import { useRef, useState, useMemo, useCallback, useLayoutEffect } from "react"
+
+type NextVideoPopupProps = {
+  className?: string
+  metaItem?: object
+  nextVideo?: object
+  onDismiss?: (...args: unknown[]) => unknown
+  onNextVideoRequested?: (...args: unknown[]) => unknown
+}
 
 const NextVideoPopup = ({
   className,
@@ -13,7 +18,7 @@ const NextVideoPopup = ({
   nextVideo,
   onDismiss,
   onNextVideoRequested,
-}) => {
+}: NextVideoPopupProps) => {
   const watchNowButtonRef = useRef(null)
   const [animationEnded, setAnimationEnded] = useState(false)
   const videoName = useMemo(() => {
@@ -108,14 +113,6 @@ const NextVideoPopup = ({
       </div>
     </div>
   )
-}
-
-NextVideoPopup.propTypes = {
-  className: PropTypes.string,
-  metaItem: PropTypes.object,
-  nextVideo: PropTypes.object,
-  onDismiss: PropTypes.func,
-  onNextVideoRequested: PropTypes.func,
 }
 
 export default NextVideoPopup

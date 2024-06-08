@@ -1,11 +1,20 @@
-// Copyright (C) 2017-2023 Smart code 203358507
-
-import PropTypes from "prop-types"
 import classnames from "classnames"
 import { default as Icon } from "@stremio/stremio-icons/react"
 import Image from "stremio/common/Image"
 import styles from "./styles.module.less"
 import { useCallback } from "react"
+
+type AddonDetailsProps = {
+  className?: string
+  id?: string
+  name?: string
+  version?: string
+  logo?: string
+  description?: string
+  types?: string[]
+  transportUrl?: string
+  official?: boolean
+}
 
 const AddonDetails = ({
   className,
@@ -17,7 +26,7 @@ const AddonDetails = ({
   types,
   transportUrl,
   official,
-}) => {
+}: AddonDetailsProps) => {
   const renderLogoFallback = useCallback(
     () => <Icon className={styles["icon"]} name="addons" />,
     [],
@@ -84,18 +93,6 @@ const AddonDetails = ({
       ) : null}
     </div>
   )
-}
-
-AddonDetails.propTypes = {
-  className: PropTypes.string,
-  id: PropTypes.string,
-  name: PropTypes.string,
-  version: PropTypes.string,
-  logo: PropTypes.string,
-  description: PropTypes.string,
-  types: PropTypes.arrayOf(PropTypes.string),
-  transportUrl: PropTypes.string,
-  official: PropTypes.bool,
 }
 
 export default AddonDetails

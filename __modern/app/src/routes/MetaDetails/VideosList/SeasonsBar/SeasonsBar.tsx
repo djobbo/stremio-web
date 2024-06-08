@@ -1,6 +1,3 @@
-// Copyright (C) 2017-2023 Smart code 203358507
-
-import PropTypes from "prop-types"
 import classnames from "classnames"
 import { t } from "i18next"
 import { default as Icon } from "@stremio/stremio-icons/react"
@@ -9,7 +6,19 @@ import SeasonsBarPlaceholder from "./SeasonsBarPlaceholder"
 import styles from "./styles.module.less"
 import { useMemo, useCallback } from "react"
 
-const SeasonsBar = ({ className, seasons, season, onSelect }) => {
+type SeasonsBarProps = {
+  className?: string
+  seasons: number[]
+  season: number
+  onSelect?: (...args: unknown[]) => unknown
+}
+
+const SeasonsBar = ({
+  className,
+  seasons,
+  season,
+  onSelect,
+}: SeasonsBarProps) => {
   const options = useMemo(() => {
     return seasons.map((season) => ({
       value: String(season),
@@ -89,12 +98,5 @@ const SeasonsBar = ({ className, seasons, season, onSelect }) => {
 }
 
 SeasonsBar.Placeholder = SeasonsBarPlaceholder
-
-SeasonsBar.propTypes = {
-  className: PropTypes.string,
-  seasons: PropTypes.arrayOf(PropTypes.number).isRequired,
-  season: PropTypes.number.isRequired,
-  onSelect: PropTypes.func,
-}
 
 export default SeasonsBar

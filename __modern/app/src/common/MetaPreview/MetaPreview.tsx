@@ -1,6 +1,3 @@
-// Copyright (C) 2017-2023 Smart code 203358507
-
-import PropTypes from "prop-types"
 import classnames from "classnames"
 import UrlUtils from "url"
 import { useTranslation } from "react-i18next"
@@ -28,6 +25,31 @@ const ALLOWED_LINK_REDIRECTS = [
   routesRegexp.metadetails.regexp,
 ]
 
+type MetaPreviewProps = {
+  className?: string
+  compact?: boolean
+  name?: string
+  logo?: string
+  background?: string
+  runtime?: string
+  releaseInfo?: string
+  released?: Date
+  description?: string
+  deepLinks?: {
+    metaDetailsVideos?: string
+    metaDetailsStreams?: string
+    player?: string
+  }
+  links?: {
+    category?: string
+    name?: string
+    url?: string
+  }[]
+  trailerStreams?: unknown[]
+  inLibrary?: boolean
+  toggleInLibrary?: (...args: unknown[]) => unknown
+}
+
 const MetaPreview = ({
   className,
   compact,
@@ -43,7 +65,7 @@ const MetaPreview = ({
   trailerStreams,
   inLibrary,
   toggleInLibrary,
-}) => {
+}: MetaPreviewProps) => {
   const { t } = useTranslation()
   const [shareModalOpen, openShareModal, closeShareModal] =
     useBinaryState(false)
@@ -273,32 +295,5 @@ const MetaPreview = ({
 }
 
 MetaPreview.Placeholder = MetaPreviewPlaceholder
-
-MetaPreview.propTypes = {
-  className: PropTypes.string,
-  compact: PropTypes.bool,
-  name: PropTypes.string,
-  logo: PropTypes.string,
-  background: PropTypes.string,
-  runtime: PropTypes.string,
-  releaseInfo: PropTypes.string,
-  released: PropTypes.instanceOf(Date),
-  description: PropTypes.string,
-  deepLinks: PropTypes.shape({
-    metaDetailsVideos: PropTypes.string,
-    metaDetailsStreams: PropTypes.string,
-    player: PropTypes.string,
-  }),
-  links: PropTypes.arrayOf(
-    PropTypes.shape({
-      category: PropTypes.string,
-      name: PropTypes.string,
-      url: PropTypes.string,
-    }),
-  ),
-  trailerStreams: PropTypes.array,
-  inLibrary: PropTypes.bool,
-  toggleInLibrary: PropTypes.func,
-}
 
 export default MetaPreview

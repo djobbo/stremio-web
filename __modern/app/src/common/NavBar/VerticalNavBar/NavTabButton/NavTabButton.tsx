@@ -1,12 +1,19 @@
-// Copyright (C) 2017-2023 Smart code 203358507
-
-import PropTypes from "prop-types"
 import classnames from "classnames"
 import { default as Icon } from "@stremio/stremio-icons/react"
 import Button from "stremio/common/Button"
 import Image from "stremio/common/Image"
 import styles from "./styles.module.less"
 import { useCallback } from "react"
+
+type NavTabButtonProps = {
+  className?: string
+  logo?: string
+  icon?: string
+  label?: string
+  href?: string
+  selected?: boolean
+  onClick?: (...args: unknown[]) => unknown
+}
 
 const NavTabButton = ({
   className,
@@ -16,7 +23,7 @@ const NavTabButton = ({
   href,
   selected,
   onClick,
-}) => {
+}: NavTabButtonProps) => {
   const renderLogoFallback = useCallback(
     () =>
       typeof icon === "string" && icon.length > 0 ? (
@@ -52,16 +59,6 @@ const NavTabButton = ({
       ) : null}
     </Button>
   )
-}
-
-NavTabButton.propTypes = {
-  className: PropTypes.string,
-  logo: PropTypes.string,
-  icon: PropTypes.string,
-  label: PropTypes.string,
-  href: PropTypes.string,
-  selected: PropTypes.bool,
-  onClick: PropTypes.func,
 }
 
 export default NavTabButton

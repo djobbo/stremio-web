@@ -1,7 +1,6 @@
 // Copyright (C) 2017-2023 Smart code 203358507
 
 import { useServices } from "stremio/services"
-import PropTypes from "prop-types"
 import classnames from "classnames"
 import { useTranslation } from "react-i18next"
 import Button from "stremio/common/Button"
@@ -10,7 +9,11 @@ import { withCoreSuspender } from "stremio/common/CoreSuspender"
 import styles from "./styles.module.less"
 import { useCallback } from "react"
 
-const StreamingServerWarning = ({ className }) => {
+type StreamingServerWarningProps = {
+  className?: string
+}
+
+const StreamingServerWarning = ({ className }: StreamingServerWarningProps) => {
   const { t } = useTranslation()
   const { core } = useServices()
   const profile = useProfile()
@@ -92,10 +95,6 @@ const StreamingServerWarning = ({ className }) => {
       </Button>
     </div>
   )
-}
-
-StreamingServerWarning.propTypes = {
-  className: PropTypes.string,
 }
 
 export default withCoreSuspender(StreamingServerWarning)

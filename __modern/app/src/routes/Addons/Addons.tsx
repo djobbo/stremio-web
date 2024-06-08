@@ -1,6 +1,3 @@
-// Copyright (C) 2017-2023 Smart code 203358507
-
-import PropTypes from "prop-types"
 import classnames from "classnames"
 import { useTranslation } from "react-i18next"
 import { default as Icon } from "@stremio/stremio-icons/react"
@@ -27,7 +24,17 @@ import useSelectableInputs from "./useSelectableInputs"
 import styles from "./styles.module.less"
 import { useRef, useCallback, useMemo, useState, useLayoutEffect } from "react"
 
-const Addons = ({ urlParams, queryParams }) => {
+type AddonsProps = {
+  urlParams?: {
+    path?: string
+    transportUrl?: string
+    catalogId?: string
+    type?: string
+  }
+  queryParams?: URLSearchParams
+}
+
+const Addons = ({ urlParams, queryParams }: AddonsProps) => {
   const { t } = useTranslation()
   const installedAddons = useInstalledAddons(urlParams)
   const remoteAddons = useRemoteAddons(urlParams)
@@ -286,16 +293,6 @@ const Addons = ({ urlParams, queryParams }) => {
       ) : null}
     </MainNavBars>
   )
-}
-
-Addons.propTypes = {
-  urlParams: PropTypes.shape({
-    path: PropTypes.string,
-    transportUrl: PropTypes.string,
-    catalogId: PropTypes.string,
-    type: PropTypes.string,
-  }),
-  queryParams: PropTypes.instanceOf(URLSearchParams),
 }
 
 const AddonsFallback = () => (

@@ -1,6 +1,3 @@
-// Copyright (C) 2017-2023 Smart code 203358507
-
-import PropTypes from "prop-types"
 import classnames from "classnames"
 import { useTranslation } from "react-i18next"
 import Option from "./Option"
@@ -9,7 +6,17 @@ import { useCallback } from "react"
 
 const RATES = Array.from(Array(8).keys(), (n) => n * 0.25 + 0.25).reverse()
 
-const SpeedMenu = ({ className, playbackSpeed, onPlaybackSpeedChanged }) => {
+type SpeedMenuProps = {
+  className?: string
+  playbackSpeed?: number
+  onPlaybackSpeedChanged?: (...args: unknown[]) => unknown
+}
+
+const SpeedMenu = ({
+  className,
+  playbackSpeed,
+  onPlaybackSpeedChanged,
+}: SpeedMenuProps) => {
   const { t } = useTranslation()
   const onMouseDown = useCallback((event) => {
     event.nativeEvent.speedMenuClosePrevented = true
@@ -41,12 +48,6 @@ const SpeedMenu = ({ className, playbackSpeed, onPlaybackSpeedChanged }) => {
       </div>
     </div>
   )
-}
-
-SpeedMenu.propTypes = {
-  className: PropTypes.string,
-  playbackSpeed: PropTypes.number,
-  onPlaybackSpeedChanged: PropTypes.func,
 }
 
 export default SpeedMenu

@@ -1,22 +1,20 @@
-// Copyright (C) 2017-2023 Smart code 203358507
-
-import PropTypes from "prop-types"
+import { ReactNode } from "react"
 import ServicesContext from "./ServicesContext"
 
-const ServicesProvider = ({ services = {}, children }) => {
+type ServicesProviderProps = {
+  services?: object
+  children?: ReactNode[] | ReactNode
+}
+
+const ServicesProvider = ({
+  services = {},
+  children,
+}: ServicesProviderProps) => {
   return (
     <ServicesContext.Provider value={services}>
       {children}
     </ServicesContext.Provider>
   )
-}
-
-ServicesProvider.propTypes = {
-  services: PropTypes.object,
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node,
-  ]),
 }
 
 export default ServicesProvider

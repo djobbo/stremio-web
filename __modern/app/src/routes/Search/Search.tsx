@@ -1,6 +1,3 @@
-// Copyright (C) 2017-2023 Smart code 203358507
-
-import PropTypes from "prop-types"
 import classnames from "classnames"
 import debounce from "lodash.debounce"
 import { useTranslation } from "react-i18next"
@@ -21,7 +18,11 @@ import { useCallback, useLayoutEffect, useMemo, useRef } from "react"
 
 const THRESHOLD = 100
 
-const Search = ({ queryParams }) => {
+type SearchProps = {
+  queryParams?: URLSearchParams
+}
+
+const Search = ({ queryParams }: SearchProps) => {
   const { t } = useTranslation()
   const [search, loadSearchRows] = useSearch(queryParams)
   const query = useMemo(() => {
@@ -165,10 +166,6 @@ const Search = ({ queryParams }) => {
   )
 }
 
-Search.propTypes = {
-  queryParams: PropTypes.instanceOf(URLSearchParams),
-}
-
 const SearchFallback = ({ queryParams }) => (
   <MainNavBars
     className={styles["search-container"]}
@@ -176,7 +173,5 @@ const SearchFallback = ({ queryParams }) => (
     query={queryParams.get("search") ?? queryParams.get("query")}
   />
 )
-
-SearchFallback.propTypes = Search.propTypes
 
 export default withCoreSuspender(Search, SearchFallback)

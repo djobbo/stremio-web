@@ -1,6 +1,3 @@
-// Copyright (C) 2017-2023 Smart code 203358507
-
-import PropTypes from "prop-types"
 import classnames from "classnames"
 import { default as Icon } from "@stremio/stremio-icons/react"
 import Button from "stremio/common/Button"
@@ -9,6 +6,27 @@ import ModalDialog from "stremio/common/ModalDialog"
 import useBinaryState from "stremio/common/useBinaryState"
 import styles from "./styles.module.less"
 import { useMemo, useCallback, useRef, useLayoutEffect, Fragment } from "react"
+
+type MultiselectProps = {
+  className?: string
+  mode?: "popup" | "modal"
+  direction?: any
+  title?: string
+  options?: {
+    value?: string
+    title?: string
+    label?: string
+  }[]
+  selected?: string[]
+  disabled?: boolean
+  dataset?: object
+  renderLabelContent?: (...args: unknown[]) => unknown
+  renderLabelText?: (...args: unknown[]) => unknown
+  onOpen?: (...args: unknown[]) => unknown
+  onClose?: (...args: unknown[]) => unknown
+  onSelect?: (...args: unknown[]) => unknown
+  onClick?: (...args: unknown[]) => unknown
+}
 
 const Multiselect = ({
   className,
@@ -23,7 +41,7 @@ const Multiselect = ({
   onClose,
   onSelect,
   ...props
-}) => {
+}: MultiselectProps) => {
   const [menuOpen, , closeMenu, toggleMenu] = useBinaryState(false)
   const options = useMemo(() => {
     return Array.isArray(props.options)
@@ -222,29 +240,6 @@ const Multiselect = ({
       renderMenu={renderMenu}
     />
   )
-}
-
-Multiselect.propTypes = {
-  className: PropTypes.string,
-  mode: PropTypes.oneOf(["popup", "modal"]),
-  direction: PropTypes.any,
-  title: PropTypes.string,
-  options: PropTypes.arrayOf(
-    PropTypes.shape({
-      value: PropTypes.string,
-      title: PropTypes.string,
-      label: PropTypes.string,
-    }),
-  ),
-  selected: PropTypes.arrayOf(PropTypes.string),
-  disabled: PropTypes.bool,
-  dataset: PropTypes.object,
-  renderLabelContent: PropTypes.func,
-  renderLabelText: PropTypes.func,
-  onOpen: PropTypes.func,
-  onClose: PropTypes.func,
-  onSelect: PropTypes.func,
-  onClick: PropTypes.func,
 }
 
 export default Multiselect

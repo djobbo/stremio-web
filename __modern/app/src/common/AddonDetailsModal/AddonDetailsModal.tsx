@@ -1,6 +1,3 @@
-// Copyright (C) 2017-2023 Smart code 203358507
-
-import PropTypes from "prop-types"
 import ModalDialog from "stremio/common/ModalDialog"
 import { withCoreSuspender } from "stremio/common/CoreSuspender"
 import { useServices } from "stremio/services"
@@ -44,7 +41,15 @@ function withRemoteAndLocalAddon(AddonDetails) {
 const AddonDetailsWithRemoteAndLocalAddon =
   withRemoteAndLocalAddon(AddonDetails)
 
-const AddonDetailsModal = ({ transportUrl, onCloseRequest }) => {
+type AddonDetailsModalProps = {
+  transportUrl?: string
+  onCloseRequest?: (...args: unknown[]) => unknown
+}
+
+const AddonDetailsModal = ({
+  transportUrl,
+  onCloseRequest,
+}: AddonDetailsModalProps) => {
   const { core } = useServices()
   const addonDetails = useAddonDetails(transportUrl)
   const modalButtons = useMemo(() => {
@@ -179,11 +184,6 @@ const AddonDetailsModal = ({ transportUrl, onCloseRequest }) => {
   )
 }
 
-AddonDetailsModal.propTypes = {
-  transportUrl: PropTypes.string,
-  onCloseRequest: PropTypes.func,
-}
-
 const AddonDetailsModalFallback = ({ onCloseRequest }) => (
   <ModalDialog
     className={styles["addon-details-modal-container"]}
@@ -195,7 +195,5 @@ const AddonDetailsModalFallback = ({ onCloseRequest }) => (
     </div>
   </ModalDialog>
 )
-
-AddonDetailsModalFallback.propTypes = AddonDetailsModal.propTypes
 
 export default withCoreSuspender(AddonDetailsModal, AddonDetailsModalFallback)

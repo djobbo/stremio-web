@@ -1,12 +1,15 @@
-// Copyright (C) 2017-2023 Smart code 203358507
-
-import PropTypes from "prop-types"
 import classnames from "classnames"
 import Button from "stremio/common/Button"
 import styles from "./styles.module.less"
-import { forwardRef } from "react"
+import { ReactNode, forwardRef } from "react"
 
-const Checkbox = forwardRef(
+type CheckboxProps = {
+  className?: string
+  checked?: boolean
+  children?: ReactNode
+}
+
+const Checkbox = forwardRef<HTMLElement, CheckboxProps>(
   ({ className, checked, children, ...props }, ref) => {
     return (
       <Button
@@ -24,11 +27,5 @@ const Checkbox = forwardRef(
 )
 
 Checkbox.displayName = "Checkbox"
-
-Checkbox.propTypes = {
-  className: PropTypes.string,
-  checked: PropTypes.bool,
-  children: PropTypes.node,
-}
 
 export default Checkbox

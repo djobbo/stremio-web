@@ -1,6 +1,3 @@
-// Copyright (C) 2017-2023 Smart code 203358507
-
-import PropTypes from "prop-types"
 import classnames from "classnames"
 import { useTranslation } from "react-i18next"
 import { default as Icon } from "@stremio/stremio-icons/react"
@@ -8,7 +5,19 @@ import Button from "stremio/common/Button"
 import styles from "./styles.module.less"
 import { CATALOG_PREVIEW_SIZE } from "stremio/common/CONSTANTS"
 
-const MetaRowPlaceholder = ({ className, title, deepLinks }) => {
+type MetaRowPlaceholderProps = {
+  className?: string
+  title?: string
+  deepLinks?: {
+    discover?: string
+  }
+}
+
+const MetaRowPlaceholder = ({
+  className,
+  title,
+  deepLinks,
+}: MetaRowPlaceholderProps) => {
   const { t } = useTranslation()
   return (
     <div
@@ -50,14 +59,6 @@ const MetaRowPlaceholder = ({ className, title, deepLinks }) => {
       </div>
     </div>
   )
-}
-
-MetaRowPlaceholder.propTypes = {
-  className: PropTypes.string,
-  title: PropTypes.string,
-  deepLinks: PropTypes.shape({
-    discover: PropTypes.string,
-  }),
 }
 
 export default MetaRowPlaceholder

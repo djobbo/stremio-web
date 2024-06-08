@@ -1,6 +1,3 @@
-// Copyright (C) 2017-2023 Smart code 203358507
-
-import PropTypes from "prop-types"
 import classnames from "classnames"
 import AColorPicker from "a-color-picker"
 import styles from "./styles.module.less"
@@ -10,7 +7,13 @@ const parseColor = (value) => {
   return AColorPicker.parseColor(value, "hexcss4")
 }
 
-const ColorPicker = ({ className, value, onInput }) => {
+type ColorPickerProps = {
+  className?: string
+  value?: string
+  onInput?: (...args: unknown[]) => unknown
+}
+
+const ColorPicker = ({ className, value, onInput }: ColorPickerProps) => {
   const pickerRef = useRef(null)
   const pickerElementRef = useRef(null)
   useLayoutEffect(() => {
@@ -53,12 +56,6 @@ const ColorPicker = ({ className, value, onInput }) => {
       className={classnames(className, styles["color-picker-container"])}
     />
   )
-}
-
-ColorPicker.propTypes = {
-  className: PropTypes.string,
-  value: PropTypes.string,
-  onInput: PropTypes.func,
 }
 
 export default ColorPicker

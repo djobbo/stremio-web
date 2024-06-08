@@ -1,11 +1,23 @@
-// Copyright (C) 2017-2023 Smart code 203358507
-
-import PropTypes from "prop-types"
 import { useServices } from "stremio/services"
 import LibItem from "stremio/common/LibItem"
 import { useCallback } from "react"
 
-const ContinueWatchingItem = ({ _id, notifications, deepLinks, ...props }) => {
+type ContinueWatchingItemProps = {
+  _id?: string
+  notifications?: object
+  deepLinks?: {
+    metaDetailsVideos?: string
+    metaDetailsStreams?: string
+    player?: string
+  }
+}
+
+const ContinueWatchingItem = ({
+  _id,
+  notifications,
+  deepLinks,
+  ...props
+}: ContinueWatchingItemProps) => {
   const { core } = useServices()
 
   const onClick = useCallback(() => {
@@ -66,16 +78,6 @@ const ContinueWatchingItem = ({ _id, notifications, deepLinks, ...props }) => {
       onDismissClick={onDismissClick}
     />
   )
-}
-
-ContinueWatchingItem.propTypes = {
-  _id: PropTypes.string,
-  notifications: PropTypes.object,
-  deepLinks: PropTypes.shape({
-    metaDetailsVideos: PropTypes.string,
-    metaDetailsStreams: PropTypes.string,
-    player: PropTypes.string,
-  }),
 }
 
 export default ContinueWatchingItem

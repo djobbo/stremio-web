@@ -4,13 +4,13 @@ import ReactDOM from "react-dom"
 import classnames from "classnames"
 import { default as FocusLock } from "react-focus-lock"
 import { useModalsContainer } from "../ModalsContainerContext"
-import { forwardRef } from "react"
+import { ReactNode, forwardRef } from "react"
 
 type ModalProps = {
   className?: string
   autoFocus?: boolean
   disabled?: boolean
-  children: React.ReactNode
+  children: ReactNode
 }
 
 const Modal = forwardRef(function Modal(

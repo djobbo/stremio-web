@@ -1,14 +1,20 @@
 // Copyright (C) 2017-2023 Smart code 203358507
 
 import { useTranslation } from "react-i18next"
-import PropTypes from "prop-types"
 import classNames from "classnames"
 import { default as Icon } from "@stremio/stremio-icons/react"
 import Button from "stremio/common/Button"
 import styles from "./styles.module.less"
 import { useMemo } from "react"
 
-const Error = ({ className, code, message, stream }) => {
+type ErrorProps = {
+  className?: string
+  code?: number
+  message?: string
+  stream?: object
+}
+
+const Error = ({ className, code, message, stream }: ErrorProps) => {
   const { t } = useTranslation()
 
   const [playlist, fileName] = useMemo(() => {
@@ -42,13 +48,6 @@ const Error = ({ className, code, message, stream }) => {
       ) : null}
     </div>
   )
-}
-
-Error.propTypes = {
-  className: PropTypes.string,
-  code: PropTypes.number,
-  message: PropTypes.string,
-  stream: PropTypes.object,
 }
 
 export default Error

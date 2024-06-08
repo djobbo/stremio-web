@@ -1,13 +1,23 @@
-// Copyright (C) 2017-2023 Smart code 203358507
-
-import PropTypes from "prop-types"
 import classnames from "classnames"
 import { default as Icon } from "@stremio/stremio-icons/react"
 import Button from "stremio/common/Button"
 import styles from "./styles.module.less"
 import { Tooltip } from "stremio/common/Tooltips"
 
-const ActionButton = ({ className, icon, label, tooltip, ...props }) => {
+type ActionButtonProps = {
+  className?: string
+  icon?: string
+  label?: string
+  tooltip?: boolean
+}
+
+const ActionButton = ({
+  className,
+  icon,
+  label,
+  tooltip,
+  ...props
+}: ActionButtonProps) => {
   return (
     <Button
       title={tooltip ? "" : label}
@@ -29,13 +39,6 @@ const ActionButton = ({ className, icon, label, tooltip, ...props }) => {
       ) : null}
     </Button>
   )
-}
-
-ActionButton.propTypes = {
-  className: PropTypes.string,
-  icon: PropTypes.string,
-  label: PropTypes.string,
-  tooltip: PropTypes.bool,
 }
 
 export default ActionButton

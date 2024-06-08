@@ -1,6 +1,3 @@
-// Copyright (C) 2017-2023 Smart code 203358507
-
-import PropTypes from "prop-types"
 import classnames from "classnames"
 import debounce from "lodash.debounce"
 import { useRouteFocused } from "stremio-router"
@@ -9,7 +6,21 @@ import formatTime from "./formatTime"
 import styles from "./styles.module.less"
 import { useState, useCallback, useLayoutEffect, useEffect } from "react"
 
-const SeekBar = ({ className, time, duration, buffered, onSeekRequested }) => {
+type SeekBarProps = {
+  className?: string
+  time?: number
+  duration?: number
+  buffered?: number
+  onSeekRequested?: (...args: unknown[]) => unknown
+}
+
+const SeekBar = ({
+  className,
+  time,
+  duration,
+  buffered,
+  onSeekRequested,
+}: SeekBarProps) => {
   const disabled =
     time === null || isNaN(time) || duration === null || isNaN(duration)
   const routeFocused = useRouteFocused()
@@ -75,14 +86,6 @@ const SeekBar = ({ className, time, duration, buffered, onSeekRequested }) => {
       </Button>
     </div>
   )
-}
-
-SeekBar.propTypes = {
-  className: PropTypes.string,
-  time: PropTypes.number,
-  duration: PropTypes.number,
-  buffered: PropTypes.number,
-  onSeekRequested: PropTypes.func,
 }
 
 export default SeekBar

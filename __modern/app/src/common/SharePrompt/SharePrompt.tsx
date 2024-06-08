@@ -1,6 +1,3 @@
-// Copyright (C) 2017-2023 Smart code 203358507
-
-import PropTypes from "prop-types"
 import classnames from "classnames"
 import { useTranslation } from "react-i18next"
 import { default as Icon } from "@stremio/stremio-icons/react"
@@ -12,7 +9,12 @@ import TextInput from "stremio/common/TextInput"
 import styles from "./styles.module.less"
 import { useRef, useCallback, useEffect } from "react"
 
-const SharePrompt = ({ className, url }) => {
+type SharePromptProps = {
+  className?: string
+  url?: string
+}
+
+const SharePrompt = ({ className, url }: SharePromptProps) => {
   const { t } = useTranslation()
   const { core } = useServices()
   const toast = useToast()
@@ -102,11 +104,6 @@ const SharePrompt = ({ className, url }) => {
       </div>
     </div>
   )
-}
-
-SharePrompt.propTypes = {
-  className: PropTypes.string,
-  url: PropTypes.string,
 }
 
 export default SharePrompt

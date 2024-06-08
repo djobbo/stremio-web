@@ -1,12 +1,25 @@
-// Copyright (C) 2017-2023 Smart code 203358507
-
-import PropTypes from "prop-types"
 import classNames from "classnames"
 import styles from "./styles.module.less"
 import { memo, useRef, useState, useCallback, useEffect } from "react"
 
+type TooltipItemProps = {
+  className?: string
+  active?: boolean
+  label?: string
+  position?: string
+  margin?: number
+  parent?: HTMLElement
+}
+
 const TooltipItem = memo(
-  ({ className, active, label, position, margin, parent }) => {
+  ({
+    className,
+    active,
+    label,
+    position,
+    margin,
+    parent,
+  }: TooltipItemProps) => {
     const ref = useRef(null)
 
     const [style, setStyle] = useState(null)
@@ -63,14 +76,5 @@ const TooltipItem = memo(
 )
 
 TooltipItem.displayName = "TooltipItem"
-
-TooltipItem.propTypes = {
-  className: PropTypes.string,
-  active: PropTypes.bool,
-  label: PropTypes.string,
-  position: PropTypes.string,
-  margin: PropTypes.number,
-  parent: PropTypes.instanceOf(HTMLElement),
-}
 
 export default TooltipItem

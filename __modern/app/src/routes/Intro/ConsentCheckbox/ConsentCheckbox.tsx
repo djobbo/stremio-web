@@ -1,13 +1,20 @@
-// Copyright (C) 2017-2023 Smart code 203358507
-
-import PropTypes from "prop-types"
 import classnames from "classnames"
 import { Button, Checkbox } from "stremio/common"
 import styles from "./styles.module.less"
 import { forwardRef } from "react"
 import { useCallback } from "react"
 
-const ConsentCheckbox = forwardRef(
+type ConsentCheckboxProps = {
+  className?: string
+  checked?: boolean
+  label?: string
+  link?: string
+  href?: string
+  onToggle?: (...args: unknown[]) => unknown
+  onClick?: (...args: unknown[]) => unknown
+}
+
+const ConsentCheckbox = forwardRef<HTMLElement, ConsentCheckboxProps>(
   ({ className, label, link, href, onToggle, ...props }, ref) => {
     const checkboxOnClick = useCallback(
       (event) => {
@@ -61,15 +68,5 @@ const ConsentCheckbox = forwardRef(
 )
 
 ConsentCheckbox.displayName = "ConsentCheckbox"
-
-ConsentCheckbox.propTypes = {
-  className: PropTypes.string,
-  checked: PropTypes.bool,
-  label: PropTypes.string,
-  link: PropTypes.string,
-  href: PropTypes.string,
-  onToggle: PropTypes.func,
-  onClick: PropTypes.func,
-}
 
 export default ConsentCheckbox

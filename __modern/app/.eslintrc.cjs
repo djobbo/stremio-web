@@ -16,6 +16,7 @@ module.exports = {
       'warn',
       { allowConstantExport: true },
     ],
+    "@typescript-eslint/consistent-type-definitions": ["error", "type"],
     "react/jsx-curly-brace-presence": ["error", { "props": "never", "children": "never" }],
     "react/react-in-jsx-scope": "off",
   },

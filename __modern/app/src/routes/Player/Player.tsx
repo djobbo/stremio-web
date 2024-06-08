@@ -1,6 +1,3 @@
-// Copyright (C) 2017-2023 Smart code 203358507
-
-import PropTypes from "prop-types"
 import classnames from "classnames"
 import debounce from "lodash.debounce"
 import langs from "langs"
@@ -43,7 +40,19 @@ import {
   useLayoutEffect,
 } from "react"
 
-const Player = ({ urlParams, queryParams }) => {
+type PlayerProps = {
+  urlParams?: {
+    stream?: string
+    streamTransportUrl?: string
+    metaTransportUrl?: string
+    type?: string
+    id?: string
+    videoId?: string
+  }
+  queryParams?: URLSearchParams
+}
+
+const Player = ({ urlParams, queryParams }: PlayerProps) => {
   const { t } = useTranslation()
   const { chromecast, shell, core } = useServices()
   const forceTranscoding = useMemo(() => {
@@ -966,18 +975,6 @@ const Player = ({ urlParams, queryParams }) => {
       ) : null}
     </div>
   )
-}
-
-Player.propTypes = {
-  urlParams: PropTypes.shape({
-    stream: PropTypes.string,
-    streamTransportUrl: PropTypes.string,
-    metaTransportUrl: PropTypes.string,
-    type: PropTypes.string,
-    id: PropTypes.string,
-    videoId: PropTypes.string,
-  }),
-  queryParams: PropTypes.instanceOf(URLSearchParams),
 }
 
 const PlayerFallback = () => (

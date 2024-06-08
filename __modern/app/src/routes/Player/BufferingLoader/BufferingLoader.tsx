@@ -1,11 +1,13 @@
-// Copyright (C) 2017-2023 Smart code 203358507
-
-import PropTypes from "prop-types"
 import classnames from "classnames"
 import { Image } from "stremio/common"
 import styles from "./styles.module.less"
 
-const BufferingLoader = ({ className, logo }) => {
+type BufferingLoaderProps = {
+  className?: string
+  logo?: string
+}
+
+const BufferingLoader = ({ className, logo }: BufferingLoaderProps) => {
   return (
     <div
       className={classnames(className, styles["buffering-loader-container"])}
@@ -18,11 +20,6 @@ const BufferingLoader = ({ className, logo }) => {
       />
     </div>
   )
-}
-
-BufferingLoader.propTypes = {
-  className: PropTypes.string,
-  logo: PropTypes.string,
 }
 
 export default BufferingLoader

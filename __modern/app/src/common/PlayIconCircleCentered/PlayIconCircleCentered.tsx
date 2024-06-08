@@ -1,9 +1,10 @@
-// Copyright (C) 2017-2023 Smart code 203358507
-
-import PropTypes from "prop-types"
 import styles from "./styles.module.less"
 
-const PlayIconCircleCentered = ({ className }) => {
+type PlayIconCircleCenteredProps = {
+  className?: string
+}
+
+const PlayIconCircleCentered = ({ className }: PlayIconCircleCenteredProps) => {
   return (
     <svg className={className} viewBox="0 0 100 100">
       <circle className={styles["background"]} cx="50" cy="50" r="50" />
@@ -19,10 +20,6 @@ const PlayIconCircleCentered = ({ className }) => {
       </svg>
     </svg>
   )
-}
-
-PlayIconCircleCentered.propTypes = {
-  className: PropTypes.string,
 }
 
 export default PlayIconCircleCentered

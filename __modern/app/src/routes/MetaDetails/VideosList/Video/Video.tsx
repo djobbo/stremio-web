@@ -1,6 +1,3 @@
-// Copyright (C) 2017-2023 Smart code 203358507
-
-import PropTypes from "prop-types"
 import classnames from "classnames"
 import { t } from "i18next"
 import { useServices } from "stremio/services"
@@ -10,6 +7,23 @@ import { Button, Image, Popup, useBinaryState } from "stremio/common"
 import VideoPlaceholder from "./VideoPlaceholder"
 import styles from "./styles.module.less"
 import { useCallback, useMemo, useEffect } from "react"
+
+type VideoProps = {
+  className?: string
+  id?: string
+  title?: string
+  thumbnail?: string
+  episode?: number
+  released?: Date
+  upcoming?: boolean
+  watched?: boolean
+  progress?: number
+  scheduled?: boolean
+  deepLinks?: {
+    metaDetailsStreams?: string
+    player?: string
+  }
+}
 
 const Video = ({
   className,
@@ -24,7 +38,7 @@ const Video = ({
   scheduled,
   deepLinks,
   ...props
-}) => {
+}: VideoProps) => {
   const { core } = useServices()
   const routeFocused = useRouteFocused()
   const [menuOpen, , closeMenu, toggleMenu] = useBinaryState(false)
@@ -246,22 +260,5 @@ const Video = ({
 }
 
 Video.Placeholder = VideoPlaceholder
-
-Video.propTypes = {
-  className: PropTypes.string,
-  id: PropTypes.string,
-  title: PropTypes.string,
-  thumbnail: PropTypes.string,
-  episode: PropTypes.number,
-  released: PropTypes.instanceOf(Date),
-  upcoming: PropTypes.bool,
-  watched: PropTypes.bool,
-  progress: PropTypes.number,
-  scheduled: PropTypes.bool,
-  deepLinks: PropTypes.shape({
-    metaDetailsStreams: PropTypes.string,
-    player: PropTypes.string,
-  }),
-}
 
 export default Video

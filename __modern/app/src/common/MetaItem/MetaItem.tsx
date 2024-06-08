@@ -1,6 +1,3 @@
-// Copyright (C) 2017-2023 Smart code 203358507
-
-import PropTypes from "prop-types"
 import classnames from "classnames"
 import { useTranslation } from "react-i18next"
 import { default as filterInvalidDOMProps } from "filter-invalid-dom-props"
@@ -12,6 +9,29 @@ import useBinaryState from "stremio/common/useBinaryState"
 import { ICON_FOR_TYPE } from "stremio/common/CONSTANTS"
 import styles from "./styles.module.less"
 import { memo, useMemo, useCallback } from "react"
+
+type MetaItemProps = {
+  className?: string
+  type?: string
+  name?: string
+  poster?: string
+  posterShape?: "poster" | "landscape" | "square"
+  posterChangeCursor?: boolean
+  progress?: number
+  newVideos?: number
+  options?: unknown[]
+  deepLinks?: {
+    metaDetailsVideos?: string
+    metaDetailsStreams?: string
+    player?: string
+  }
+  dataset?: object
+  optionOnSelect?: (...args: unknown[]) => unknown
+  onDismissClick?: (...args: unknown[]) => unknown
+  onPlayClick?: (...args: unknown[]) => unknown
+  onClick?: (...args: unknown[]) => unknown
+  watched?: boolean
+}
 
 const MetaItem = memo(
   ({
@@ -31,7 +51,7 @@ const MetaItem = memo(
     onPlayClick,
     watched,
     ...props
-  }) => {
+  }: MetaItemProps) => {
     const { t } = useTranslation()
     const [menuOpen, onMenuOpen, onMenuClose] = useBinaryState(false)
     const href = useMemo(() => {
@@ -188,28 +208,5 @@ const MetaItem = memo(
 )
 
 MetaItem.displayName = "MetaItem"
-
-MetaItem.propTypes = {
-  className: PropTypes.string,
-  type: PropTypes.string,
-  name: PropTypes.string,
-  poster: PropTypes.string,
-  posterShape: PropTypes.oneOf(["poster", "landscape", "square"]),
-  posterChangeCursor: PropTypes.bool,
-  progress: PropTypes.number,
-  newVideos: PropTypes.number,
-  options: PropTypes.array,
-  deepLinks: PropTypes.shape({
-    metaDetailsVideos: PropTypes.string,
-    metaDetailsStreams: PropTypes.string,
-    player: PropTypes.string,
-  }),
-  dataset: PropTypes.object,
-  optionOnSelect: PropTypes.func,
-  onDismissClick: PropTypes.func,
-  onPlayClick: PropTypes.func,
-  onClick: PropTypes.func,
-  watched: PropTypes.bool,
-}
 
 export default MetaItem

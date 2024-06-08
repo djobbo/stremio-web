@@ -1,11 +1,12 @@
-// Copyright (C) 2017-2023 Smart code 203358507
-
-import PropTypes from "prop-types"
 import classnames from "classnames"
 import PlayIconCircleCentered from "stremio/common/PlayIconCircleCentered"
 import styles from "./styles.module.less"
 
-const StreamPlaceholder = ({ className }) => {
+type StreamPlaceholderProps = {
+  className?: string
+}
+
+const StreamPlaceholder = ({ className }: StreamPlaceholderProps) => {
   return (
     <div
       className={classnames(className, styles["stream-placeholder-container"])}
@@ -20,10 +21,6 @@ const StreamPlaceholder = ({ className }) => {
       <PlayIconCircleCentered className={styles["play-icon"]} />
     </div>
   )
-}
-
-StreamPlaceholder.propTypes = {
-  className: PropTypes.string,
 }
 
 export default StreamPlaceholder

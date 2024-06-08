@@ -1,12 +1,30 @@
-// Copyright (C) 2017-2023 Smart code 203358507
-
-import PropTypes from "prop-types"
 import classnames from "classnames"
 import { useTranslation } from "react-i18next"
 import { default as Icon } from "@stremio/stremio-icons/react"
 import { Button, Image } from "stremio/common"
 import styles from "./styles.module.less"
 import { useCallback } from "react"
+
+type AddonProps = {
+  className?: string
+  id?: string
+  name?: string
+  version?: string
+  logo?: string
+  description?: string
+  types?: string[]
+  behaviorHints?: {
+    adult?: boolean
+    configurable?: boolean
+    configurationRequired?: boolean
+    p2p?: boolean
+  }
+  installed?: boolean
+  onToggle?: (...args: unknown[]) => unknown
+  onConfigure?: (...args: unknown[]) => unknown
+  onShare?: (...args: unknown[]) => unknown
+  dataset?: object
+}
 
 const Addon = ({
   className,
@@ -22,7 +40,7 @@ const Addon = ({
   onConfigure,
   onShare,
   dataset,
-}) => {
+}: AddonProps) => {
   const { t } = useTranslation()
   const toggleButtonOnClick = useCallback(
     (event) => {
@@ -172,27 +190,6 @@ const Addon = ({
       </div>
     </Button>
   )
-}
-
-Addon.propTypes = {
-  className: PropTypes.string,
-  id: PropTypes.string,
-  name: PropTypes.string,
-  version: PropTypes.string,
-  logo: PropTypes.string,
-  description: PropTypes.string,
-  types: PropTypes.arrayOf(PropTypes.string),
-  behaviorHints: PropTypes.shape({
-    adult: PropTypes.bool,
-    configurable: PropTypes.bool,
-    configurationRequired: PropTypes.bool,
-    p2p: PropTypes.bool,
-  }),
-  installed: PropTypes.bool,
-  onToggle: PropTypes.func,
-  onConfigure: PropTypes.func,
-  onShare: PropTypes.func,
-  dataset: PropTypes.object,
 }
 
 export default Addon

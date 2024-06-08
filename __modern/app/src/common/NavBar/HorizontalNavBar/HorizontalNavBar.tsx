@@ -1,6 +1,3 @@
-// Copyright (C) 2017-2023 Smart code 203358507
-
-import PropTypes from "prop-types"
 import classnames from "classnames"
 import { default as Icon } from "@stremio/stremio-icons/react"
 import Button from "stremio/common/Button"
@@ -12,6 +9,18 @@ import NavMenu from "./NavMenu"
 import styles from "./styles.module.less"
 import { t } from "i18next"
 import { memo, useCallback } from "react"
+
+type HorizontalNavBarProps = {
+  className?: string
+  route?: string
+  query?: string
+  title?: string
+  backButton?: boolean
+  searchBar?: boolean
+  addonsButton?: boolean
+  fullscreenButton?: boolean
+  navMenu?: boolean
+}
 
 const HorizontalNavBar = memo(
   ({
@@ -25,7 +34,7 @@ const HorizontalNavBar = memo(
     fullscreenButton,
     navMenu,
     ...props
-  }) => {
+  }: HorizontalNavBarProps) => {
     const backButtonOnClick = useCallback(() => {
       window.history.back()
     }, [])
@@ -119,17 +128,5 @@ const HorizontalNavBar = memo(
 )
 
 HorizontalNavBar.displayName = "HorizontalNavBar"
-
-HorizontalNavBar.propTypes = {
-  className: PropTypes.string,
-  route: PropTypes.string,
-  query: PropTypes.string,
-  title: PropTypes.string,
-  backButton: PropTypes.bool,
-  searchBar: PropTypes.bool,
-  addonsButton: PropTypes.bool,
-  fullscreenButton: PropTypes.bool,
-  navMenu: PropTypes.bool,
-}
 
 export default HorizontalNavBar

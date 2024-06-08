@@ -1,6 +1,3 @@
-// Copyright (C) 2017-2023 Smart code 203358507
-
-import PropTypes from "prop-types"
 import classnames from "classnames"
 import { useTranslation } from "react-i18next"
 import { default as Icon } from "@stremio/stremio-icons/react"
@@ -14,7 +11,11 @@ import { withCoreSuspender } from "stremio/common/CoreSuspender"
 import styles from "./styles.module.less"
 import { useCallback } from "react"
 
-const NavMenuContent = ({ onClick }) => {
+type NavMenuContentProps = {
+  onClick?: (...args: unknown[]) => unknown
+}
+
+const NavMenuContent = ({ onClick }: NavMenuContentProps) => {
   const { t } = useTranslation()
   const { core } = useServices()
   const profile = useProfile()
@@ -172,10 +173,6 @@ const NavMenuContent = ({ onClick }) => {
       </div>
     </div>
   )
-}
-
-NavMenuContent.propTypes = {
-  onClick: PropTypes.func,
 }
 
 const NavMenuContentFallback = () => (

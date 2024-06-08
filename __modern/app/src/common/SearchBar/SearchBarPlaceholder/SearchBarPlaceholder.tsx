@@ -1,22 +1,22 @@
-// Copyright (C) 2017-2023 Smart code 203358507
-
-import PropTypes from "prop-types"
 import classnames from "classnames"
 import { default as Icon } from "@stremio/stremio-icons/react"
 import styles from "./styles.module.less"
 
-const SearchBarPlaceholder = ({ className, title }) => {
+type SearchBarPlaceholderProps = {
+  className?: string
+  title?: string
+}
+
+const SearchBarPlaceholder = ({
+  className,
+  title,
+}: SearchBarPlaceholderProps) => {
   return (
     <div className={classnames(className, styles["search-bar-container"])}>
       <div className={styles["search-input"]}>{title}</div>
       <Icon className={styles["icon"]} name="search" />
     </div>
   )
-}
-
-SearchBarPlaceholder.propTypes = {
-  className: PropTypes.string,
-  title: PropTypes.string,
 }
 
 export default SearchBarPlaceholder

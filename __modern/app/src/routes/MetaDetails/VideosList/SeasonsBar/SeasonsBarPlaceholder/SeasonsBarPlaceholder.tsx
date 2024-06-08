@@ -1,11 +1,12 @@
-// Copyright (C) 2017-2023 Smart code 203358507
-
-import PropTypes from "prop-types"
 import classnames from "classnames"
 import { default as Icon } from "@stremio/stremio-icons/react"
 import styles from "./styles.module.less"
 
-const SeasonsBarPlaceholder = ({ className }) => {
+type SeasonsBarPlaceholderProps = {
+  className?: string
+}
+
+const SeasonsBarPlaceholder = ({ className }: SeasonsBarPlaceholderProps) => {
   return (
     <div
       className={classnames(
@@ -27,10 +28,6 @@ const SeasonsBarPlaceholder = ({ className }) => {
       </div>
     </div>
   )
-}
-
-SeasonsBarPlaceholder.propTypes = {
-  className: PropTypes.string,
 }
 
 export default SeasonsBarPlaceholder

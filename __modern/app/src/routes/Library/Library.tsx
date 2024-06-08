@@ -1,6 +1,3 @@
-// Copyright (C) 2017-2023 Smart code 203358507
-
-import PropTypes from "prop-types"
 import classnames from "classnames"
 import NotFound from "stremio/routes/NotFound"
 
@@ -54,7 +51,15 @@ function withModel(Library) {
   return withModel
 }
 
-const Library = ({ model, urlParams, queryParams }) => {
+type LibraryProps = {
+  model?: "library" | "continue_watching"
+  urlParams?: {
+    type?: string
+  }
+  queryParams?: URLSearchParams
+}
+
+const Library = ({ model, urlParams, queryParams }: LibraryProps) => {
   const profile = useProfile()
   const notifications = useNotifications()
   const [library, loadNextPage] = useLibrary(model, urlParams, queryParams)
@@ -162,18 +167,8 @@ const Library = ({ model, urlParams, queryParams }) => {
   )
 }
 
-Library.propTypes = {
-  model: PropTypes.oneOf(["library", "continue_watching"]),
-  urlParams: PropTypes.shape({
-    type: PropTypes.string,
-  }),
-  queryParams: PropTypes.instanceOf(URLSearchParams),
-}
-
 const LibraryFallback = ({ model }) => (
   <MainNavBars className={styles["library-container"]} route={model} />
 )
-
-LibraryFallback.propTypes = Library.propTypes
 
 export default withModel(withCoreSuspender(Library, LibraryFallback))

@@ -1,6 +1,3 @@
-// Copyright (C) 2017-2023 Smart code 203358507
-
-import PropTypes from "prop-types"
 import classnames from "classnames"
 import { t } from "i18next"
 import { Image, SearchBar, Checkbox } from "stremio/common"
@@ -9,6 +6,15 @@ import Video from "./Video"
 import styles from "./styles.module.less"
 import { useMemo, useState, useCallback, Fragment } from "react"
 
+type VideosListProps = {
+  className?: string
+  metaItem?: object
+  libraryItem?: object
+  season?: number
+  seasonOnSelect?: (...args: unknown[]) => unknown
+  toggleNotifications?: (...args: unknown[]) => unknown
+}
+
 const VideosList = ({
   className,
   metaItem,
@@ -16,7 +22,7 @@ const VideosList = ({
   season,
   seasonOnSelect,
   toggleNotifications,
-}) => {
+}: VideosListProps) => {
   const showNotificationsToggle = useMemo(() => {
     return (
       metaItem?.content?.content?.inLibrary &&
@@ -162,15 +168,6 @@ const VideosList = ({
       )}
     </div>
   )
-}
-
-VideosList.propTypes = {
-  className: PropTypes.string,
-  metaItem: PropTypes.object,
-  libraryItem: PropTypes.object,
-  season: PropTypes.number,
-  seasonOnSelect: PropTypes.func,
-  toggleNotifications: PropTypes.func,
 }
 
 export default VideosList

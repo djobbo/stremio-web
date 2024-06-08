@@ -1,6 +1,3 @@
-// Copyright (C) 2017-2023 Smart code 203358507
-
-import PropTypes from "prop-types"
 import classnames from "classnames"
 import {
   Button,
@@ -21,7 +18,44 @@ const LANGUAGE_PRIORITIES = {
   eng: 1,
 }
 
-const SubtitlesMenu = memo((props) => {
+type SubtitlesMenuProps = {
+  className?: string
+  subtitlesTracks?: {
+    id: string
+    lang: string
+    origin: string
+  }[]
+  selectedSubtitlesTrackId?: string
+  subtitlesOffset?: number
+  subtitlesSize?: number
+  extraSubtitlesTracks?: {
+    id: string
+    lang: string
+    origin: string
+    label: string
+  }[]
+  selectedExtraSubtitlesTrackId?: string
+  extraSubtitlesOffset?: number
+  extraSubtitlesDelay?: number
+  extraSubtitlesSize?: number
+  audioTracks?: {
+    id: string
+    lang: string
+    origin: string
+    label: string
+  }[]
+  selectedAudioTrackId?: string
+  onSubtitlesTrackSelected?: (...args: unknown[]) => unknown
+  onExtraSubtitlesTrackSelected?: (...args: unknown[]) => unknown
+  onAudioTrackSelected?: (...args: unknown[]) => unknown
+  onSubtitlesOffsetChanged?: (...args: unknown[]) => unknown
+  onSubtitlesSizeChanged?: (...args: unknown[]) => unknown
+  onExtraSubtitlesOffsetChanged?: (...args: unknown[]) => unknown
+  onExtraSubtitlesDelayChanged?: (...args: unknown[]) => unknown
+  onExtraSubtitlesSizeChanged?: (...args: unknown[]) => unknown
+}
+
+const SubtitlesMenu = memo((props: SubtitlesMenuProps) => {
   const subtitlesLanguages = useMemo(() => {
     return (Array.isArray(props.subtitlesTracks) ? props.subtitlesTracks : [])
       .concat(
@@ -450,48 +484,5 @@ const SubtitlesMenu = memo((props) => {
 })
 
 SubtitlesMenu.displayName = "MainNavBars"
-
-SubtitlesMenu.propTypes = {
-  className: PropTypes.string,
-  subtitlesTracks: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      lang: PropTypes.string.isRequired,
-      origin: PropTypes.string.isRequired,
-    }),
-  ),
-  selectedSubtitlesTrackId: PropTypes.string,
-  subtitlesOffset: PropTypes.number,
-  subtitlesSize: PropTypes.number,
-  extraSubtitlesTracks: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      lang: PropTypes.string.isRequired,
-      origin: PropTypes.string.isRequired,
-      label: PropTypes.string.isRequired,
-    }),
-  ),
-  selectedExtraSubtitlesTrackId: PropTypes.string,
-  extraSubtitlesOffset: PropTypes.number,
-  extraSubtitlesDelay: PropTypes.number,
-  extraSubtitlesSize: PropTypes.number,
-  audioTracks: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.string.isRequired,
-      lang: PropTypes.string.isRequired,
-      origin: PropTypes.string.isRequired,
-      label: PropTypes.string.isRequired,
-    }),
-  ),
-  selectedAudioTrackId: PropTypes.string,
-  onSubtitlesTrackSelected: PropTypes.func,
-  onExtraSubtitlesTrackSelected: PropTypes.func,
-  onAudioTrackSelected: PropTypes.func,
-  onSubtitlesOffsetChanged: PropTypes.func,
-  onSubtitlesSizeChanged: PropTypes.func,
-  onExtraSubtitlesOffsetChanged: PropTypes.func,
-  onExtraSubtitlesDelayChanged: PropTypes.func,
-  onExtraSubtitlesSizeChanged: PropTypes.func,
-}
 
 export default SubtitlesMenu

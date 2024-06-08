@@ -1,13 +1,16 @@
-// Copyright (C) 2017-2023 Smart code 203358507
-
-import PropTypes from "prop-types"
 import useTooltip from "../useTooltip"
 import styles from "./styles.module.less"
 import { useRef, useEffect, useLayoutEffect } from "react"
 
 const createId = () => (Math.random() + 1).toString(36).substring(7)
 
-const Tooltip = ({ label, position, margin = 15 }) => {
+type TooltipProps = {
+  label: string
+  position: string
+  margin?: number
+}
+
+const Tooltip = ({ label, position, margin = 15 }: TooltipProps) => {
   const tooltip = useTooltip()
 
   const id = useRef(createId())
@@ -58,12 +61,6 @@ const Tooltip = ({ label, position, margin = 15 }) => {
   }, [])
 
   return <div ref={element} className={styles["tooltip-placeholder"]} />
-}
-
-Tooltip.propTypes = {
-  label: PropTypes.string.isRequired,
-  position: PropTypes.string.isRequired,
-  margin: PropTypes.number,
 }
 
 export default Tooltip

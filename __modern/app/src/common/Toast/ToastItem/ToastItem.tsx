@@ -1,11 +1,18 @@
-// Copyright (C) 2017-2023 Smart code 203358507
-
-import PropTypes from "prop-types"
 import classnames from "classnames"
 import { default as Icon } from "@stremio/stremio-icons/react"
 import Button from "stremio/common/Button"
 import styles from "./styles.module.less"
 import { useMemo, useCallback } from "react"
+
+type ToastItemProps = {
+  type?: "success" | "alert" | "info" | "error"
+  title?: string
+  message?: string
+  icon?: string
+  dataset?: object
+  onSelect?: (...args: unknown[]) => unknown
+  onClose?: (...args: unknown[]) => unknown
+}
 
 const ToastItem = ({
   title,
@@ -14,7 +21,7 @@ const ToastItem = ({
   onSelect,
   onClose,
   ...props
-}) => {
+}: ToastItemProps) => {
   const type = useMemo(() => {
     return ["success", "alert", "info", "error"].includes(props.type)
       ? props.type
@@ -101,16 +108,6 @@ const ToastItem = ({
       </Button>
     </Button>
   )
-}
-
-ToastItem.propTypes = {
-  type: PropTypes.oneOf(["success", "alert", "info", "error"]),
-  title: PropTypes.string,
-  message: PropTypes.string,
-  icon: PropTypes.string,
-  dataset: PropTypes.object,
-  onSelect: PropTypes.func,
-  onClose: PropTypes.func,
 }
 
 export default ToastItem

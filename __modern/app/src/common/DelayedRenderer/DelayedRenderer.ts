@@ -1,9 +1,11 @@
-// Copyright (C) 2017-2023 Smart code 203358507
+import { useState, useEffect, ReactNode } from "react"
 
-import PropTypes from "prop-types"
-import { useState, useEffect } from "react"
+type DelayedRendererProps = {
+  children?: ReactNode
+  delay: number
+}
 
-const DelayedRenderer = ({ children, delay }) => {
+const DelayedRenderer = ({ children, delay }: DelayedRendererProps) => {
   const [render, setRender] = useState(false)
   useEffect(() => {
     const timeout = setTimeout(() => {
@@ -14,10 +16,6 @@ const DelayedRenderer = ({ children, delay }) => {
     }
   }, [])
   return render ? children : null
-}
-
-DelayedRenderer.propTypes = {
-  children: PropTypes.node,
 }
 
 export default DelayedRenderer

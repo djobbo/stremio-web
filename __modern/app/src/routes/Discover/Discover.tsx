@@ -1,6 +1,3 @@
-// Copyright (C) 2017-2023 Smart code 203358507
-
-import PropTypes from "prop-types"
 import classnames from "classnames"
 import { default as Icon } from "@stremio/stremio-icons/react"
 import { useServices } from "stremio/services"
@@ -28,7 +25,16 @@ import { useState, useRef, useEffect, useMemo, useCallback } from "react"
 
 const SCROLL_TO_BOTTOM_TRESHOLD = 400
 
-const Discover = ({ urlParams, queryParams }) => {
+type DiscoverProps = {
+  urlParams?: {
+    transportUrl?: string
+    type?: string
+    catalogId?: string
+  }
+  queryParams?: URLSearchParams
+}
+
+const Discover = ({ urlParams, queryParams }: DiscoverProps) => {
   const { core } = useServices()
   const [discover, loadNextPage] = useDiscover(urlParams, queryParams)
   const [selectInputs, hasNextPage] = useSelectableInputs(discover)
@@ -281,15 +287,6 @@ const Discover = ({ urlParams, queryParams }) => {
       ) : null}
     </MainNavBars>
   )
-}
-
-Discover.propTypes = {
-  urlParams: PropTypes.shape({
-    transportUrl: PropTypes.string,
-    type: PropTypes.string,
-    catalogId: PropTypes.string,
-  }),
-  queryParams: PropTypes.instanceOf(URLSearchParams),
 }
 
 const DiscoverFallback = () => (

@@ -1,9 +1,11 @@
-// Copyright (C) 2017-2023 Smart code 203358507
-
-import PropTypes from "prop-types"
+import { ReactNode } from "react"
 import { ModalsContainerProvider } from "../ModalsContainerContext"
 
-const Route = ({ children }) => {
+type RouteProps = {
+  children?: ReactNode
+}
+
+const Route = ({ children }: RouteProps) => {
   return (
     <div className="route-container">
       <ModalsContainerProvider>
@@ -11,10 +13,6 @@ const Route = ({ children }) => {
       </ModalsContainerProvider>
     </div>
   )
-}
-
-Route.propTypes = {
-  children: PropTypes.node,
 }
 
 export default Route

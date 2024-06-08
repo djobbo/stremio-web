@@ -1,12 +1,20 @@
-// Copyright (C) 2017-2023 Smart code 203358507
-
-import PropTypes from "prop-types"
 import classnames from "classnames"
 import { useRouteFocused } from "stremio-router"
 import useAnimationFrame from "stremio/common/useAnimationFrame"
 import useLiveRef from "stremio/common/useLiveRef"
 import styles from "./styles.module.less"
 import { useRef, useCallback, useLayoutEffect } from "react"
+
+type SliderProps = {
+  className?: string
+  value?: number
+  buffered?: number
+  minimumValue?: number
+  maximumValue?: number
+  disabled?: boolean
+  onSlide?: (...args: unknown[]) => unknown
+  onComplete?: (...args: unknown[]) => unknown
+}
 
 const Slider = ({
   className,
@@ -17,7 +25,7 @@ const Slider = ({
   disabled,
   onSlide,
   onComplete,
-}) => {
+}: SliderProps) => {
   const minimumValueRef = useLiveRef(
     minimumValue !== null && !isNaN(minimumValue) ? minimumValue : 0,
   )
@@ -176,17 +184,6 @@ const Slider = ({
       </div>
     </div>
   )
-}
-
-Slider.propTypes = {
-  className: PropTypes.string,
-  value: PropTypes.number,
-  buffered: PropTypes.number,
-  minimumValue: PropTypes.number,
-  maximumValue: PropTypes.number,
-  disabled: PropTypes.bool,
-  onSlide: PropTypes.func,
-  onComplete: PropTypes.func,
 }
 
 export default Slider

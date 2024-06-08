@@ -1,7 +1,6 @@
 // Copyright (C) 2017-2023 Smart code 203358507
 
 import ReactIs from "react-is"
-import PropTypes from "prop-types"
 import classnames from "classnames"
 import UrlUtils from "url"
 import isEqual from "lodash.isequal"
@@ -9,9 +8,31 @@ import { RouteFocusedProvider } from "../RouteFocusedContext"
 import Route from "../Route"
 import routeConfigForPath from "./routeConfigForPath"
 import urlParamsForPath from "./urlParamsForPath"
-import { createElement, useLayoutEffect, useMemo, useState } from "react"
+import {
+  ElementType,
+  createElement,
+  useLayoutEffect,
+  useMemo,
+  useState,
+} from "react"
 
-const Router = ({ className, onPathNotMatch, onRouteChange, ...props }) => {
+type RouterProps = {
+  className?: string
+  onPathNotMatch?: (...args: unknown[]) => unknown
+  onRouteChange?: (...args: unknown[]) => unknown
+  viewsConfig: {
+    regexp: RegExp
+    urlParamsNames: string[]
+    component: ElementType
+  }[][]
+}
+
+const Router = ({
+  className,
+  onPathNotMatch,
+  onRouteChange,
+  ...props
+}: RouterProps) => {
   const viewsConfig = useMemo(() => props.viewsConfig, [])
   const [views, setViews] = useState(() => {
     return Array(viewsConfig.length).fill(null)
@@ -103,21 +124,6 @@ const Router = ({ className, onPathNotMatch, onRouteChange, ...props }) => {
         ))}
     </div>
   )
-}
-
-Router.propTypes = {
-  className: PropTypes.string,
-  onPathNotMatch: PropTypes.func,
-  onRouteChange: PropTypes.func,
-  viewsConfig: PropTypes.arrayOf(
-    PropTypes.arrayOf(
-      PropTypes.exact({
-        regexp: PropTypes.instanceOf(RegExp).isRequired,
-        urlParamsNames: PropTypes.arrayOf(PropTypes.string).isRequired,
-        component: PropTypes.elementType.isRequired,
-      }),
-    ),
-  ).isRequired,
 }
 
 export default Router

@@ -1,10 +1,11 @@
-// Copyright (C) 2017-2023 Smart code 203358507
-
-import PropTypes from "prop-types"
 import classnames from "classnames"
 import styles from "./styles.module.less"
 
-const MetaPreviewPlaceholder = ({ className }) => {
+type MetaPreviewPlaceholderProps = {
+  className?: string
+}
+
+const MetaPreviewPlaceholder = ({ className }: MetaPreviewPlaceholderProps) => {
   return (
     <div
       className={classnames(
@@ -34,10 +35,6 @@ const MetaPreviewPlaceholder = ({ className }) => {
       <div className={styles["action-buttons-container"]} />
     </div>
   )
-}
-
-MetaPreviewPlaceholder.propTypes = {
-  className: PropTypes.string,
 }
 
 export default MetaPreviewPlaceholder

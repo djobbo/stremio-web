@@ -1,6 +1,3 @@
-// Copyright (C) 2017-2023 Smart code 203358507
-
-import PropTypes from "prop-types"
 import classnames from "classnames"
 import { default as Icon } from "@stremio/stremio-icons/react"
 import { Button } from "stremio/common"
@@ -11,6 +8,36 @@ import styles from "./styles.module.less"
 import { useBinaryState } from "stremio/common"
 import { t } from "i18next"
 import { useState, useCallback, useEffect } from "react"
+
+type ControlBarProps = {
+  className?: string
+  paused?: boolean
+  time?: number
+  duration?: number
+  buffered?: number
+  volume?: number
+  muted?: boolean
+  playbackSpeed?: number
+  subtitlesTracks?: unknown[]
+  audioTracks?: unknown[]
+  metaItem?: object
+  nextVideo?: object
+  stream?: object
+  statistics?: object
+  onPlayRequested?: (...args: unknown[]) => unknown
+  onPauseRequested?: (...args: unknown[]) => unknown
+  onNextVideoRequested?: (...args: unknown[]) => unknown
+  onMuteRequested?: (...args: unknown[]) => unknown
+  onUnmuteRequested?: (...args: unknown[]) => unknown
+  onVolumeChangeRequested?: (...args: unknown[]) => unknown
+  onSeekRequested?: (...args: unknown[]) => unknown
+  onToggleSubtitlesMenu?: (...args: unknown[]) => unknown
+  onToggleInfoMenu?: (...args: unknown[]) => unknown
+  onToggleSpeedMenu?: (...args: unknown[]) => unknown
+  onToggleVideosMenu?: (...args: unknown[]) => unknown
+  onToggleOptionsMenu?: (...args: unknown[]) => unknown
+  onToggleStatisticsMenu?: (...args: unknown[]) => unknown
+}
 
 const ControlBar = ({
   className,
@@ -41,7 +68,7 @@ const ControlBar = ({
   onToggleOptionsMenu,
   onToggleStatisticsMenu,
   ...props
-}) => {
+}: ControlBarProps) => {
   const { chromecast } = useServices()
   const [chromecastServiceActive, setChromecastServiceActive] = useState(
     () => chromecast.active,
@@ -259,36 +286,6 @@ const ControlBar = ({
       </div>
     </div>
   )
-}
-
-ControlBar.propTypes = {
-  className: PropTypes.string,
-  paused: PropTypes.bool,
-  time: PropTypes.number,
-  duration: PropTypes.number,
-  buffered: PropTypes.number,
-  volume: PropTypes.number,
-  muted: PropTypes.bool,
-  playbackSpeed: PropTypes.number,
-  subtitlesTracks: PropTypes.array,
-  audioTracks: PropTypes.array,
-  metaItem: PropTypes.object,
-  nextVideo: PropTypes.object,
-  stream: PropTypes.object,
-  statistics: PropTypes.object,
-  onPlayRequested: PropTypes.func,
-  onPauseRequested: PropTypes.func,
-  onNextVideoRequested: PropTypes.func,
-  onMuteRequested: PropTypes.func,
-  onUnmuteRequested: PropTypes.func,
-  onVolumeChangeRequested: PropTypes.func,
-  onSeekRequested: PropTypes.func,
-  onToggleSubtitlesMenu: PropTypes.func,
-  onToggleInfoMenu: PropTypes.func,
-  onToggleSpeedMenu: PropTypes.func,
-  onToggleVideosMenu: PropTypes.func,
-  onToggleOptionsMenu: PropTypes.func,
-  onToggleStatisticsMenu: PropTypes.func,
 }
 
 export default ControlBar

@@ -1,6 +1,3 @@
-// Copyright (C) 2017-2023 Smart code 203358507
-
-import PropTypes from "prop-types"
 import classnames from "classnames"
 import AColorPicker from "a-color-picker"
 import { useTranslation } from "react-i18next"
@@ -16,7 +13,21 @@ const parseColor = (value) => {
   return typeof color === "string" ? color : "#ffffffff"
 }
 
-const ColorInput = ({ className, value, dataset, onChange, ...props }) => {
+type ColorInputProps = {
+  className?: string
+  value?: string
+  dataset?: object
+  onChange?: (...args: unknown[]) => unknown
+  onClick?: (...args: unknown[]) => unknown
+}
+
+const ColorInput = ({
+  className,
+  value,
+  dataset,
+  onChange,
+  ...props
+}: ColorInputProps) => {
   const { t } = useTranslation()
   const [modalOpen, openModal, closeModal] = useBinaryState(false)
   const [tempValue, setTempValue] = useState(() => {
@@ -107,14 +118,6 @@ const ColorInput = ({ className, value, dataset, onChange, ...props }) => {
       ) : null}
     </Button>
   )
-}
-
-ColorInput.propTypes = {
-  className: PropTypes.string,
-  value: PropTypes.string,
-  dataset: PropTypes.object,
-  onChange: PropTypes.func,
-  onClick: PropTypes.func,
 }
 
 export default ColorInput

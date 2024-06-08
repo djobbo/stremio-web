@@ -1,7 +1,6 @@
 // Copyright (C) 2017-2023 Smart code 203358507
 
 import ReactIs from "react-is"
-import PropTypes from "prop-types"
 import classnames from "classnames"
 import { default as Icon } from "@stremio/stremio-icons/react"
 import Button from "stremio/common/Button"
@@ -9,7 +8,40 @@ import { CATALOG_PREVIEW_SIZE } from "stremio/common/CONSTANTS"
 import useTranslate from "stremio/common/useTranslate"
 import MetaRowPlaceholder from "./MetaRowPlaceholder"
 import styles from "./styles.module.less"
-import { createElement, useMemo } from "react"
+import { ElementType, createElement, useMemo } from "react"
+
+type MetaRowProps = {
+  className?: string
+  title?: string
+  message?: string
+  catalog?: {
+    id?: string
+    name?: string
+    type?: string
+    addon?: {
+      manifest?: {
+        id?: string
+        name?: string
+      }
+    }
+    content?: {
+      content?:
+        | string
+        | {
+            posterShape?: string
+          }[]
+    }
+    items?: {
+      posterShape?: string
+    }[]
+    deepLinks?: {
+      discover?: string
+      library?: string
+    }
+  }
+  itemComponent?: ElementType
+  notifications?: object
+}
 
 const MetaRow = ({
   className,
@@ -18,7 +50,7 @@ const MetaRow = ({
   message,
   itemComponent,
   notifications,
-}) => {
+}: MetaRowProps) => {
   const t = useTranslate()
 
   const catalogTitle = useMemo(() => {
@@ -91,43 +123,5 @@ const MetaRow = ({
 }
 
 MetaRow.Placeholder = MetaRowPlaceholder
-
-MetaRow.propTypes = {
-  className: PropTypes.string,
-  title: PropTypes.string,
-  message: PropTypes.string,
-  catalog: PropTypes.shape({
-    id: PropTypes.string,
-    name: PropTypes.string,
-    type: PropTypes.string,
-    addon: PropTypes.shape({
-      manifest: PropTypes.shape({
-        id: PropTypes.string,
-        name: PropTypes.string,
-      }),
-    }),
-    content: PropTypes.shape({
-      content: PropTypes.oneOfType([
-        PropTypes.string,
-        PropTypes.arrayOf(
-          PropTypes.shape({
-            posterShape: PropTypes.string,
-          }),
-        ),
-      ]),
-    }),
-    items: PropTypes.arrayOf(
-      PropTypes.shape({
-        posterShape: PropTypes.string,
-      }),
-    ),
-    deepLinks: PropTypes.shape({
-      discover: PropTypes.string,
-      library: PropTypes.string,
-    }),
-  }),
-  itemComponent: PropTypes.elementType,
-  notifications: PropTypes.object,
-}
 
 export default MetaRow

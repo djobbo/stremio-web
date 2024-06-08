@@ -1,11 +1,13 @@
-// Copyright (C) 2017-2023 Smart code 203358507
-
-import PropTypes from "prop-types"
 import TooltipContext from "./TooltipContext"
 import TooltipItem from "./TooltipItem"
-import { useState } from "react"
+import { ReactNode, useState } from "react"
 
-const TooltipProvider = ({ children, className }) => {
+type TooltipProviderProps = {
+  children?: ReactNode
+  className?: string
+}
+
+const TooltipProvider = ({ children, className }: TooltipProviderProps) => {
   const [tooltips, setTooltips] = useState([])
 
   const add = (options) => {
@@ -45,11 +47,6 @@ const TooltipProvider = ({ children, className }) => {
       </div>
     </TooltipContext.Provider>
   )
-}
-
-TooltipProvider.propTypes = {
-  children: PropTypes.node,
-  className: PropTypes.string,
 }
 
 export default TooltipProvider

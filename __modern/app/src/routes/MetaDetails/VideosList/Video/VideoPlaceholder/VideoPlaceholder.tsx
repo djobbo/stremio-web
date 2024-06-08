@@ -1,10 +1,11 @@
-// Copyright (C) 2017-2023 Smart code 203358507
-
-import PropTypes from "prop-types"
 import classnames from "classnames"
 import styles from "./styles.module.less"
 
-const VideoPlaceholder = ({ className }) => {
+type VideoPlaceholderProps = {
+  className?: string
+}
+
+const VideoPlaceholder = ({ className }: VideoPlaceholderProps) => {
   return (
     <div
       className={classnames(className, styles["video-placeholder-container"])}
@@ -15,10 +16,6 @@ const VideoPlaceholder = ({ className }) => {
       </div>
     </div>
   )
-}
-
-VideoPlaceholder.propTypes = {
-  className: PropTypes.string,
 }
 
 export default VideoPlaceholder

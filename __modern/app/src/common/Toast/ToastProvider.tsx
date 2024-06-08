@@ -1,13 +1,15 @@
-// Copyright (C) 2017-2023 Smart code 203358507
-
-import PropTypes from "prop-types"
 import ToastItem from "./ToastItem"
 import ToastContext from "./ToastContext"
-import { useState, useReducer, useCallback, useMemo } from "react"
+import { useState, useReducer, useCallback, useMemo, ReactNode } from "react"
 
 const DEFAULT_TIMEOUT = 3000
 
-const ToastProvider = ({ className, children }) => {
+type ToastProviderProps = {
+  className?: string
+  children?: ReactNode
+}
+
+const ToastProvider = ({ className, children }: ToastProviderProps) => {
   const [container, setContainer] = useState(null)
   const [items, dispatch] = useReducer((items, action) => {
     switch (action.type) {
@@ -77,11 +79,6 @@ const ToastProvider = ({ className, children }) => {
       </div>
     </ToastContext.Provider>
   )
-}
-
-ToastProvider.propTypes = {
-  className: PropTypes.string,
-  children: PropTypes.node,
 }
 
 export default ToastProvider

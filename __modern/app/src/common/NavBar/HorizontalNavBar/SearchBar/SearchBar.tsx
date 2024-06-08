@@ -1,6 +1,3 @@
-// Copyright (C) 2017-2023 Smart code 203358507
-
-import PropTypes from "prop-types"
 import classnames from "classnames"
 import debounce from "lodash.debounce"
 import { useTranslation } from "react-i18next"
@@ -16,7 +13,13 @@ import styles from "./styles.module.less"
 import useBinaryState from "stremio/common/useBinaryState"
 import { memo, useState, useRef, useCallback, useEffect } from "react"
 
-const SearchBar = memo(({ className, query, active }) => {
+type SearchBarProps = {
+  className?: string
+  query?: string
+  active?: boolean
+}
+
+const SearchBar = memo(({ className, query, active }: SearchBarProps) => {
   const { t } = useTranslation()
   const routeFocused = useRouteFocused()
   const searchHistory = useSearchHistory()
@@ -202,12 +205,6 @@ const SearchBar = memo(({ className, query, active }) => {
 
 SearchBar.displayName = "SearchBar"
 
-SearchBar.propTypes = {
-  className: PropTypes.string,
-  query: PropTypes.string,
-  active: PropTypes.bool,
-}
-
 const SearchBarFallback = ({ className }) => {
   const { t } = useTranslation()
   return (
@@ -223,7 +220,5 @@ const SearchBarFallback = ({ className }) => {
     </label>
   )
 }
-
-SearchBarFallback.propTypes = SearchBar.propTypes
 
 export default withCoreSuspender(SearchBar, SearchBarFallback)

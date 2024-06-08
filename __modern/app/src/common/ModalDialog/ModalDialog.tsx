@@ -1,13 +1,25 @@
-// Copyright (C) 2017-2023 Smart code 203358507
-
-import PropTypes from "prop-types"
 import classnames from "classnames"
 import { useRouteFocused, useModalsContainer } from "stremio-router"
 import Button from "stremio/common/Button"
 import { default as Icon } from "@stremio/stremio-icons/react"
 import { Modal } from "stremio-router"
 import styles from "./styles.module.less"
-import { useRef, useCallback, useEffect } from "react"
+import { useRef, useCallback, useEffect, ReactNode } from "react"
+
+type ModalDialogProps = {
+  className?: string
+  title?: string
+  background?: string
+  buttons?: {
+    className?: string
+    label?: string
+    icon?: string
+    props?: object
+  }[]
+  children?: ReactNode[] | ReactNode
+  dataset?: object
+  onCloseRequest?: (...args: unknown[]) => unknown
+}
 
 const ModalDialog = ({
   className,
@@ -18,7 +30,7 @@ const ModalDialog = ({
   onCloseRequest,
   background,
   ...props
-}) => {
+}: ModalDialogProps) => {
   const routeFocused = useRouteFocused()
   const modalsContainer = useModalsContainer()
   const modalContainerRef = useRef(null)
@@ -130,26 +142,6 @@ const ModalDialog = ({
       </div>
     </Modal>
   )
-}
-
-ModalDialog.propTypes = {
-  className: PropTypes.string,
-  title: PropTypes.string,
-  background: PropTypes.string,
-  buttons: PropTypes.arrayOf(
-    PropTypes.shape({
-      className: PropTypes.string,
-      label: PropTypes.string,
-      icon: PropTypes.string,
-      props: PropTypes.object,
-    }),
-  ),
-  children: PropTypes.oneOfType([
-    PropTypes.arrayOf(PropTypes.node),
-    PropTypes.node,
-  ]),
-  dataset: PropTypes.object,
-  onCloseRequest: PropTypes.func,
 }
 
 export default ModalDialog

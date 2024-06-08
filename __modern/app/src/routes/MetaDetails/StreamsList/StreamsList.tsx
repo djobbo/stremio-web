@@ -1,6 +1,3 @@
-// Copyright (C) 2017-2023 Smart code 203358507
-
-import PropTypes from "prop-types"
 import classnames from "classnames"
 import { useTranslation } from "react-i18next"
 import { default as Icon } from "@stremio/stremio-icons/react"
@@ -12,7 +9,13 @@ import { useState, useCallback, useMemo, Fragment } from "react"
 
 const ALL_ADDONS_KEY = "ALL"
 
-const StreamsList = ({ className, video, ...props }) => {
+type StreamsListProps = {
+  className?: string
+  streams: object[]
+  video?: object
+}
+
+const StreamsList = ({ className, video, ...props }: StreamsListProps) => {
   const { t } = useTranslation()
   const { core } = useServices()
   const [selectedAddon, setSelectedAddon] = useState(ALL_ADDONS_KEY)
@@ -167,12 +170,6 @@ const StreamsList = ({ className, video, ...props }) => {
       </Button>
     </div>
   )
-}
-
-StreamsList.propTypes = {
-  className: PropTypes.string,
-  streams: PropTypes.arrayOf(PropTypes.object).isRequired,
-  video: PropTypes.object,
 }
 
 export default StreamsList

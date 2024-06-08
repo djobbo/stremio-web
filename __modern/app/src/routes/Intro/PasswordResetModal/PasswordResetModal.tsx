@@ -1,13 +1,18 @@
-// Copyright (C) 2017-2023 Smart code 203358507
-
-import PropTypes from "prop-types"
 import { useRouteFocused } from "stremio-router"
 import { ModalDialog } from "stremio/common"
 import CredentialsTextInput from "../CredentialsTextInput"
 import styles from "./styles.module.less"
 import { useState, useRef, useCallback, useMemo, useEffect } from "react"
 
-const PasswordResetModal = ({ email, onCloseRequest }) => {
+type PasswordResetModalProps = {
+  email?: string
+  onCloseRequest?: (...args: unknown[]) => unknown
+}
+
+const PasswordResetModal = ({
+  email,
+  onCloseRequest,
+}: PasswordResetModalProps) => {
   const routeFocused = useRouteFocused()
   const [error, setError] = useState("")
   const emailRef = useRef(null)
@@ -65,11 +70,6 @@ const PasswordResetModal = ({ email, onCloseRequest }) => {
       ) : null}
     </ModalDialog>
   )
-}
-
-PasswordResetModal.propTypes = {
-  email: PropTypes.string,
-  onCloseRequest: PropTypes.func,
 }
 
 export default PasswordResetModal

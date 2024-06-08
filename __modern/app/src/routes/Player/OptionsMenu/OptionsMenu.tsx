@@ -1,6 +1,3 @@
-// Copyright (C) 2017-2023 Smart code 203358507
-
-import PropTypes from "prop-types"
 import classnames from "classnames"
 import { useTranslation } from "react-i18next"
 import { useToast } from "stremio/common"
@@ -9,7 +6,17 @@ import Option from "./Option"
 import styles from "./styles.module.less"
 import { useMemo, useCallback } from "react"
 
-const OptionsMenu = ({ className, stream, playbackDevices }) => {
+type OptionsMenuProps = {
+  className?: string
+  stream?: object
+  playbackDevices?: unknown[]
+}
+
+const OptionsMenu = ({
+  className,
+  stream,
+  playbackDevices,
+}: OptionsMenuProps) => {
   const { t } = useTranslation()
   const { core } = useServices()
   const toast = useToast()
@@ -107,12 +114,6 @@ const OptionsMenu = ({ className, stream, playbackDevices }) => {
         ))}
     </div>
   )
-}
-
-OptionsMenu.propTypes = {
-  className: PropTypes.string,
-  stream: PropTypes.object,
-  playbackDevices: PropTypes.array,
 }
 
 export default OptionsMenu
