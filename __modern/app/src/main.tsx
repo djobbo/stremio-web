@@ -5,7 +5,7 @@ import ReactDOM from "react-dom/client"
 import { initReactI18next } from "react-i18next"
 import stremioTranslations from "stremio-translations"
 
-import App from "./App"
+import {App} from "./App"
 
 const SENTRY_DSN = import.meta.env.SENTRY_DSN
 

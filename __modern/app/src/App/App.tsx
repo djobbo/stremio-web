@@ -31,7 +31,7 @@ import withProtectedRoutes from "./withProtectedRoutes"
 
 const RouterWithProtectedRoutes = withCoreSuspender(withProtectedRoutes(Router))
 
-const App = () => {
+export function App() {
   const { i18n } = useTranslation()
   const onPathNotMatch = useCallback(() => {
     return NotFound
@@ -202,5 +202,3 @@ const App = () => {
     </ServicesProvider>
   )
 }
-
-export default App

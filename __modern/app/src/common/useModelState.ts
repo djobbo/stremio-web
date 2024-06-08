@@ -16,7 +16,7 @@ type useModelStateArgs = {
   deps?: string[]
 }
 
-const useModelState = ({ action, ...args }: useModelStateArgs) => {
+const useModelState = ({ action, ...args }: useModelStateArgs): any => {
   const { core } = useServices()
   const routeFocused = useRouteFocused()
   const mountedRef = useRef(false)

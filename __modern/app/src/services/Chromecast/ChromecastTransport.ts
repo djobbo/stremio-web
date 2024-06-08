@@ -15,7 +15,7 @@ window["__onGCastApiAvailable"] = function (available) {
 }
 
 const initialize = () => {
-  return new Promise((resolve, reject) => {
+  return new Promise<void>((resolve, reject) => {
     function onCastAPIAvailabilityChanged() {
       castAPIEvents.off("availabilityChanged", onCastAPIAvailabilityChanged)
       if (castAPIAvailable) {

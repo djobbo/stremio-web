@@ -22,31 +22,37 @@ function KeyboardShortcuts() {
     switch (event.code) {
       case "Digit0": {
         event.preventDefault()
+        // @ts-expect-error we can set window.location as a string
         window.location = "#/search"
         break
       }
       case "Digit1": {
         event.preventDefault()
+        // @ts-expect-error we can set window.location as a string
         window.location = "#/"
         break
       }
       case "Digit2": {
         event.preventDefault()
+        // @ts-expect-error we can set window.location as a string
         window.location = "#/discover"
         break
       }
       case "Digit3": {
         event.preventDefault()
+        // @ts-expect-error we can set window.location as a string
         window.location = "#/library"
         break
       }
       case "Digit4": {
         event.preventDefault()
+        // @ts-expect-error we can set window.location as a string
         window.location = "#/addons"
         break
       }
       case "Digit5": {
         event.preventDefault()
+        // @ts-expect-error we can set window.location as a string
         window.location = "#/settings"
         break
       }
