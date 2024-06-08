@@ -312,11 +312,7 @@ const Intro = ({ queryParams }) => {
       <div className={styles["background-container"]} />
       <div className={styles["heading-container"]}>
         <div className={styles["logo-container"]}>
-          <Image
-            className={styles["logo"]}
-            src={require("/images/logo.png")}
-            alt={" "}
-          />
+          <Image className={styles["logo"]} src="/images/logo.png" alt={" "} />
         </div>
         <div className={styles["title-container"]}>Freedom to Stream</div>
         <div className={styles["slogan-container"]}>

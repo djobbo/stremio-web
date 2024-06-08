@@ -48,10 +48,10 @@ const NavMenuContent = ({ onClick }) => {
           style={{
             backgroundImage:
               profile.auth === null
-                ? `url('${require("/images/anonymous.png")}')`
+                ? `url('${"/images/anonymous.png"}')`
                 : profile.auth.user.avatar
                   ? `url('${profile.auth.user.avatar}')`
-                  : `url('${require("/images/default_avatar.png")}')`,
+                  : `url('${"/images/default_avatar.png"}')`,
           }}
         />
         <div className={styles["user-info-details"]}>

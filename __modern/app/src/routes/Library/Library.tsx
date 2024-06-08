@@ -103,7 +103,7 @@ const Library = ({ model, urlParams, queryParams }) => {
           >
             <Image
               className={styles["image"]}
-              src={require("/images/anonymous.png")}
+              src="/images/anonymous.png"
               alt={" "}
             />
             <div className={styles["message-label"]}>
@@ -118,7 +118,7 @@ const Library = ({ model, urlParams, queryParams }) => {
             <div className={styles["message-container"]}>
               <Image
                 className={styles["image"]}
-                src={require("/images/empty.png")}
+                src="/images/empty.png"
                 alt={" "}
               />
               <div className={styles["message-label"]}>
@@ -131,7 +131,7 @@ const Library = ({ model, urlParams, queryParams }) => {
           <div className={styles["message-container"]}>
             <Image
               className={styles["image"]}
-              src={require("/images/empty.png")}
+              src="/images/empty.png"
               alt={" "}
             />
             <div className={styles["message-label"]}>

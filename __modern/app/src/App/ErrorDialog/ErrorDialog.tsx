@@ -22,7 +22,7 @@ const ErrorDialog = ({ className }) => {
     <div className={classnames(className, styles["error-container"])}>
       <Image
         className={styles["error-image"]}
-        src={require("/images/empty.png")}
+        src="/images/empty.png"
         alt={" "}
       />
       <div className={styles["error-message"]}>

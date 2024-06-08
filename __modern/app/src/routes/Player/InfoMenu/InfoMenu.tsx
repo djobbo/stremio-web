@@ -3,8 +3,8 @@
 import PropTypes from "prop-types"
 import classnames from "classnames"
 
-// const Stream = require('stremio/routes/MetaDetails/StreamsList/Stream');
-// const AddonDetails = require('stremio/common/AddonDetailsModal/AddonDetails');
+// import Stream from 'stremio/routes/MetaDetails/StreamsList/Stream'
+// import AddonDetails from 'stremio/common/AddonDetailsModal/AddonDetails'
 import { MetaPreview, CONSTANTS } from "stremio/common"
 
 import * as styles from "./styles.less"

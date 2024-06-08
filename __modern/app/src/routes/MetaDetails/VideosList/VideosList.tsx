@@ -94,7 +94,7 @@ const VideosList = ({
         <div className={styles["message-container"]}>
           <Image
             className={styles["image"]}
-            src={require("/images/empty.png")}
+            src="/images/empty.png"
             alt={" "}
           />
           <div className={styles["label"]}>No videos found for this meta!</div>

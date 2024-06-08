@@ -83,7 +83,7 @@ const StreamsList = ({ className, video, ...props }) => {
         <div className={styles["message-container"]}>
           <Image
             className={styles["image"]}
-            src={require("/images/empty.png")}
+            src="/images/empty.png"
             alt={" "}
           />
           <div className={styles["label"]}>
@@ -94,7 +94,7 @@ const StreamsList = ({ className, video, ...props }) => {
         <div className={styles["message-container"]}>
           <Image
             className={styles["image"]}
-            src={require("/images/empty.png")}
+            src="/images/empty.png"
             alt={" "}
           />
           <div className={styles["label"]}>{t("NO_STREAM")}</div>

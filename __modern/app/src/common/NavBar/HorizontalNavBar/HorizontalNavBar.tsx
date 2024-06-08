@@ -72,7 +72,7 @@ const HorizontalNavBar = memo(
           <div className={styles["logo-container"]}>
             <Image
               className={styles["logo"]}
-              src={require("/images/stremio_symbol.png")}
+              src="/images/stremio_symbol.png"
               alt={" "}
             />
           </div>

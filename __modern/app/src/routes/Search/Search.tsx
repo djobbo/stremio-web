@@ -105,7 +105,7 @@ const Search = ({ queryParams }) => {
           <div className={styles["message-container"]}>
             <Image
               className={styles["image"]}
-              src={require("/images/empty.png")}
+              src="/images/empty.png"
               alt={" "}
             />
             <div className={styles["message-label"]}>
