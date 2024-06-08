@@ -43,7 +43,7 @@ const HorizontalNavBar = memo(
           tabIndex={-1}
           onClick={onClick}
         >
-          <Icon className={styles["icon"]} name={"person-outline"} />
+          <Icon className={styles["icon"]} name="person-outline" />
           {children}
         </Button>
       ),
@@ -66,7 +66,7 @@ const HorizontalNavBar = memo(
             tabIndex={-1}
             onClick={backButtonOnClick}
           >
-            <Icon className={styles["icon"]} name={"chevron-back"} />
+            <Icon className={styles["icon"]} name="chevron-back" />
           </Button>
         ) : (
           <div className={styles["logo-container"]}>
@@ -91,11 +91,11 @@ const HorizontalNavBar = memo(
           {addonsButton ? (
             <Button
               className={styles["button-container"]}
-              href={"#/addons"}
+              href="#/addons"
               title={t("ADDONS")}
               tabIndex={-1}
             >
-              <Icon className={styles["icon"]} name={"addons-outline"} />
+              <Icon className={styles["icon"]} name="addons-outline" />
             </Button>
           ) : null}
           {!isIOSPWA && fullscreenButton ? (

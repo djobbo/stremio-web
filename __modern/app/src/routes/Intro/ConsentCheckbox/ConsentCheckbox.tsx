@@ -47,7 +47,7 @@ const ConsentCheckbox = forwardRef(
             <Button
               className={styles["link"]}
               href={href}
-              target={"_blank"}
+              target="_blank"
               tabIndex={-1}
               onClick={linkOnClick}
             >

@@ -60,29 +60,29 @@ const SeasonsBar = ({ className, seasons, season, onSelect }) => {
     <div className={classnames(className, styles["seasons-bar-container"])}>
       <Button
         className={styles["prev-season-button"]}
-        title={"Previous season"}
-        data-action={"prev"}
+        title="Previous season"
+        data-action="prev"
         onClick={prevNextButtonOnClick}
       >
-        <Icon className={styles["icon"]} name={"chevron-back"} />
+        <Icon className={styles["icon"]} name="chevron-back" />
         <div className={styles["label"]}>Prev</div>
       </Button>
       <Multiselect
         className={styles["seasons-popup-label-container"]}
         title={season > 0 ? `${t("SEASON")} ${season}` : t("SPECIAL")}
-        direction={"bottom-left"}
+        direction="bottom-left"
         options={options}
         selected={selected}
         onSelect={seasonOnSelect}
       />
       <Button
         className={styles["next-season-button"]}
-        title={"Next season"}
-        data-action={"next"}
+        title="Next season"
+        data-action="next"
         onClick={prevNextButtonOnClick}
       >
         <div className={styles["label"]}>Next</div>
-        <Icon className={styles["icon"]} name={"chevron-forward"} />
+        <Icon className={styles["icon"]} name="chevron-forward" />
       </Button>
     </div>
   )

@@ -47,15 +47,15 @@ const PasswordResetModal = ({ email, onCloseRequest }) => {
   return (
     <ModalDialog
       className={styles["password-reset-modal-container"]}
-      title={"Password reset"}
+      title="Password reset"
       buttons={passwordResetModalButtons}
       onCloseRequest={onCloseRequest}
     >
       <CredentialsTextInput
         ref={emailRef}
         className={styles["credentials-text-input"]}
-        type={"email"}
-        placeholder={"Email"}
+        type="email"
+        placeholder="Email"
         defaultValue={typeof email === "string" ? email : ""}
         onChange={emailOnChange}
         onSubmit={goToPasswordReset}

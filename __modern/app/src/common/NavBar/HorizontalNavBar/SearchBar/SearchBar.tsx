@@ -120,7 +120,7 @@ const SearchBar = memo(({ className, query, active }) => {
           key={query}
           ref={searchInputRef}
           className={styles["search-input"]}
-          type={"text"}
+          type="text"
           placeholder={t("SEARCH_OR_PASTE_LINK")}
           defaultValue={query}
           tabIndex={-1}
@@ -140,11 +140,11 @@ const SearchBar = memo(({ className, query, active }) => {
           className={styles["submit-button-container"]}
           onClick={queryInputClear}
         >
-          <Icon className={styles["icon"]} name={"close"} />
+          <Icon className={styles["icon"]} name="close" />
         </Button>
       ) : (
         <Button className={styles["submit-button-container"]}>
-          <Icon className={styles["icon"]} name={"search"} />
+          <Icon className={styles["icon"]} name="search" />
         </Button>
       )}
       {historyOpen &&
@@ -218,7 +218,7 @@ const SearchBarFallback = ({ className }) => {
         </div>
       </div>
       <Button className={styles["submit-button-container"]} tabIndex={-1}>
-        <Icon className={styles["icon"]} name={"search"} />
+        <Icon className={styles["icon"]} name="search" />
       </Button>
     </label>
   )

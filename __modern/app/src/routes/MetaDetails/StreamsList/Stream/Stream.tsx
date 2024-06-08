@@ -80,9 +80,7 @@ const Stream = ({
   )
 
   const renderThumbnailFallback = useCallback(
-    () => (
-      <Icon className={styles["placeholder-icon"]} name={"ic_broken_link"} />
-    ),
+    () => <Icon className={styles["placeholder-icon"]} name="ic_broken_link" />,
     [],
   )
 
@@ -129,7 +127,7 @@ const Stream = ({
       <div className={styles["description-container"]} title={description}>
         {description}
       </div>
-      <Icon className={styles["icon"]} name={"play"} />
+      <Icon className={styles["icon"]} name="play" />
     </Button>
   )
 }

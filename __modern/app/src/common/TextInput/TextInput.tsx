@@ -26,9 +26,9 @@ const TextInput = forwardRef((props, ref) => {
   return (
     <input
       size={1}
-      autoCorrect={"off"}
-      autoCapitalize={"off"}
-      autoComplete={"off"}
+      autoCorrect="off"
+      autoCapitalize="off"
+      autoComplete="off"
       spellCheck={false}
       tabIndex={0}
       {...props}

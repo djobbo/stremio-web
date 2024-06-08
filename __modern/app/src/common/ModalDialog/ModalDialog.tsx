@@ -95,10 +95,10 @@ const ModalDialog = ({
         />
         <Button
           className={styles["close-button-container"]}
-          title={"Close"}
+          title="Close"
           onClick={closeButtonOnClick}
         >
-          <Icon className={styles["icon"]} name={"close"} />
+          <Icon className={styles["icon"]} name="close" />
         </Button>
         <div className={styles["modal-dialog-content"]}>
           {typeof title === "string" && title.length > 0 ? (

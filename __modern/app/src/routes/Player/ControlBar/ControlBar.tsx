@@ -137,7 +137,7 @@ const ControlBar = ({
             tabIndex={-1}
             onClick={onNextVideoButtonClick}
           >
-            <Icon className={styles["icon"]} name={"next"} />
+            <Icon className={styles["icon"]} name="next" />
           </Button>
         ) : null}
         <Button
@@ -173,7 +173,7 @@ const ControlBar = ({
           className={styles["control-bar-buttons-menu-button"]}
           onClick={toogleButtonsMenu}
         >
-          <Icon className={styles["icon"]} name={"more-vertical"} />
+          <Icon className={styles["icon"]} name="more-vertical" />
         </Button>
         <div
           className={classnames(styles["control-bar-buttons-menu-container"], {
@@ -193,7 +193,7 @@ const ControlBar = ({
             onMouseDown={onStatisticsButtonMouseDown}
             onClick={onToggleStatisticsMenu}
           >
-            <Icon className={styles["icon"]} name={"network"} />
+            <Icon className={styles["icon"]} name="network" />
           </Button>
           <Button
             className={classnames(styles["control-bar-button"], {
@@ -203,7 +203,7 @@ const ControlBar = ({
             onMouseDown={onSpeedButtonMouseDown}
             onClick={onToggleSpeedMenu}
           >
-            <Icon className={styles["icon"]} name={"speed"} />
+            <Icon className={styles["icon"]} name="speed" />
           </Button>
           <Button
             className={classnames(styles["control-bar-button"], {
@@ -213,7 +213,7 @@ const ControlBar = ({
             onMouseDown={onInfoButtonMouseDown}
             onClick={onToggleInfoMenu}
           >
-            <Icon className={styles["icon"]} name={"about"} />
+            <Icon className={styles["icon"]} name="about" />
           </Button>
           <Button
             className={classnames(styles["control-bar-button"], {
@@ -222,7 +222,7 @@ const ControlBar = ({
             tabIndex={-1}
             onClick={onChromecastButtonClick}
           >
-            <Icon className={styles["icon"]} name={"cast"} />
+            <Icon className={styles["icon"]} name="cast" />
           </Button>
           <Button
             className={classnames(styles["control-bar-button"], {
@@ -235,7 +235,7 @@ const ControlBar = ({
             onMouseDown={onSubtitlesButtonMouseDown}
             onClick={onToggleSubtitlesMenu}
           >
-            <Icon className={styles["icon"]} name={"subtitles"} />
+            <Icon className={styles["icon"]} name="subtitles" />
           </Button>
           {metaItem?.content?.videos?.length > 0 ? (
             <Button
@@ -244,7 +244,7 @@ const ControlBar = ({
               onMouseDown={onVideosButtonMouseDown}
               onClick={onToggleVideosMenu}
             >
-              <Icon className={styles["icon"]} name={"episodes"} />
+              <Icon className={styles["icon"]} name="episodes" />
             </Button>
           ) : null}
           <Button
@@ -253,7 +253,7 @@ const ControlBar = ({
             onMouseDown={onOptionsButtonMouseDown}
             onClick={onToggleOptionsMenu}
           >
-            <Icon className={styles["icon"]} name={"more-horizontal"} />
+            <Icon className={styles["icon"]} name="more-horizontal" />
           </Button>
         </div>
       </div>

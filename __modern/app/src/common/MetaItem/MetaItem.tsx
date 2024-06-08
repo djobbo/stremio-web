@@ -86,7 +86,7 @@ const MetaItem = memo(
       [type],
     )
     const renderMenuLabelContent = useCallback(
-      () => <Icon className={styles["icon"]} name={"more-vertical"} />,
+      () => <Icon className={styles["icon"]} name="more-vertical" />,
       [],
     )
     return (
@@ -114,13 +114,13 @@ const MetaItem = memo(
               className={styles["dismiss-icon-layer"]}
               onClick={onDismissClick}
             >
-              <Icon className={styles["dismiss-icon"]} name={"close"} />
+              <Icon className={styles["dismiss-icon"]} name="close" />
               <div className={styles["dismiss-icon-backdrop"]} />
             </div>
           ) : null}
           {watched ? (
             <div className={styles["watched-icon-layer"]}>
-              <Icon className={styles["watched-icon"]} name={"checkmark"} />
+              <Icon className={styles["watched-icon"]} name="checkmark" />
             </div>
           ) : null}
           <div className={styles["poster-image-layer"]}>
@@ -137,7 +137,7 @@ const MetaItem = memo(
               className={styles["play-icon-layer"]}
               onClick={onPlayClick}
             >
-              <Icon className={styles["play-icon"]} name={"play"} />
+              <Icon className={styles["play-icon"]} name="play" />
               <div className={styles["play-icon-outer"]} />
               <div className={styles["play-icon-background"]} />
             </div>
@@ -156,7 +156,7 @@ const MetaItem = memo(
               <div className={styles["layer"]} />
               <div className={styles["layer"]} />
               <div className={styles["layer"]}>
-                <Icon className={styles["icon"]} name={"add"} />
+                <Icon className={styles["icon"]} name="add" />
                 <div className={styles["label"]}>{newVideos}</div>
               </div>
             </div>

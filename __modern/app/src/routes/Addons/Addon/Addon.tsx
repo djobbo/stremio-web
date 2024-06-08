@@ -77,7 +77,7 @@ const Addon = ({
     [onToggle, dataset],
   )
   const renderLogoFallback = useCallback(
-    () => <Icon className={styles["icon"]} name={"addons"} />,
+    () => <Icon className={styles["icon"]} name="addons" />,
     [],
   )
   return (
@@ -128,7 +128,7 @@ const Addon = ({
               tabIndex={-1}
               onClick={configureButtonOnClick}
             >
-              <Icon className={styles["icon"]} name={"settings"} />
+              <Icon className={styles["icon"]} name="settings" />
             </Button>
           ) : null}
           <Button
@@ -166,7 +166,7 @@ const Addon = ({
           tabIndex={-1}
           onClick={shareButtonOnClick}
         >
-          <Icon className={styles["icon"]} name={"share"} />
+          <Icon className={styles["icon"]} name="share" />
           <div className={styles["label"]}>{t("SHARE_ADDON")}</div>
         </Button>
       </div>

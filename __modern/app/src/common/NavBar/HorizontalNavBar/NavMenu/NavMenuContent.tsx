@@ -101,17 +101,17 @@ const NavMenuContent = ({ onClick }) => {
         <Button
           className={styles["nav-menu-option-container"]}
           title={t("SETTINGS")}
-          href={"#/settings"}
+          href="#/settings"
         >
-          <Icon className={styles["icon"]} name={"settings"} />
+          <Icon className={styles["icon"]} name="settings" />
           <div className={styles["nav-menu-option-label"]}>{t("SETTINGS")}</div>
         </Button>
         <Button
           className={styles["nav-menu-option-container"]}
           title={t("ADDONS")}
-          href={"#/addons"}
+          href="#/addons"
         >
-          <Icon className={styles["icon"]} name={"addons-outline"} />
+          <Icon className={styles["icon"]} name="addons-outline" />
           <div className={styles["nav-menu-option-label"]}>{t("ADDONS")}</div>
         </Button>
         <Button
@@ -119,7 +119,7 @@ const NavMenuContent = ({ onClick }) => {
           title={t("PLAY_URL_MAGNET_LINK")}
           onClick={onPlayMagnetLinkClick}
         >
-          <Icon className={styles["icon"]} name={"magnet-link"} />
+          <Icon className={styles["icon"]} name="magnet-link" />
           <div className={styles["nav-menu-option-label"]}>
             {t("PLAY_URL_MAGNET_LINK")}
           </div>
@@ -127,10 +127,10 @@ const NavMenuContent = ({ onClick }) => {
         <Button
           className={styles["nav-menu-option-container"]}
           title={t("HELP_FEEDBACK")}
-          href={"https://stremio.zendesk.com/"}
-          target={"_blank"}
+          href="https://stremio.zendesk.com/"
+          target="_blank"
         >
-          <Icon className={styles["icon"]} name={"help"} />
+          <Icon className={styles["icon"]} name="help" />
           <div className={styles["nav-menu-option-label"]}>
             {t("HELP_FEEDBACK")}
           </div>
@@ -140,8 +140,8 @@ const NavMenuContent = ({ onClick }) => {
         <Button
           className={styles["nav-menu-option-container"]}
           title={t("TERMS_OF_SERVICE")}
-          href={"https://www.stremio.com/tos"}
-          target={"_blank"}
+          href="https://www.stremio.com/tos"
+          target="_blank"
         >
           <div className={styles["nav-menu-option-label"]}>
             {t("TERMS_OF_SERVICE")}
@@ -150,8 +150,8 @@ const NavMenuContent = ({ onClick }) => {
         <Button
           className={styles["nav-menu-option-container"]}
           title={t("PRIVACY_POLICY")}
-          href={"https://www.stremio.com/privacy"}
-          target={"_blank"}
+          href="https://www.stremio.com/privacy"
+          target="_blank"
         >
           <div className={styles["nav-menu-option-label"]}>
             {t("PRIVACY_POLICY")}
@@ -161,8 +161,8 @@ const NavMenuContent = ({ onClick }) => {
           <Button
             className={styles["nav-menu-option-container"]}
             title={t("USER_PANEL")}
-            href={"https://www.stremio.com/acc-settings"}
-            target={"_blank"}
+            href="https://www.stremio.com/acc-settings"
+            target="_blank"
           >
             <div className={styles["nav-menu-option-label"]}>
               {t("USER_PANEL")}

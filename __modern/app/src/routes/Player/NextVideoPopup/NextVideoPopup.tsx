@@ -90,7 +90,7 @@ const NextVideoPopup = ({
             )}
             onClick={onDismissButtonClick}
           >
-            <Icon className={styles["icon"]} name={"close"} />
+            <Icon className={styles["icon"]} name="close" />
             <div className={styles["label"]}>Dismiss</div>
           </Button>
           <Button
@@ -101,7 +101,7 @@ const NextVideoPopup = ({
             )}
             onClick={onWatchNowButtonClick}
           >
-            <Icon className={styles["icon"]} name={"play"} />
+            <Icon className={styles["icon"]} name="play" />
             <div className={styles["label"]}>Watch Now</div>
           </Button>
         </div>

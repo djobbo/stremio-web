@@ -328,8 +328,8 @@ const Intro = ({ queryParams }) => {
           <CredentialsTextInput
             ref={emailRef}
             className={styles["credentials-text-input"]}
-            type={"email"}
-            placeholder={"Email"}
+            type="email"
+            placeholder="Email"
             value={state.email}
             onChange={emailOnChange}
             onSubmit={emailOnSubmit}
@@ -337,8 +337,8 @@ const Intro = ({ queryParams }) => {
           <CredentialsTextInput
             ref={passwordRef}
             className={styles["credentials-text-input"]}
-            type={"password"}
-            placeholder={"Password"}
+            type="password"
+            placeholder="Password"
             value={state.password}
             onChange={passwordOnChange}
             onSubmit={passwordOnSubmit}
@@ -348,8 +348,8 @@ const Intro = ({ queryParams }) => {
               <CredentialsTextInput
                 ref={confirmPasswordRef}
                 className={styles["credentials-text-input"]}
-                type={"password"}
-                placeholder={"Confirm Password"}
+                type="password"
+                placeholder="Confirm Password"
                 value={state.confirmPassword}
                 onChange={confirmPasswordOnChange}
                 onSubmit={confirmPasswordOnSubmit}
@@ -357,27 +357,25 @@ const Intro = ({ queryParams }) => {
               <ConsentCheckbox
                 ref={termsRef}
                 className={styles["consent-checkbox"]}
-                label={"I have read and agree with the Stremio"}
-                link={"Terms and conditions"}
-                href={"https://www.stremio.com/tos"}
+                label="I have read and agree with the Stremio"
+                link="Terms and conditions"
+                href="https://www.stremio.com/tos"
                 checked={state.termsAccepted}
                 onToggle={toggleTermsAccepted}
               />
               <ConsentCheckbox
                 ref={privacyPolicyRef}
                 className={styles["consent-checkbox"]}
-                label={"I have read and agree with the Stremio"}
-                link={"Privacy Policy"}
-                href={"https://www.stremio.com/privacy"}
+                label="I have read and agree with the Stremio"
+                link="Privacy Policy"
+                href="https://www.stremio.com/privacy"
                 checked={state.privacyPolicyAccepted}
                 onToggle={togglePrivacyPolicyAccepted}
               />
               <ConsentCheckbox
                 ref={marketingRef}
                 className={styles["consent-checkbox"]}
-                label={
-                  "I agree to receive marketing communications from Stremio"
-                }
+                label="I agree to receive marketing communications from Stremio"
                 checked={state.marketingAccepted}
                 onToggle={toggleMarketingAccepted}
               />
@@ -417,7 +415,7 @@ const Intro = ({ queryParams }) => {
             )}
             onClick={loginWithFacebook}
           >
-            <Icon className={styles["icon"]} name={"facebook"} />
+            <Icon className={styles["icon"]} name="facebook" />
             <div className={styles["label"]}>Continue with Facebook</div>
           </Button>
           {state.form === SIGNUP_FORM ? (
@@ -464,7 +462,7 @@ const Intro = ({ queryParams }) => {
       {loaderModalOpen ? (
         <Modal className={styles["loading-modal-container"]}>
           <div className={styles["loader-container"]}>
-            <Icon className={styles["icon"]} name={"person"} />
+            <Icon className={styles["icon"]} name="person" />
             <div className={styles["label"]}>Authenticating...</div>
           </div>
         </Modal>

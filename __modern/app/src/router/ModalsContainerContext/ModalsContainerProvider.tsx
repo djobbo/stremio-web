@@ -9,7 +9,7 @@ const ModalsContainerProvider = ({ children }) => {
   return (
     <ModalsContainerContext.Provider value={container}>
       {container instanceof HTMLElement ? children : null}
-      <div ref={setContainer} className={"modals-container"} />
+      <div ref={setContainer} className="modals-container" />
     </ModalsContainerContext.Provider>
   )
 }

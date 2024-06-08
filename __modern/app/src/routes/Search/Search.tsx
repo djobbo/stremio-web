@@ -57,7 +57,7 @@ const Search = ({ queryParams }) => {
   return (
     <MainNavBars
       className={styles["search-container"]}
-      route={"search"}
+      route="search"
       query={query}
     >
       <div
@@ -84,19 +84,19 @@ const Search = ({ queryParams }) => {
               )}
             >
               <div className={styles["search-hint-container"]}>
-                <Icon className={styles["icon"]} name={"trailer"} />
+                <Icon className={styles["icon"]} name="trailer" />
                 <div className={styles["label"]}>{t("SEARCH_CATEGORIES")}</div>
               </div>
               <div className={styles["search-hint-container"]}>
-                <Icon className={styles["icon"]} name={"actors"} />
+                <Icon className={styles["icon"]} name="actors" />
                 <div className={styles["label"]}>{t("SEARCH_PERSONS")}</div>
               </div>
               <div className={styles["search-hint-container"]}>
-                <Icon className={styles["icon"]} name={"link"} />
+                <Icon className={styles["icon"]} name="link" />
                 <div className={styles["label"]}>{t("SEARCH_PROTOCOLS")}</div>
               </div>
               <div className={styles["search-hint-container"]}>
-                <Icon className={styles["icon"]} name={"imdb-outline"} />
+                <Icon className={styles["icon"]} name="imdb-outline" />
                 <div className={styles["label"]}>{t("SEARCH_TYPES")}</div>
               </div>
             </div>
@@ -172,7 +172,7 @@ Search.propTypes = {
 const SearchFallback = ({ queryParams }) => (
   <MainNavBars
     className={styles["search-container"]}
-    route={"search"}
+    route="search"
     query={queryParams.get("search") ?? queryParams.get("query")}
   />
 )

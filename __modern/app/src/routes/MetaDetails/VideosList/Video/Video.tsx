@@ -124,7 +124,7 @@ const Video = ({
                   renderFallback={() => (
                     <Icon
                       className={styles["placeholder-icon"]}
-                      name={"symbol"}
+                      name="symbol"
                     />
                   )}
                 />
@@ -156,7 +156,7 @@ const Video = ({
                 ) : scheduled ? (
                   <div
                     className={styles["released-container"]}
-                    title={"To be announced"}
+                    title="To be announced"
                   >
                     TBA
                   </div>
@@ -169,7 +169,7 @@ const Video = ({
                   ) : null}
                   {watched ? (
                     <div className={styles["watched-container"]}>
-                      <Icon className={styles["flag-icon"]} name={"eye"} />
+                      <Icon className={styles["flag-icon"]} name="eye" />
                       <div className={styles["flag-label"]}>Watched</div>
                     </div>
                   ) : null}
@@ -195,7 +195,7 @@ const Video = ({
           >
             <Button
               className={styles["context-menu-option-container"]}
-              title={"Watch"}
+              title="Watch"
             >
               <div className={styles["context-menu-option-label"]}>
                 {t("CTX_WATCH")}

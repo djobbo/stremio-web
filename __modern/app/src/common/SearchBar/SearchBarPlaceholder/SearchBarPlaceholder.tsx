@@ -9,7 +9,7 @@ const SearchBarPlaceholder = ({ className, title }) => {
   return (
     <div className={classnames(className, styles["search-bar-container"])}>
       <div className={styles["search-input"]}>{title}</div>
-      <Icon className={styles["icon"]} name={"search"} />
+      <Icon className={styles["icon"]} name="search" />
     </div>
   )
 }

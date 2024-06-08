@@ -55,37 +55,37 @@ const SharePrompt = ({ className, url }) => {
             styles["button-container"],
             styles["facebook-button"],
           )}
-          title={"Facebook"}
+          title="Facebook"
           href={`https://www.facebook.com/sharer/sharer.php?u=${url}`}
-          target={"_blank"}
+          target="_blank"
         >
-          <Icon className={styles["icon"]} name={"facebook"} />
+          <Icon className={styles["icon"]} name="facebook" />
         </Button>
         <Button
           className={classnames(styles["button-container"], styles["x-button"])}
-          title={"X (Twitter)"}
+          title="X (Twitter)"
           href={`https://twitter.com/intent/tweet?text=${url}`}
-          target={"_blank"}
+          target="_blank"
         >
-          <Icon className={styles["icon"]} name={"x"} />
+          <Icon className={styles["icon"]} name="x" />
         </Button>
         <Button
           className={classnames(
             styles["button-container"],
             styles["reddit-button"],
           )}
-          title={"Reddit"}
+          title="Reddit"
           href={`https://www.reddit.com/submit?url=${url}`}
-          target={"_blank"}
+          target="_blank"
         >
-          <Icon className={styles["icon"]} name={"reddit"} />
+          <Icon className={styles["icon"]} name="reddit" />
         </Button>
       </div>
       <div className={styles["url-container"]}>
         <TextInput
           ref={inputRef}
           className={styles["url-text-input"]}
-          type={"text"}
+          type="text"
           readOnly={true}
           defaultValue={url}
           onClick={selectInputContent}
@@ -93,10 +93,10 @@ const SharePrompt = ({ className, url }) => {
         />
         <Button
           className={styles["copy-button"]}
-          title={"Copy to clipboard"}
+          title="Copy to clipboard"
           onClick={copyToClipboard}
         >
-          <Icon className={styles["icon"]} name={"link"} />
+          <Icon className={styles["icon"]} name="link" />
           <div className={styles["label"]}>{t("COPY")}</div>
         </Button>
       </div>

@@ -15,12 +15,12 @@ const SearchBar = ({ className, title, value, onChange }) => {
     >
       <TextInput
         className={styles["search-input"]}
-        type={"text"}
+        type="text"
         placeholder={title}
         value={value}
         onChange={onChange}
       />
-      <Icon className={styles["icon"]} name={"search"} />
+      <Icon className={styles["icon"]} name="search" />
     </label>
   )
 }

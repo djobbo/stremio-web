@@ -29,22 +29,22 @@ const PaginationInput = ({ className, label, dataset, onSelect, ...props }) => {
     >
       <Button
         className={styles["prev-button-container"]}
-        title={"Previous page"}
-        data-value={"prev"}
+        title="Previous page"
+        data-value="prev"
         onClick={prevNextButtonOnClick}
       >
-        <Icon className={styles["icon"]} name={"chevron-back"} />
+        <Icon className={styles["icon"]} name="chevron-back" />
       </Button>
       <div className={styles["label-container"]} title={label}>
         <div className={styles["label"]}>{label}</div>
       </div>
       <Button
         className={styles["next-button-container"]}
-        title={"Next page"}
-        data-value={"next"}
+        title="Next page"
+        data-value="next"
         onClick={prevNextButtonOnClick}
       >
-        <Icon className={styles["icon"]} name={"chevron-forward"} />
+        <Icon className={styles["icon"]} name="chevron-forward" />
       </Button>
     </div>
   )

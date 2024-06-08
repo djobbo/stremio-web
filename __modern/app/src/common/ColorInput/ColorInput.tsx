@@ -93,7 +93,7 @@ const ColorInput = ({ className, value, dataset, onChange, ...props }) => {
       ) : null}
       {modalOpen ? (
         <ModalDialog
-          title={"Choose a color:"}
+          title="Choose a color:"
           buttons={modalButtons}
           onCloseRequest={closeModal}
           onClick={modalDialogOnClick}

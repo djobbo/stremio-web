@@ -19,7 +19,7 @@ const AddonDetails = ({
   official,
 }) => {
   const renderLogoFallback = useCallback(
-    () => <Icon className={styles["icon"]} name={"addons"} />,
+    () => <Icon className={styles["icon"]} name="addons" />,
     [],
   )
   return (

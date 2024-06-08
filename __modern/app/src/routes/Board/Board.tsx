@@ -55,10 +55,7 @@ const Board = () => {
   return (
     <div className={styles["board-container"]}>
       <EventModal />
-      <MainNavBars
-        className={styles["board-content-container"]}
-        route={"board"}
-      >
+      <MainNavBars className={styles["board-content-container"]} route="board">
         <div
           ref={scrollContainerRef}
           className={styles["board-content"]}
@@ -135,10 +132,7 @@ const Board = () => {
 
 const BoardFallback = () => (
   <div className={styles["board-container"]}>
-    <MainNavBars
-      className={styles["board-content-container"]}
-      route={"board"}
-    />
+    <MainNavBars className={styles["board-content-container"]} route="board" />
   </div>
 )
 

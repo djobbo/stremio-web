@@ -170,13 +170,13 @@ const MetaPreview = ({
                 className={styles["imdb-button-container"]}
                 title={linksGroups.get(IMDB_LINK_CATEGORY).label}
                 href={linksGroups.get(IMDB_LINK_CATEGORY).href}
-                target={"_blank"}
+                target="_blank"
                 {...(compact ? { tabIndex: -1 } : null)}
               >
                 <div className={styles["label"]}>
                   {linksGroups.get(IMDB_LINK_CATEGORY).label}
                 </div>
-                <Icon className={styles["icon"]} name={"imdb"} />
+                <Icon className={styles["icon"]} name="imdb" />
               </Button>
             ) : null}
           </div>
@@ -225,7 +225,7 @@ const MetaPreview = ({
         {typeof trailerHref === "string" ? (
           <ActionButton
             className={styles["action-button"]}
-            icon={"trailer"}
+            icon="trailer"
             label={t("TRAILER")}
             tabIndex={compact ? -1 : 0}
             href={trailerHref}
@@ -238,7 +238,7 @@ const MetaPreview = ({
               styles["action-button"],
               styles["show-button"],
             )}
-            icon={"play"}
+            icon="play"
             label={t("SHOW")}
             tabIndex={compact ? -1 : 0}
             href={showHref}
@@ -248,7 +248,7 @@ const MetaPreview = ({
           <Fragment>
             <ActionButton
               className={styles["action-button"]}
-              icon={"share"}
+              icon="share"
               label={t("CTX_SHARE")}
               tooltip={true}
               tabIndex={compact ? -1 : 0}

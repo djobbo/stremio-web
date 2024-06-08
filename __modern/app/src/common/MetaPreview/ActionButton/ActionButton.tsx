@@ -16,7 +16,7 @@ const ActionButton = ({ className, icon, label, tooltip, ...props }) => {
         wide: typeof label === "string" && !tooltip,
       })}
     >
-      {tooltip === true ? <Tooltip label={label} position={"top"} /> : null}
+      {tooltip === true ? <Tooltip label={label} position="top" /> : null}
       {typeof icon === "string" && icon.length > 0 ? (
         <div className={styles["icon-container"]}>
           <Icon className={styles["icon"]} name={icon} />

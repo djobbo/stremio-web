@@ -93,11 +93,11 @@ const ToastItem = ({
       </div>
       <Button
         className={styles["close-button-container"]}
-        title={"Close"}
+        title="Close"
         tabIndex={-1}
         onClick={closeButtonOnClick}
       >
-        <Icon className={styles["icon"]} name={"close"} />
+        <Icon className={styles["icon"]} name="close" />
       </Button>
     </Button>
   )

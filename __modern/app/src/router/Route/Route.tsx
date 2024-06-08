@@ -5,9 +5,9 @@ import { ModalsContainerProvider } from "../ModalsContainerContext"
 
 const Route = ({ children }) => {
   return (
-    <div className={"route-container"}>
+    <div className="route-container">
       <ModalsContainerProvider>
-        <div className={"route-content"}>{children}</div>
+        <div className="route-content">{children}</div>
       </ModalsContainerProvider>
     </div>
   )

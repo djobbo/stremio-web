@@ -80,7 +80,7 @@ const OptionsMenu = ({ className, stream, playbackDevices }) => {
     >
       {streamingUrl || downloadUrl ? (
         <Option
-          icon={"link"}
+          icon="link"
           label={t("CTX_COPY_STREAM_LINK")}
           disabled={stream === null}
           onClick={onCopyStreamButtonClick}
@@ -88,7 +88,7 @@ const OptionsMenu = ({ className, stream, playbackDevices }) => {
       ) : null}
       {streamingUrl || downloadUrl ? (
         <Option
-          icon={"download"}
+          icon="download"
           label={t("CTX_DOWNLOAD_VIDEO")}
           disabled={stream === null}
           onClick={onDownloadVideoButtonClick}
@@ -98,7 +98,7 @@ const OptionsMenu = ({ className, stream, playbackDevices }) => {
         externalDevices.map(({ id, name }) => (
           <Option
             key={id}
-            icon={"vlc"}
+            icon="vlc"
             label={t("PLAYER_PLAY_IN", { device: name })}
             deviceId={id}
             disabled={stream === null}

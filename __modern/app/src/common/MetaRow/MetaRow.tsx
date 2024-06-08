@@ -49,7 +49,7 @@ const MetaRow = ({
             tabIndex={-1}
           >
             <div className={styles["label"]}>{t.string("BUTTON_SEE_ALL")}</div>
-            <Icon className={styles["icon"]} name={"chevron-forward"} />
+            <Icon className={styles["icon"]} name="chevron-forward" />
           </Button>
         ) : null}
       </div>

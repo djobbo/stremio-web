@@ -8,7 +8,7 @@ const NotFound = () => {
     <div className={styles["not-found-container"]}>
       <HorizontalNavBar
         className={styles["nav-bar"]}
-        title={"Page not found"}
+        title="Page not found"
         backButton={true}
         fullscreenButton={true}
         navMenu={true}

@@ -109,10 +109,7 @@ const Library = ({ model, urlParams, queryParams }) => {
             <div className={styles["message-label"]}>
               Library is only available for logged in users!
             </div>
-            <Button
-              className={styles["login-button-container"]}
-              href={"#/intro"}
-            >
+            <Button className={styles["login-button-container"]} href="#/intro">
               <div className={styles["label"]}>LOG IN</div>
             </Button>
           </div>

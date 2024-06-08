@@ -125,7 +125,7 @@ const StreamsList = ({ className, video, ...props }) => {
                   tabIndex={-1}
                   onClick={backButtonOnClick}
                 >
-                  <Icon className={styles["icon"]} name={"chevron-back"} />
+                  <Icon className={styles["icon"]} name="chevron-back" />
                 </Button>
                 <div className={styles["episode-title"]}>
                   {`S${video?.season}E${video?.episode} ${video?.title}`}
@@ -160,9 +160,9 @@ const StreamsList = ({ className, video, ...props }) => {
       <Button
         className={styles["install-button-container"]}
         title={t("ADDON_CATALOGUE_MORE")}
-        href={"#/addons"}
+        href="#/addons"
       >
-        <Icon className={styles["icon"]} name={"addons"} />
+        <Icon className={styles["icon"]} name="addons" />
         <div className={styles["label"]}>{t("ADDON_CATALOGUE_MORE")}</div>
       </Button>
     </div>

@@ -32,7 +32,7 @@ const MetaRowPlaceholder = ({ className, title, deepLinks }) => {
             tabIndex={-1}
           >
             <div className={styles["label"]}>{t("BUTTON_SEE_ALL")}</div>
-            <Icon className={styles["icon"]} name={"chevron-forward"} />
+            <Icon className={styles["icon"]} name="chevron-forward" />
           </Button>
         ) : null}
       </div>

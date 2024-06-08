@@ -44,10 +44,10 @@ const DiscreteSelectInput = ({
           className={classnames(styles["button-container"], {
             disabled: disabled,
           })}
-          data-type={"decrement"}
+          data-type="decrement"
           onClick={buttonOnClick}
         >
-          <Icon className={styles["icon"]} name={"remove"} />
+          <Icon className={styles["icon"]} name="remove" />
         </Button>
         <div className={styles["option-label"]} title={value}>
           {value}
@@ -56,10 +56,10 @@ const DiscreteSelectInput = ({
           className={classnames(styles["button-container"], {
             disabled: disabled,
           })}
-          data-type={"increment"}
+          data-type="increment"
           onClick={buttonOnClick}
         >
-          <Icon className={styles["icon"]} name={"add"} />
+          <Icon className={styles["icon"]} name="add" />
         </Button>
       </div>
     </div>

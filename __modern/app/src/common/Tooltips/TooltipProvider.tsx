@@ -38,7 +38,7 @@ const TooltipProvider = ({ children, className }) => {
   return (
     <TooltipContext.Provider value={{ add, remove, update }}>
       {children}
-      <div className={"tooltips-items-container"}>
+      <div className="tooltips-items-container">
         {tooltips.map(({ id, ...tooltip }) => (
           <TooltipItem key={id} className={className} {...tooltip} />
         ))}

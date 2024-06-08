@@ -101,7 +101,7 @@ const Addons = ({ urlParams, queryParams }) => {
     [search],
   )
   const renderLogoFallback = useCallback(
-    () => <Icon className={styles["icon"]} name={"addons"} />,
+    () => <Icon className={styles["icon"]} name="addons" />,
     [],
   )
   useLayoutEffect(() => {
@@ -110,7 +110,7 @@ const Addons = ({ urlParams, queryParams }) => {
     clearSharedAddon()
   }, [urlParams, queryParams])
   return (
-    <MainNavBars className={styles["addons-container"]} route={"addons"}>
+    <MainNavBars className={styles["addons-container"]} route="addons">
       <div className={styles["addons-content"]}>
         <div className={styles["selectable-inputs-container"]}>
           {selectInputs.map((selectInput, index) => (
@@ -126,7 +126,7 @@ const Addons = ({ urlParams, queryParams }) => {
             title={t("ADD_ADDON")}
             onClick={openAddAddonModal}
           >
-            <Icon className={styles["icon"]} name={"add"} />
+            <Icon className={styles["icon"]} name="add" />
             <div className={styles["add-button-label"]}>{t("ADD_ADDON")}</div>
           </Button>
           <SearchBar
@@ -137,10 +137,10 @@ const Addons = ({ urlParams, queryParams }) => {
           />
           <Button
             className={styles["filter-button"]}
-            title={"All filters"}
+            title="All filters"
             onClick={openFiltersModal}
           >
-            <Icon className={styles["filter-icon"]} name={"filters"} />
+            <Icon className={styles["filter-icon"]} name="filters" />
           </Button>
         </div>
         {installedAddons.selected !== null ? (
@@ -213,7 +213,7 @@ const Addons = ({ urlParams, queryParams }) => {
       </div>
       {filtersModalOpen ? (
         <ModalDialog
-          title={"Addons filters"}
+          title="Addons filters"
           className={styles["filters-modal"]}
           onCloseRequest={closeFiltersModal}
         >
@@ -237,7 +237,7 @@ const Addons = ({ urlParams, queryParams }) => {
           <TextInput
             ref={addAddonUrlInputRef}
             className={styles["addon-url-input"]}
-            type={"text"}
+            type="text"
             placeholder={t("PASTE_ADDON_URL")}
             autoFocus={true}
             onSubmit={addAddonOnSubmit}
@@ -299,7 +299,7 @@ Addons.propTypes = {
 }
 
 const AddonsFallback = () => (
-  <MainNavBars className={styles["addons-container"]} route={"addons"} />
+  <MainNavBars className={styles["addons-container"]} route="addons" />
 )
 
 export default withCoreSuspender(Addons, AddonsFallback)

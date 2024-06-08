@@ -224,7 +224,7 @@ const MetaDetails = ({ urlParams, queryParams }) => {
         >
           <iframe
             className={styles["meta-extension-modal-iframe"]}
-            sandbox={"allow-forms allow-scripts allow-same-origin"}
+            sandbox="allow-forms allow-scripts allow-same-origin"
             src={metaExtension.url}
           />
         </ModalDialog>

@@ -34,9 +34,9 @@ const Error = ({ className, code, message, stream }) => {
           title={t("PLAYER_OPEN_IN_EXTERNAL")}
           href={playlist}
           download={fileName}
-          target={"_blank"}
+          target="_blank"
         >
-          <Icon className={styles["icon"]} name={"ic_downloads"} />
+          <Icon className={styles["icon"]} name="ic_downloads" />
           <div className={styles["label"]}>{t("PLAYER_OPEN_IN_EXTERNAL")}</div>
         </Button>
       ) : null}

@@ -110,7 +110,7 @@ const Discover = ({ urlParams, queryParams }) => {
     setSelectedMetaItemIndex(0)
   }, [discover.selected])
   return (
-    <MainNavBars className={styles["discover-container"]} route={"discover"}>
+    <MainNavBars className={styles["discover-container"]} route="discover">
       <div className={styles["discover-content"]}>
         <div className={styles["catalog-container"]}>
           <div className={styles["selectable-inputs-container"]}>
@@ -132,10 +132,10 @@ const Discover = ({ urlParams, queryParams }) => {
             )}
             <Button
               className={styles["filter-container"]}
-              title={"All filters"}
+              title="All filters"
               onClick={openInputsModal}
             >
-              <Icon className={styles["filter-icon"]} name={"filters"} />
+              <Icon className={styles["filter-icon"]} name="filters" />
             </Button>
           </div>
           {discover.catalog !== null && !discover.catalog.installed ? (
@@ -145,7 +145,7 @@ const Discover = ({ urlParams, queryParams }) => {
               </div>
               <Button
                 className={styles["install-button"]}
-                title={"Install addon"}
+                title="Install addon"
                 onClick={openAddonModal}
               >
                 <div className={styles["label"]}>Install</div>
@@ -251,7 +251,7 @@ const Discover = ({ urlParams, queryParams }) => {
       </div>
       {inputsModalOpen ? (
         <ModalDialog
-          title={"Catalog filters"}
+          title="Catalog filters"
           className={styles["selectable-inputs-modal"]}
           onCloseRequest={closeInputsModal}
         >
@@ -293,7 +293,7 @@ Discover.propTypes = {
 }
 
 const DiscoverFallback = () => (
-  <MainNavBars className={styles["discover-container"]} route={"discover"} />
+  <MainNavBars className={styles["discover-container"]} route="discover" />
 )
 
 export default withCoreSuspender(Discover, DiscoverFallback)

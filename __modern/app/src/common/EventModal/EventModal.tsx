@@ -41,7 +41,7 @@ const EventModal = () => {
         </div>
         {modal?.addon?.name ? (
           <div className={styles["addon-container"]}>
-            <Icon className={styles["icon"]} name={"addons"} />
+            <Icon className={styles["icon"]} name="addons" />
             <div className={styles["name"]}>{modal.addon.name}</div>
           </div>
         ) : null}
@@ -57,7 +57,7 @@ const EventModal = () => {
           <Button
             className={styles["action-button"]}
             href={modal.externalUrl}
-            target={"_blank"}
+            target="_blank"
           >
             <div className={styles["button-label"]}>{t("LEARN_MORE")}</div>
           </Button>

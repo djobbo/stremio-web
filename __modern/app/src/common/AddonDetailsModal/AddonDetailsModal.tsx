@@ -148,7 +148,7 @@ const AddonDetailsModal = ({ transportUrl, onCloseRequest }) => {
   return (
     <ModalDialog
       className={styles["addon-details-modal-container"]}
-      title={"Stremio addon"}
+      title="Stremio addon"
       buttons={modalButtons}
       background={modalBackground}
       onCloseRequest={onCloseRequest}
@@ -187,7 +187,7 @@ AddonDetailsModal.propTypes = {
 const AddonDetailsModalFallback = ({ onCloseRequest }) => (
   <ModalDialog
     className={styles["addon-details-modal-container"]}
-    title={"Stremio addon"}
+    title="Stremio addon"
     onCloseRequest={onCloseRequest}
   >
     <div className={styles["addon-details-message-container"]}>

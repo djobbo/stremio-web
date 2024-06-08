@@ -131,7 +131,7 @@ const Multiselect = ({
                       .join(", ")
                   : title}
             </div>
-            <Icon className={styles["icon"]} name={"caret-down"} />
+            <Icon className={styles["icon"]} name="caret-down" />
           </Fragment>
         )}
         {children}

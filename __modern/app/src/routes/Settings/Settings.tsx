@@ -245,7 +245,7 @@ const Settings = () => {
     closeConfigureServerUrlModal()
   }, [routeFocused])
   return (
-    <MainNavBars className={styles["settings-container"]} route={"settings"}>
+    <MainNavBars className={styles["settings-container"]} route="settings">
       <div
         className={classnames(styles["settings-content"], "animation-fade-in")}
       >
@@ -368,7 +368,7 @@ const Settings = () => {
                     styles["button-container"],
                   )}
                   title={`${t("LOG_IN")} / ${t("SIGN_UP")}`}
-                  href={"#/intro"}
+                  href="#/intro"
                 >
                   <div className={styles["label"]}>
                     {t("LOG_IN")} / {t("SIGN_UP")}
@@ -434,8 +434,8 @@ const Settings = () => {
                   styles["link-input-container"],
                 )}
                 title={t("SETTINGS_SUPPORT")}
-                target={"_blank"}
-                href={"https://stremio.zendesk.com/hc/en-us"}
+                target="_blank"
+                href="https://stremio.zendesk.com/hc/en-us"
               >
                 <div className={styles["label"]}>{t("SETTINGS_SUPPORT")}</div>
               </Button>
@@ -451,8 +451,8 @@ const Settings = () => {
                   styles["option-input-container"],
                   styles["link-input-container"],
                 )}
-                title={"Source code"}
-                target={"_blank"}
+                title="Source code"
+                target="_blank"
                 href={`https://github.com/stremio/stremio-web/tree/${import.meta.env.COMMIT_HASH}`}
               >
                 <div className={styles["label"]}>Source code</div>
@@ -470,8 +470,8 @@ const Settings = () => {
                   styles["link-input-container"],
                 )}
                 title={t("TERMS_OF_SERVICE")}
-                target={"_blank"}
-                href={"https://www.stremio.com/tos"}
+                target="_blank"
+                href="https://www.stremio.com/tos"
               >
                 <div className={styles["label"]}>{t("TERMS_OF_SERVICE")}</div>
               </Button>
@@ -488,8 +488,8 @@ const Settings = () => {
                   styles["link-input-container"],
                 )}
                 title={t("PRIVACY_POLICY")}
-                target={"_blank"}
-                href={"https://www.stremio.com/privacy"}
+                target="_blank"
+                href="https://www.stremio.com/privacy"
               >
                 <div className={styles["label"]}>{t("PRIVACY_POLICY")}</div>
               </Button>
@@ -507,10 +507,8 @@ const Settings = () => {
                     styles["link-input-container"],
                   )}
                   title={t("SETTINGS_ACC_DELETE")}
-                  target={"_blank"}
-                  href={
-                    "https://stremio.zendesk.com/hc/en-us/articles/360021428911-How-to-delete-my-account"
-                  }
+                  target="_blank"
+                  href="https://stremio.zendesk.com/hc/en-us/articles/360021428911-How-to-delete-my-account"
                 >
                   <div className={styles["label"]}>
                     {t("SETTINGS_ACC_DELETE")}
@@ -528,7 +526,7 @@ const Settings = () => {
                     styles["link-input-container"],
                   )}
                   title={t("SETTINGS_CHANGE_PASSWORD")}
-                  target={"_blank"}
+                  target="_blank"
                   href={`https://www.strem.io/reset-password/${profile.auth.user.email}`}
                 >
                   <div className={styles["label"]}>
@@ -544,7 +542,7 @@ const Settings = () => {
                   styles["trakt-icon"],
                 )}
               >
-                <Icon className={styles["icon"]} name={"trakt"} />
+                <Icon className={styles["icon"]} name="trakt" />
                 <div className={styles["label"]}>Trakt Scrobbling</div>
               </div>
               <Button
@@ -552,7 +550,7 @@ const Settings = () => {
                   styles["option-input-container"],
                   styles["button-container"],
                 )}
-                title={"Authenticate"}
+                title="Authenticate"
                 disabled={profile.auth === null}
                 tabIndex={-1}
                 onClick={toggleTraktOnClick}
@@ -589,7 +587,7 @@ const Settings = () => {
               {t("SETTINGS_NAV_PLAYER")}
             </div>
             <div className={styles["section-category-container"]}>
-              <Icon className={styles["icon"]} name={"subtitles"} />
+              <Icon className={styles["icon"]} name="subtitles" />
               <div className={styles["label"]}>
                 {t("SETTINGS_SECTION_SUBTITLES")}
               </div>
@@ -683,7 +681,7 @@ const Settings = () => {
           </div>
           <div className={styles["section-container"]}>
             <div className={styles["section-category-container"]}>
-              <Icon className={styles["icon"]} name={"volume-medium"} />
+              <Icon className={styles["icon"]} name="volume-medium" />
               <div className={styles["label"]}>
                 {t("SETTINGS_SECTION_AUDIO")}
               </div>
@@ -720,7 +718,7 @@ const Settings = () => {
           </div>
           <div className={styles["section-container"]}>
             <div className={styles["section-category-container"]}>
-              <Icon className={styles["icon"]} name={"remote"} />
+              <Icon className={styles["icon"]} name="remote" />
               <div className={styles["label"]}>
                 {t("SETTINGS_SECTION_CONTROLS")}
               </div>
@@ -770,7 +768,7 @@ const Settings = () => {
           </div>
           <div className={styles["section-container"]}>
             <div className={styles["section-category-container"]}>
-              <Icon className={styles["icon"]} name={"play"} />
+              <Icon className={styles["icon"]} name="play" />
               <div className={styles["label"]}>
                 {t("SETTINGS_SECTION_AUTO_PLAY")}
               </div>
@@ -805,7 +803,7 @@ const Settings = () => {
           </div>
           <div className={styles["section-container"]}>
             <div className={styles["section-category-container"]}>
-              <Icon className={styles["icon"]} name={"glasses"} />
+              <Icon className={styles["icon"]} name="glasses" />
               <div className={styles["label"]}>
                 {t("SETTINGS_SECTION_ADVANCED")}
               </div>
@@ -852,7 +850,7 @@ const Settings = () => {
                   styles["option-input-container"],
                   styles["button-container"],
                 )}
-                title={"Reload"}
+                title="Reload"
                 onClick={reloadStreamingServer}
               >
                 <div className={styles["label"]}>{t("RELOAD")}</div>
@@ -897,10 +895,10 @@ const Settings = () => {
                 </div>
                 <Button
                   className={styles["configure-button-container"]}
-                  title={"Configure server url"}
+                  title="Configure server url"
                   onClick={openConfigureServerUrlModal}
                 >
-                  <Icon className={styles["icon"]} name={"settings"} />
+                  <Icon className={styles["icon"]} name="settings" />
                 </Button>
               </div>
             </div>
@@ -928,7 +926,7 @@ const Settings = () => {
                     title={t("SETTINGS_COPY_REMOTE_URL")}
                     onClick={onCopyRemoteUrlClick}
                   >
-                    <Icon className={styles["icon"]} name={"link"} />
+                    <Icon className={styles["icon"]} name="link" />
                   </Button>
                 </div>
               </div>
@@ -1255,7 +1253,7 @@ const Settings = () => {
             ref={configureServerUrlInputRef}
             autoFocus={true}
             className={styles["server-url-input"]}
-            type={"text"}
+            type="text"
             defaultValue={streamingServerUrlInput.value}
             placeholder={t("SETTINGS_SERVER_CONFIGURE_INPUT")}
             onSubmit={configureServerUrlOnSubmit}
@@ -1267,7 +1265,7 @@ const Settings = () => {
 }
 
 const SettingsFallback = () => (
-  <MainNavBars className={styles["settings-container"]} route={"settings"} />
+  <MainNavBars className={styles["settings-container"]} route="settings" />
 )
 
 export default withCoreSuspender(Settings, SettingsFallback)
