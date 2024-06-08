@@ -36,9 +36,11 @@ export default defineConfig({
   },
   plugins: [react(), wasm(), topLevelAwait()],
   define: {
-    "import.meta.env.SENTRY_DSN": process.env.SENTRY_DSN || null,
+    "import.meta.env.SENTRY_DSN": process.env.SENTRY_DSN
+      ? JSON.stringify(process.env.SENTRY_DSN)
+      : null,
     "import.meta.env.DEBUG": process.env.NODE_ENV !== "production",
-    "import.meta.env.VERSION": packageJson.version,
-    "import.meta.env.COMMIT_HASH": COMMIT_HASH,
+    "import.meta.env.VERSION": JSON.stringify(packageJson.version),
+    "import.meta.env.COMMIT_HASH": JSON.stringify(COMMIT_HASH),
   },
 })
