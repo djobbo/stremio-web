@@ -47,6 +47,7 @@ export default defineConfig({
     "import.meta.env.DEBUG": process.env.NODE_ENV !== "production",
     "import.meta.env.VERSION": JSON.stringify(packageJson.version),
     "import.meta.env.COMMIT_HASH": JSON.stringify(COMMIT_HASH),
+    global: "globalThis",
   },
   // assetsInclude: ["../**/*.wasm"],
   optimizeDeps: {

@@ -163,6 +163,22 @@ const Player = ({ urlParams, queryParams }: PlayerProps) => {
     settings.subtitlesOutlineColor,
   ])
 
+  const onNextVideoRequested = useCallback(() => {
+    if (player.nextVideo !== null) {
+      nextVideo()
+
+      const deepLinks = player.nextVideo.deepLinks
+      if (deepLinks.metaDetailsStreams && deepLinks.player) {
+        window.location.replace(deepLinks.metaDetailsStreams)
+        window.location.href = deepLinks.player
+      } else {
+        window.location.replace(
+          deepLinks.player ?? deepLinks.metaDetailsStreams,
+        )
+      }
+    }
+  }, [player.nextVideo])
+
   const onEnded = useCallback(() => {
     ended()
     if (player.nextVideo !== null) {
@@ -279,22 +295,6 @@ const Player = ({ urlParams, queryParams }: PlayerProps) => {
     closeNextVideoPopup()
     nextVideoPopupDismissed.current = true
   }, [])
-
-  const onNextVideoRequested = useCallback(() => {
-    if (player.nextVideo !== null) {
-      nextVideo()
-
-      const deepLinks = player.nextVideo.deepLinks
-      if (deepLinks.metaDetailsStreams && deepLinks.player) {
-        window.location.replace(deepLinks.metaDetailsStreams)
-        window.location.href = deepLinks.player
-      } else {
-        window.location.replace(
-          deepLinks.player ?? deepLinks.metaDetailsStreams,
-        )
-      }
-    }
-  }, [player.nextVideo])
 
   const onVideoClick = useCallback(() => {
     if (video.state.paused !== null) {
