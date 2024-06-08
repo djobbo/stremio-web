@@ -1,3 +1,5 @@
+// @ts-expect-error file will be present in the output directory
+import * as core from './stremio_core_web.js'
 import Bridge from './bridge'
 const bridge = new Bridge(self, self);
 
@@ -21,8 +23,7 @@ self.init = async ({ appVersion, shellVersion }) => {
     self.local_storage_set_item = async (key, value) => bridge.call(['localStorage', 'setItem'], [key, value]);
     // @ts-expect-error
     self.local_storage_remove_item = async (key) => bridge.call(['localStorage', 'removeItem'], [key]);
-    // @ts-expect-error file will be present in the output directory
-    const { default: initialize_api, initialize_runtime, get_state, get_debug_state, dispatch, analytics, decode_stream } = await import('./stremio_core_web.js');
+    const { default: initialize_api, initialize_runtime, get_state, get_debug_state, dispatch, analytics, decode_stream } = core;
     // @ts-expect-error
     self.getState = get_state;
     // @ts-expect-error
