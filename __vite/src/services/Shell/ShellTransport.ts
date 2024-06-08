@@ -26,7 +26,7 @@ window.initShellComm = function () {
 
 const initialize = () => {
   if (!window.qt) return Promise.reject("Qt API not found")
-  return new Promise((resolve) => {
+  return new Promise<void>((resolve) => {
     function onShellAvailabilityChanged() {
       shellEvents.off("availabilityChanged", onShellAvailabilityChanged)
       shellAvailable = true
