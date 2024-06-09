@@ -18,6 +18,7 @@ function Chromecast() {
     starting = false
     onStateChanged()
   }
+
   function onTransportInitError(args) {
     console.error(args)
     active = false
@@ -26,6 +27,7 @@ function Chromecast() {
     onStateChanged()
     transport = null
   }
+
   function onStateChanged() {
     events.emit("stateChanged")
   }
@@ -72,6 +74,7 @@ function Chromecast() {
     transport.on("init-error", onTransportInitError)
     onStateChanged()
   }
+
   this.stop = function () {
     active = false
     error = null
@@ -82,9 +85,11 @@ function Chromecast() {
       transport = null
     }
   }
+
   this.on = function (name, listener) {
     events.on(name, listener)
   }
+
   this.off = function (name, listener) {
     events.off(name, listener)
   }

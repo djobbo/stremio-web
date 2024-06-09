@@ -19,6 +19,7 @@ const Option = ({ icon, label, deviceId, disabled, onClick }: OptionProps) => {
       onClick(deviceId)
     }
   }, [onClick, deviceId])
+
   return (
     <Button
       className={classnames(styles["option-container"], { disabled: disabled })}

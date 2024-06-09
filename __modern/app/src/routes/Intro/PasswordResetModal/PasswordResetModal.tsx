@@ -45,11 +45,13 @@ const PasswordResetModal = ({
   const emailOnChange = useCallback(() => {
     setError("")
   }, [])
+
   useEffect(() => {
     if (routeFocused) {
       emailRef.current.focus()
     }
   }, [routeFocused])
+
   return (
     <ModalDialog
       className={styles["password-reset-modal-container"]}

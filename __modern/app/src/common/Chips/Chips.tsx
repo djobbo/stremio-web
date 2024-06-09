@@ -32,10 +32,12 @@ const Chips = memo(({ options, selected, onSelect }: Props) => {
           : scrollLeft + offsetWidth + SCROLL_THRESHOLD >= scrollWidth
             ? "right"
             : "center"
+
       setScrollPosition(position)
     }
 
     ref.current?.addEventListener("scroll", onScroll)
+
     return () => ref.current?.removeEventListener("scroll", onScroll)
   }, [])
 

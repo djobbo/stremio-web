@@ -15,6 +15,7 @@ type MetaLinksProps = {
 
 const MetaLinks = ({ className, label, links }: MetaLinksProps) => {
   const { t } = useTranslation()
+
   return (
     <div className={classnames(className, styles["meta-links-container"])}>
       {typeof label === "string" && label.length > 0 ? (

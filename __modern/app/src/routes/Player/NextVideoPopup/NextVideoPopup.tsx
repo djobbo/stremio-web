@@ -24,6 +24,7 @@ const NextVideoPopup = ({
   const [animationEnded, setAnimationEnded] = useState(false)
   const videoName = useMemo(() => {
     const title = (nextVideo && nextVideo.title) || (metaItem && metaItem.title)
+
     return nextVideo !== null &&
       typeof nextVideo.season === "number" &&
       typeof nextVideo.episode === "number"
@@ -55,11 +56,13 @@ const NextVideoPopup = ({
       onNextVideoRequested()
     }
   }, [onNextVideoRequested])
+
   useLayoutEffect(() => {
     if (animationEnded === true && watchNowButtonRef.current !== null) {
       watchNowButtonRef.current.focus()
     }
   }, [animationEnded])
+
   return (
     <div
       className={classnames(className, styles["next-video-popup-container"])}

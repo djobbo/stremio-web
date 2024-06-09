@@ -4,7 +4,9 @@ import { useRef } from "react"
 
 const useLiveRef = (value) => {
   const ref = useRef()
+
   ref.current = value
+
   return ref
 }
 

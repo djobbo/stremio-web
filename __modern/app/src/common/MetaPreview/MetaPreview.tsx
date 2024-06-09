@@ -81,6 +81,7 @@ const MetaPreview = ({
           )
           .reduce((linksGroups, { category, name, url }) => {
             const { protocol, path, pathname, hostname } = UrlUtils.parse(url)
+
             if (category === IMDB_LINK_CATEGORY) {
               if (hostname === "imdb.com") {
                 linksGroups.set(category, {
@@ -146,6 +147,7 @@ const MetaPreview = ({
     () => <div className={styles["logo-placeholder"]}>{name}</div>,
     [name],
   )
+
   return (
     <div
       className={classnames(className, styles["meta-preview-container"], {

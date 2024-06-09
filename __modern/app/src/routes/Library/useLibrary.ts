@@ -33,6 +33,7 @@ const useLibrary = (model, urlParams, queryParams) => {
     [urlParams, queryParams],
   )
   const library = useModelState({ model, action })
+
   return [library, loadNextPage]
 }
 

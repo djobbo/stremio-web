@@ -2,6 +2,7 @@
 
 const urlParamsForPath = (routeConfig, path) => {
   const matches = path.match(routeConfig.regexp)
+
   return routeConfig.urlParamsNames.reduce(
     (urlParams, name, index) => {
       if (Array.isArray(matches) && typeof matches[index + 1] === "string") {

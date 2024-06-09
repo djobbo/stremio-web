@@ -66,6 +66,7 @@ const Slider = ({
       (thumbStart / sliderWidth) *
         (maximumValueRef.current - minimumValueRef.current) +
       minimumValueRef.current
+
     return value
   }, [])
   const retainThumb = useCallback(() => {
@@ -84,6 +85,7 @@ const Slider = ({
     window.removeEventListener("mousemove", onMouseMove)
     const classList = document.documentElement.className.split(" ")
     const classIndex = classList.indexOf(styles["active-slider-within"])
+
     if (classIndex !== -1) {
       classList.splice(classIndex, 1)
       document.documentElement.className = classnames(classList)
@@ -102,6 +104,7 @@ const Slider = ({
   }, [])
   const onMouseUp = useCallback((event) => {
     const value = calculateValueForMouseX(event.clientX)
+
     if (typeof onCompleteRef.current === "function") {
       onCompleteRef.current(value)
     }
@@ -111,6 +114,7 @@ const Slider = ({
   const onMouseMove = useCallback((event) => {
     requestThumbAnimation(() => {
       const value = calculateValueForMouseX(event.clientX)
+
       if (typeof onSlideRef.current === "function") {
         onSlideRef.current(value)
       }
@@ -122,12 +126,14 @@ const Slider = ({
     }
 
     const value = calculateValueForMouseX(event.clientX)
+
     if (typeof onSlideRef.current === "function") {
       onSlideRef.current(value)
     }
 
     retainThumb()
   }, [])
+
   useLayoutEffect(() => {
     if (!routeFocused || disabled) {
       releaseThumb()
@@ -154,6 +160,7 @@ const Slider = ({
         (maximumValueRef.current - minimumValueRef.current),
     ),
   )
+
   return (
     <div
       ref={sliderContainerRef}

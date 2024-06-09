@@ -27,6 +27,7 @@ const TextInput = forwardRef<HTMLElement, TextInputProps>((props, ref) => {
     },
     [props.onKeyDown, props.onSubmit],
   )
+
   return (
     <input
       size={1}

@@ -43,6 +43,7 @@ const Discover = ({ urlParams, queryParams }: DiscoverProps) => {
     useBinaryState(false)
   const [selectedMetaItemIndex, setSelectedMetaItemIndex] = useState(0)
   const metasContainerRef = useRef()
+
   useEffect(() => {
     if (discover.catalog?.content.type === "Loading") {
       metasContainerRef.current.scrollTop = 0
@@ -109,11 +110,13 @@ const Discover = ({ urlParams, queryParams }: DiscoverProps) => {
     onScrollToBottom,
     SCROLL_TO_BOTTOM_TRESHOLD,
   )
+
   useEffect(() => {
     closeInputsModal()
     closeAddonModal()
     setSelectedMetaItemIndex(0)
   }, [discover.selected])
+
   return (
     <MainNavBars className={styles["discover-container"]} route="discover">
       <div className={styles["discover-content"]}>

@@ -33,12 +33,14 @@ const Board = () => {
   const scrollContainerRef = useRef()
   const onVisibleRangeChange = useCallback(() => {
     const range = getVisibleChildrenRange(scrollContainerRef.current)
+
     if (range === null) {
       return
     }
 
     const start = Math.max(0, range.start - boardCatalogsOffset - THRESHOLD)
     const end = range.end - boardCatalogsOffset + THRESHOLD
+
     if (end < start) {
       return
     }
@@ -48,9 +50,11 @@ const Board = () => {
   const onScroll = useCallback(debounce(onVisibleRangeChange, 250), [
     onVisibleRangeChange,
   ])
+
   useLayoutEffect(() => {
     onVisibleRangeChange()
   }, [board.catalogs, onVisibleRangeChange])
+
   return (
     <div className={styles["board-container"]}>
       <EventModal />
@@ -91,6 +95,7 @@ const Board = () => {
                   />
                 )
               }
+
               case "Err": {
                 return (
                   <MetaRow
@@ -104,6 +109,7 @@ const Board = () => {
                   />
                 )
               }
+
               default: {
                 return (
                   <MetaRow.Placeholder

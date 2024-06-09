@@ -263,6 +263,7 @@ const useProfileSettingsInputs = (profile) => {
         const selectedOption = CONSTANTS.EXTERNAL_PLAYERS.find(
           ({ value }) => value === profile.settings.playerType,
         )
+
         return selectedOption
           ? t(selectedOption.label, { defaultValue: selectedOption.label })
           : profile.settings.playerType
@@ -382,6 +383,7 @@ const useProfileSettingsInputs = (profile) => {
     }),
     [profile.settings],
   )
+
   return {
     interfaceLanguageSelect,
     subtitlesLanguageSelect,

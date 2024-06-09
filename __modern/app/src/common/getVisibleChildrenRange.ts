@@ -5,6 +5,7 @@ const isChildVisible = (container, element) => {
   const elementBottom = element.offsetTop + element.clientHeight
   const containerTop = container.scrollTop
   const containerBottom = container.scrollTop + container.clientHeight
+
   return (
     (elementTop >= containerTop && elementBottom <= containerBottom) ||
     (elementTop < containerTop && containerTop < elementBottom) ||

@@ -12,6 +12,7 @@ const formatTime = (time, prefix = "") => {
   const hours = Math.floor(time / (1000 * 60 * 60))
   const minutes = Math.floor((time / (1000 * 60)) % 60)
   const seconds = Math.floor((time / 1000) % 60)
+
   return `${formatUnit(hours)}:${formatUnit(minutes)}:${formatUnit(seconds)}${prefix}`
 }
 

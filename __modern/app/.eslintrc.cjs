@@ -6,14 +6,15 @@ module.exports = {
     'plugin:@typescript-eslint/recommended',
     "plugin:react/recommended",
     'plugin:react-hooks/recommended',
-    "plugin:import/recommended"
+    "plugin:import/recommended",
   ],
   ignorePatterns: ['dist', '.eslintrc.cjs'],
   parser: '@typescript-eslint/parser',
   plugins: [
     'react-refresh',
+    '@stylistic/ts',
     'prettier',
-    "simple-import-sort"
+    "simple-import-sort",
   ],
   rules: {
     'prettier/prettier': 'error',
@@ -59,7 +60,16 @@ module.exports = {
       }
     ],
     "simple-import-sort/imports": "error",
-    "simple-import-sort/exports": "error"
+    "simple-import-sort/exports": "error",
+    "padding-line-between-statements": [
+      "error",
+      { blankLine: "always", prev: "block-like", next: "block-like" },
+      { blankLine: "always", prev: "*", next: "return" },
+      { blankLine: "always", prev: ["const", "let", "var"], next: "*"},
+      { blankLine: "any", prev: ["const", "let", "var"], next: ["const", "let", "var"]},
+      { blankLine: "always", prev: "directive", next: "*" },
+      { blankLine: "any", prev: "directive", next: "directive" }
+    ],
   },
   "settings": {
     "react": {

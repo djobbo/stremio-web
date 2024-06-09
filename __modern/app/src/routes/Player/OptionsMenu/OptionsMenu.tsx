@@ -81,6 +81,7 @@ const OptionsMenu = ({
   const onMouseDown = useCallback((event) => {
     event.nativeEvent.optionsMenuClosePrevented = true
   }, [])
+
   return (
     <div
       className={classnames(className, styles["options-menu-container"])}

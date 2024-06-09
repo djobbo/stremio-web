@@ -15,6 +15,7 @@ const useAnimationFrame = () => {
       animationFrameId.current = null
     })
   }, [])
+
   return [request, cancel]
 }
 

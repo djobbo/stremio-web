@@ -56,6 +56,7 @@ const SearchBar = memo(({ className, query, active }: SearchBarProps) => {
 
   useEffect(() => {
     document.addEventListener("mousedown", searchHistoryOnClose)
+
     return () => {
       document.removeEventListener("mousedown", searchHistoryOnClose)
     }
@@ -63,6 +64,7 @@ const SearchBar = memo(({ className, query, active }: SearchBarProps) => {
 
   const queryInputOnChange = useCallback(() => {
     const value = searchInputRef.current.value
+
     setCurrentQuery(value)
     openHistory()
     try {
@@ -75,6 +77,7 @@ const SearchBar = memo(({ className, query, active }: SearchBarProps) => {
   const queryInputOnSubmit = useCallback((event) => {
     event.preventDefault()
     const searchValue = `/search?search=${event.target.value}`
+
     setCurrentQuery(searchValue)
     if (searchInputRef.current && searchValue) {
       window.location.hash = searchValue
@@ -208,6 +211,7 @@ SearchBar.displayName = "SearchBar"
 
 const SearchBarFallback = ({ className }) => {
   const { t } = useTranslation()
+
   return (
     <label className={classnames(className, styles["search-bar-container"])}>
       <div className={styles["search-input"]}>

@@ -46,6 +46,7 @@ const VolumeSlider = ({
     },
     [onVolumeChangeRequested],
   )
+
   useLayoutEffect(() => {
     if (!routeFocused || disabled) {
       resetVolumeDebounced.cancel()
@@ -57,6 +58,7 @@ const VolumeSlider = ({
       resetVolumeDebounced.cancel()
     }
   }, [])
+
   return (
     <Slider
       className={classnames(className, styles["volume-slider"], {

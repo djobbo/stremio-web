@@ -22,6 +22,7 @@ const ErrorDialog = ({ className }: ErrorDialogProps) => {
     window.localStorage.clear()
     setDataCleared(true)
   }, [])
+
   return (
     <div className={classnames(className, styles["error-container"])}>
       <Image

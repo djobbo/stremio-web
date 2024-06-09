@@ -137,10 +137,12 @@ const SubtitlesMenu = memo((props: SubtitlesMenuProps) => {
           comparatorWithPriorities(ORIGIN_PRIORITIES)(t1.origin, t2.origin),
         )
         .shift()
+
       if (!track) {
         if (typeof props.onSubtitlesTrackSelected === "function") {
           props.onSubtitlesTrackSelected(null)
         }
+
         if (typeof props.onExtraSubtitlesTrackSelected === "function") {
           props.onExtraSubtitlesTrackSelected(null)
         }
@@ -178,12 +180,14 @@ const SubtitlesMenu = memo((props: SubtitlesMenuProps) => {
   const onSubtitlesDelayChanged = useCallback(
     (event) => {
       const delta = event.value === "increment" ? 250 : -250
+
       if (typeof props.selectedExtraSubtitlesTrackId === "string") {
         if (
           props.extraSubtitlesDelay !== null &&
           !isNaN(props.extraSubtitlesDelay)
         ) {
           const extraDelay = props.extraSubtitlesDelay + delta
+
           if (typeof props.onExtraSubtitlesDelayChanged === "function") {
             props.onExtraSubtitlesDelayChanged(extraDelay)
           }
@@ -199,6 +203,7 @@ const SubtitlesMenu = memo((props: SubtitlesMenuProps) => {
   const onSubtitlesSizeChanged = useCallback(
     (event) => {
       const delta = event.value === "increment" ? 1 : -1
+
       if (typeof props.selectedSubtitlesTrackId === "string") {
         if (props.subtitlesSize !== null && !isNaN(props.subtitlesSize)) {
           const sizeIndex = CONSTANTS.SUBTITLES_SIZES.indexOf(
@@ -214,6 +219,7 @@ const SubtitlesMenu = memo((props: SubtitlesMenuProps) => {
                 ),
               )
             ]
+
           if (typeof props.onSubtitlesSizeChanged === "function") {
             props.onSubtitlesSizeChanged(size)
           }
@@ -236,6 +242,7 @@ const SubtitlesMenu = memo((props: SubtitlesMenuProps) => {
                 ),
               )
             ]
+
           if (typeof props.onExtraSubtitlesSizeChanged === "function") {
             props.onExtraSubtitlesSizeChanged(extraSize)
           }
@@ -254,6 +261,7 @@ const SubtitlesMenu = memo((props: SubtitlesMenuProps) => {
   const onSubtitlesOffsetChanged = useCallback(
     (event) => {
       const delta = event.value === "increment" ? 1 : -1
+
       if (typeof props.selectedSubtitlesTrackId === "string") {
         if (
           props.extraSubtitlesOffset !== null &&
@@ -263,6 +271,7 @@ const SubtitlesMenu = memo((props: SubtitlesMenuProps) => {
             0,
             Math.min(100, Math.floor(props.extraSubtitlesOffset + delta)),
           )
+
           if (typeof props.onExtraSubtitlesOffsetChanged === "function") {
             props.onExtraSubtitlesOffsetChanged(offset)
           }
@@ -273,6 +282,7 @@ const SubtitlesMenu = memo((props: SubtitlesMenuProps) => {
             0,
             Math.min(100, Math.floor(props.subtitlesOffset + delta)),
           )
+
           if (typeof props.onSubtitlesOffsetChanged === "function") {
             props.onSubtitlesOffsetChanged(offset)
           }
@@ -296,6 +306,7 @@ const SubtitlesMenu = memo((props: SubtitlesMenuProps) => {
     },
     [props.onAudioTrackSelected],
   )
+
   return (
     <div
       className={classnames(

@@ -13,6 +13,7 @@ const useBinaryState = (initialValue) => {
   const toggle = useCallback(() => {
     setValue(!value)
   }, [value])
+
   return [value, on, off, toggle]
 }
 

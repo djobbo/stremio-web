@@ -20,6 +20,7 @@ const StreamingServerWarning = ({ className }: StreamingServerWarningProps) => {
   const profile = useProfile()
   const onLaterClick = useCallback(() => {
     const streamingServerWarningDismissed = new Date()
+
     streamingServerWarningDismissed.setMonth(
       streamingServerWarningDismissed.getMonth() + 1,
     )
@@ -36,6 +37,7 @@ const StreamingServerWarning = ({ className }: StreamingServerWarningProps) => {
   }, [profile.settings])
   const onDismissClick = useCallback(() => {
     const streamingServerWarningDismissed = new Date()
+
     streamingServerWarningDismissed.setFullYear(
       streamingServerWarningDismissed.getFullYear() + 50,
     )

@@ -38,6 +38,7 @@ const ConsentCheckbox = forwardRef<HTMLElement, ConsentCheckboxProps>(
     const linkOnClick = useCallback((event) => {
       event.nativeEvent.togglePrevented = true
     }, [])
+
     return (
       <Checkbox
         {...props}

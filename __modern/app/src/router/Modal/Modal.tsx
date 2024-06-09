@@ -20,6 +20,7 @@ const Modal = forwardRef(function Modal(
   ref,
 ) {
   const modalsContainer = useModalsContainer()
+
   return ReactDOM.createPortal(
     <FocusLock
       ref={ref}

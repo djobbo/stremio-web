@@ -81,6 +81,7 @@ const StreamsList = ({ className, video, ...props }: StreamsListProps) => {
       onSelect: onAddonSelected,
     }
   }, [streamsByAddon, selectedAddon])
+
   return (
     <div className={classnames(className, styles["streams-list-container"])}>
       {props.streams.length === 0 ? (

@@ -18,6 +18,7 @@ function Shell() {
     starting = false
     onStateChanged()
   }
+
   function onTransportInitError(err) {
     console.error(err)
     active = false
@@ -74,15 +75,18 @@ function Shell() {
     transport.on("init-error", onTransportInitError)
     onStateChanged()
   }
+
   this.stop = function () {
     active = false
     error = null
     starting = false
     onStateChanged()
   }
+
   this.on = function (name, listener) {
     events.on(name, listener)
   }
+
   this.off = function (name, listener) {
     events.off(name, listener)
   }

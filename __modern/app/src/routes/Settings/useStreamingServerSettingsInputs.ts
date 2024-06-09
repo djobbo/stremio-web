@@ -153,6 +153,7 @@ const useStreamingServerSettingsInputs = (streamingServer) => {
     ).every((torrentProfile) => {
       return !isEqual(torrentProfile, selectedTorrentProfile)
     })
+
     return {
       options: Object.keys(TORRENT_PROFILES)
         .map((profileName) => ({
@@ -220,6 +221,7 @@ const useStreamingServerSettingsInputs = (streamingServer) => {
       },
     }
   }, [streamingServer.settings, streamingServer.deviceInfo])
+
   return {
     streamingServerRemoteUrlInput,
     remoteEndpointSelect,

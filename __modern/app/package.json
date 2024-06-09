@@ -50,6 +50,7 @@
     "@rollup/plugin-babel": "^6.0.4",
     "@rollup/plugin-commonjs": "^26.0.1",
     "@rollup/plugin-node-resolve": "^15.2.3",
+    "@stylistic/eslint-plugin-ts": "^2.1.0",
     "@types/chromecast-caf-sender": "^1.0.10",
     "@types/lodash.intersection": "^4.4.9",
     "@types/lodash.isequal": "^4.5.8",

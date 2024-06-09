@@ -32,6 +32,7 @@ const NavTabButton = ({
       ) : null,
     [icon],
   )
+
   return (
     <Button
       className={classnames(className, styles["nav-tab-button-container"], {

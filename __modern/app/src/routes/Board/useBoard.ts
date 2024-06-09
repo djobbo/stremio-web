@@ -29,6 +29,7 @@ const useBoard = () => {
     )
   }, [])
   const board = useModelState({ model: "board", action })
+
   return [board, loadRange]
 }
 

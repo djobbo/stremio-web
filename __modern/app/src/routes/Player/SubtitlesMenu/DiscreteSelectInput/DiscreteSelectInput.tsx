@@ -36,6 +36,7 @@ const DiscreteSelectInput = ({
     },
     [dataset, onChange],
   )
+
   return (
     <div
       className={classnames(className, styles["discrete-input-container"], {

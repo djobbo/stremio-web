@@ -122,15 +122,19 @@ const ControlBar = ({
   const onChromecastButtonClick = useCallback(() => {
     chromecast.transport.requestSession()
   }, [])
+
   useEffect(() => {
     const onStateChanged = () => {
       setChromecastServiceActive(chromecast.active)
     }
+
     chromecast.on("stateChanged", onStateChanged)
+
     return () => {
       chromecast.off("stateChanged", onStateChanged)
     }
   }, [])
+
   return (
     <div
       {...props}

@@ -7,6 +7,7 @@ const useFacebookToken = () => {
     return new Promise((resolve, reject) => {
       if (typeof FB === "undefined") {
         reject(new Error("Failed to connect to Facebook"))
+
         return
       }
 
@@ -17,6 +18,7 @@ const useFacebookToken = () => {
           typeof resp.authResponse.accessToken === "string"
         ) {
           resolve(resp.authResponse.accessToken)
+
           return
         }
 
@@ -27,6 +29,7 @@ const useFacebookToken = () => {
             typeof resp.authResponse.accessToken !== "string"
           ) {
             reject(new Error("Failed to get token from Facebook"))
+
             return
           }
 
@@ -35,6 +38,7 @@ const useFacebookToken = () => {
       })
     })
   }, [])
+
   useEffect(() => {
     window.fbAsyncInit = function () {
       FB.init({
@@ -45,14 +49,17 @@ const useFacebookToken = () => {
       })
     }
     const sdkScriptElement = document.createElement("script")
+
     sdkScriptElement.src = "https://connect.facebook.net/en_US/sdk.js"
     sdkScriptElement.async = true
     sdkScriptElement.defer = true
     document.body.appendChild(sdkScriptElement)
+
     return () => {
       document.body.removeChild(sdkScriptElement)
     }
   }, [])
+
   return getToken
 }
 

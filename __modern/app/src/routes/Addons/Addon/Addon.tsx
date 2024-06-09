@@ -99,6 +99,7 @@ const Addon = ({
     () => <Icon className={styles["icon"]} name="addons" />,
     [],
   )
+
   return (
     <Button
       className={classnames(className, styles["addon-container"])}

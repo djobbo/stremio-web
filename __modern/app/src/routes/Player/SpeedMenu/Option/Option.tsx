@@ -22,6 +22,7 @@ const OptionButton = ({
       onSelect(value)
     }
   }, [onSelect, value])
+
   return (
     <Button
       className={classnames(className, styles["option"], {

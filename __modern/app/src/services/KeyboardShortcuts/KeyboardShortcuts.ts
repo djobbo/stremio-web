@@ -26,36 +26,42 @@ function KeyboardShortcuts() {
         window.location = "#/search"
         break
       }
+
       case "Digit1": {
         event.preventDefault()
         // @ts-expect-error we can set window.location as a string
         window.location = "#/"
         break
       }
+
       case "Digit2": {
         event.preventDefault()
         // @ts-expect-error we can set window.location as a string
         window.location = "#/discover"
         break
       }
+
       case "Digit3": {
         event.preventDefault()
         // @ts-expect-error we can set window.location as a string
         window.location = "#/library"
         break
       }
+
       case "Digit4": {
         event.preventDefault()
         // @ts-expect-error we can set window.location as a string
         window.location = "#/addons"
         break
       }
+
       case "Digit5": {
         event.preventDefault()
         // @ts-expect-error we can set window.location as a string
         window.location = "#/settings"
         break
       }
+
       case "Backspace": {
         event.preventDefault()
         if (event.ctrlKey) {
@@ -66,6 +72,7 @@ function KeyboardShortcuts() {
 
         break
       }
+
       case "KeyF": {
         event.preventDefault()
         if (document.fullscreenElement === document.documentElement) {
@@ -78,6 +85,7 @@ function KeyboardShortcuts() {
       }
     }
   }
+
   function onStateChanged() {
     events.emit("stateChanged")
   }
@@ -101,6 +109,7 @@ function KeyboardShortcuts() {
     active = true
     onStateChanged()
   }
+
   this.stop = function () {
     window.removeEventListener("keydown", onKeyDown)
     active = false

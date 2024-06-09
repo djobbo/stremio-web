@@ -20,6 +20,7 @@ const SearchParamsHandler = () => {
 
     setSearchParams((previousSearchParams) => {
       const currentSearchParams = Object.fromEntries(searchParams.entries())
+
       return isEqual(previousSearchParams, currentSearchParams)
         ? previousSearchParams
         : currentSearchParams
@@ -52,6 +53,7 @@ const SearchParamsHandler = () => {
   useEffect(() => {
     onLocationChange()
     window.addEventListener("hashchange", onLocationChange)
+
     return () => window.removeEventListener("hashchange", onLocationChange)
   }, [])
 

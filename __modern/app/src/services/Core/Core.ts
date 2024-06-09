@@ -18,6 +18,7 @@ function Core(args) {
     starting = false
     onStateChanged()
   }
+
   function onTransportError(args) {
     console.error(args)
     active = false
@@ -28,6 +29,7 @@ function Core(args) {
     onStateChanged()
     transport = null
   }
+
   function onStateChanged() {
     events.emit("stateChanged")
   }
@@ -74,6 +76,7 @@ function Core(args) {
     transport.on("error", onTransportError)
     onStateChanged()
   }
+
   this.stop = function () {
     active = false
     error = null
@@ -84,9 +87,11 @@ function Core(args) {
       transport = null
     }
   }
+
   this.on = function (name, listener) {
     events.on(name, listener)
   }
+
   this.off = function (name, listener) {
     events.off(name, listener)
   }

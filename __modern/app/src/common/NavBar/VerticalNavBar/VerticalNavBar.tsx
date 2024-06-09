@@ -23,6 +23,7 @@ type VerticalNavBarProps = {
 const VerticalNavBar = memo(
   ({ className, selected, tabs }: VerticalNavBarProps) => {
     const { t } = useTranslation()
+
     return (
       <nav
         className={classnames(className, styles["vertical-nav-bar-container"])}

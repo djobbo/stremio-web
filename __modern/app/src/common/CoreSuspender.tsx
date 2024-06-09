@@ -29,6 +29,7 @@ function wrapPromise(promise) {
       result = error
     },
   )
+
   return {
     read() {
       if (status === "pending") {
@@ -70,11 +71,13 @@ const withCoreSuspender = (Component, Fallback = () => {}) => {
       return streamsRef.current[stream].read()
     }, [])
     const suspender = useMemo(() => ({ getState, decodeStream }), [])
+
     useLayoutEffect(() => {
       if (!render) {
         setRender(true)
       }
     }, [])
+
     return render ? (
       <Suspense fallback={<Fallback {...props} />}>
         <CoreSuspenderContext.Provider value={suspender}>

@@ -42,6 +42,7 @@ const Search = ({ queryParams }: SearchProps) => {
     }
 
     const range = getVisibleChildrenRange(scrollContainerRef.current, THRESHOLD)
+
     if (range === null) {
       return
     }
@@ -51,9 +52,11 @@ const Search = ({ queryParams }: SearchProps) => {
   const onScroll = useCallback(debounce(onVisibleRangeChange, 250), [
     onVisibleRangeChange,
   ])
+
   useLayoutEffect(() => {
     onVisibleRangeChange()
   }, [search.catalogs, onVisibleRangeChange])
+
   return (
     <MainNavBars
       className={styles["search-container"]}
@@ -131,6 +134,7 @@ const Search = ({ queryParams }: SearchProps) => {
                   />
                 )
               }
+
               case "Err": {
                 return (
                   <MetaRow
@@ -144,6 +148,7 @@ const Search = ({ queryParams }: SearchProps) => {
                   />
                 )
               }
+
               default: {
                 return (
                   <MetaRow.Placeholder

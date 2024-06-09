@@ -30,6 +30,7 @@ const useEvents = () => {
   }
 
   const events = useModelState({ model: "ctx", map })
+
   return { events, pullEvents, dismissEvent }
 }
 

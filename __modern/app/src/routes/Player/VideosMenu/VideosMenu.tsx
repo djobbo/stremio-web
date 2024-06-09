@@ -24,6 +24,7 @@ const VideosMenu = ({ className, metaItem, seriesInfo }: VideosMenuProps) => {
       ? metaItem.videos.filter(({ season }) => season === seriesInfo.season)
       : metaItem.videos
   }, [metaItem, seriesInfo])
+
   return (
     <div
       className={classnames(className, styles["videos-menu-container"])}

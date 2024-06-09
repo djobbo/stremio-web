@@ -5,7 +5,7 @@ import ReactDOM from "react-dom/client"
 import { initReactI18next } from "react-i18next"
 import stremioTranslations from "stremio-translations"
 
-import {App} from "./App"
+import { App } from "./App"
 
 const SENTRY_DSN = import.meta.env.SENTRY_DSN
 
@@ -14,6 +14,7 @@ if (typeof SENTRY_DSN === "string") {
 }
 
 const browser = Bowser.parse(window.navigator?.userAgent || "")
+
 if (browser?.platform?.type === "desktop") {
   document.querySelector('meta[name="viewport"]')?.setAttribute("content", "")
 }

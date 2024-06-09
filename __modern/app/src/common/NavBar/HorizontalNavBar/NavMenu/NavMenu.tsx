@@ -40,11 +40,13 @@ const NavMenu = (props: NavMenuProps) => {
     () => <NavMenuContent onClick={popupMenuOnClick} />,
     [],
   )
+
   useEffect(() => {
     if (!routeFocused) {
       closeMenu()
     }
   }, [routeFocused])
+
   return (
     <Popup
       open={menuOpen}

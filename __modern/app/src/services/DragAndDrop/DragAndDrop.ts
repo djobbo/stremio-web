@@ -10,6 +10,7 @@ function DragAndDrop({ core }) {
   function onDragOver(event) {
     event.preventDefault()
   }
+
   async function onDrop(event) {
     event.preventDefault()
     if (
@@ -17,10 +18,12 @@ function DragAndDrop({ core }) {
       event.dataTransfer.files.length > 0
     ) {
       const file = event.dataTransfer.files[0]
+
       switch (file.type) {
         case "application/x-bittorrent": {
           try {
             const torrent = await file.arrayBuffer()
+
             core.transport.dispatch({
               action: "StreamingServer",
               args: {
@@ -39,6 +42,7 @@ function DragAndDrop({ core }) {
           }
           break
         }
+
         default: {
           events.emit("error", {
             message: "Unsupported file",
@@ -51,6 +55,7 @@ function DragAndDrop({ core }) {
       }
     }
   }
+
   function onStateChanged() {
     events.emit("stateChanged")
   }
@@ -75,15 +80,18 @@ function DragAndDrop({ core }) {
     active = true
     onStateChanged()
   }
+
   this.stop = function () {
     window.removeEventListener("dragover", onDragOver)
     window.removeEventListener("drop", onDrop)
     active = false
     onStateChanged()
   }
+
   this.on = function (name, listener) {
     events.on(name, listener)
   }
+
   this.off = function (name, listener) {
     events.off(name, listener)
   }

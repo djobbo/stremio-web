@@ -39,6 +39,7 @@ const useStatistics = (player, streamingServer) => {
   const getStatistics = useCallback(() => {
     if (stream) {
       const { infoHash, fileIdx } = stream
+
       if (typeof infoHash === "string" && typeof fileIdx === "number") {
         core.transport.dispatch({
           action: "StreamingServer",
@@ -57,6 +58,7 @@ const useStatistics = (player, streamingServer) => {
   useEffect(() => {
     getStatistics()
     const interval = setInterval(getStatistics, 5000)
+
     return () => clearInterval(interval)
   }, [getStatistics])
 

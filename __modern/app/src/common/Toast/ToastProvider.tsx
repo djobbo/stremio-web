@@ -31,12 +31,14 @@ const ToastProvider = ({ className, children }: ToastProviderProps) => {
   }, [])
   const toast = useMemo(() => {
     const filters = []
+
     return {
       addFilter: (filter) => {
         filters.push(filter)
       },
       removeFilter: (filter) => {
         const index = filters.indexOf(filter)
+
         if (index > -1) {
           filters.splice(index, 1)
         }
@@ -53,6 +55,7 @@ const ToastProvider = ({ className, children }: ToastProviderProps) => {
         const id = setTimeout(() => {
           dispatch({ type: "remove", id })
         }, timeout)
+
         dispatch({
           type: "add",
           item: {
@@ -71,6 +74,7 @@ const ToastProvider = ({ className, children }: ToastProviderProps) => {
       },
     }
   }, [])
+
   return (
     <ToastContext.Provider value={toast}>
       {container instanceof HTMLElement ? children : null}

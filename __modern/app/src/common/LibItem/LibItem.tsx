@@ -30,6 +30,7 @@ const LibItem = ({
 
   const newVideos = useMemo(() => {
     const count = notifications.items?.[_id]?.length ?? 0
+
     return Math.min(Math.max(count, 0), 99)
   }, [_id, notifications])
 
@@ -92,6 +93,7 @@ const LibItem = ({
 
             break
           }
+
           case "details": {
             if (props.deepLinks) {
               if (typeof props.deepLinks.metaDetailsVideos === "string") {
@@ -105,6 +107,7 @@ const LibItem = ({
 
             break
           }
+
           case "watched": {
             if (typeof _id === "string") {
               core.transport.dispatch({
@@ -121,6 +124,7 @@ const LibItem = ({
 
             break
           }
+
           case "dismiss": {
             if (typeof _id === "string") {
               core.transport.dispatch({
@@ -141,6 +145,7 @@ const LibItem = ({
 
             break
           }
+
           case "remove": {
             if (typeof _id === "string") {
               core.transport.dispatch({

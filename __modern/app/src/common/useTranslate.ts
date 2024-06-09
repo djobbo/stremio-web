@@ -29,6 +29,7 @@ const useTranslate = () => {
 
         if (type && withType) {
           const translatedType = stringWithPrefix(type, "TYPE_")
+
           return `${translatedName} - ${translatedType}`
         }
 

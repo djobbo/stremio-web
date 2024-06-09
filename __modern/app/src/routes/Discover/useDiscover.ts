@@ -44,6 +44,7 @@ const useDiscover = (urlParams, queryParams) => {
       typeof urlParams.catalogId === "string"
     ) {
       const { hostname } = UrlUtils.parse(urlParams.transportUrl)
+
       if (typeof hostname === "string" && hostname.length > 0) {
         return {
           action: "Load",
@@ -83,6 +84,7 @@ const useDiscover = (urlParams, queryParams) => {
     map,
     deps: ["ctx"],
   })
+
   return [discover, loadNextPage]
 }
 

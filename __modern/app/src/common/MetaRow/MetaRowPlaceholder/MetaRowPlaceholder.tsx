@@ -20,6 +20,7 @@ const MetaRowPlaceholder = ({
   deepLinks,
 }: MetaRowPlaceholderProps) => {
   const { t } = useTranslation()
+
   return (
     <div
       className={classnames(

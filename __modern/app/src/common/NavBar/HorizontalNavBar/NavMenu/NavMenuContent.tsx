@@ -34,11 +34,13 @@ const NavMenuContent = ({ onClick }: NavMenuContentProps) => {
   const onPlayMagnetLinkClick = useCallback(async () => {
     try {
       const clipboardText = await navigator.clipboard.readText()
+
       createTorrentFromMagnet(clipboardText)
     } catch (e) {
       console.error(e)
     }
   }, [])
+
   return (
     <div
       className={classnames(styles["nav-menu-container"], "animation-fade-in")}

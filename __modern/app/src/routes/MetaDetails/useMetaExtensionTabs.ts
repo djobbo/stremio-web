@@ -16,6 +16,7 @@ const useMetaExtensionTabs = (metaExtensions) => {
   const clear = useCallback(() => {
     setSelected(null)
   }, [])
+
   return [tabs, selected, clear]
 }
 

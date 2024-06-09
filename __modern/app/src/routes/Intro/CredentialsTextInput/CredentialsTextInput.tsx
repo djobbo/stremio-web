@@ -33,6 +33,7 @@ const CredentialsTextInput = forwardRef<HTMLElement, CredentialsTextInputProps>(
       },
       [props.onKeyDown],
     )
+
     return <TextInput {...props} ref={ref} onKeyDown={onKeyDown} />
   },
 )

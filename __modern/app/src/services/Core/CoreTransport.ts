@@ -34,24 +34,31 @@ function CoreTransport(args) {
   this.on = function (name, listener) {
     events.on(name, listener)
   }
+
   this.off = function (name, listener) {
     events.off(name, listener)
   }
+
   this.removeAllListeners = function () {
     events.removeAllListeners()
   }
+
   this.getState = async function (field) {
     return bridge.call(["getState"], [field])
   }
+
   this.getDebugState = async function () {
     return bridge.call(["getDebugState"], [])
   }
+
   this.dispatch = async function (action, field) {
     return bridge.call(["dispatch"], [action, field, location.hash])
   }
+
   this.analytics = async function (event) {
     return bridge.call(["analytics"], [event, location.hash])
   }
+
   this.decodeStream = async function (stream) {
     return bridge.call(["decodeStream"], [stream])
   }

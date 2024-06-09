@@ -19,15 +19,19 @@ const useFullscreen = () => {
       requestFullscreen()
     }
   }, [fullscreen])
+
   useEffect(() => {
     const onFullscreenChange = () => {
       setFullscreen(document.fullscreenElement === document.documentElement)
     }
+
     document.addEventListener("fullscreenchange", onFullscreenChange)
+
     return () => {
       document.removeEventListener("fullscreenchange", onFullscreenChange)
     }
   }, [])
+
   return [fullscreen, requestFullscreen, exitFullscreen, toggleFullscreen]
 }
 

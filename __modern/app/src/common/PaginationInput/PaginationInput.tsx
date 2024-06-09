@@ -33,6 +33,7 @@ const PaginationInput = ({
     },
     [dataset, onSelect],
   )
+
   return (
     <div
       {...props}

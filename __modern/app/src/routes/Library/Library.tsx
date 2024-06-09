@@ -33,6 +33,7 @@ function withModel(Library) {
             : null
         : null
     }, [urlParams.path])
+
     if (model === null) {
       return <NotFound />
     }
@@ -46,7 +47,9 @@ function withModel(Library) {
       />
     )
   }
+
   withModel.displayName = "withModel"
+
   return withModel
 }
 
@@ -73,6 +76,7 @@ const Library = ({ model, urlParams, queryParams }: LibraryProps) => {
     onScrollToBottom,
     SCROLL_TO_BOTTOM_TRESHOLD,
   )
+
   useLayoutEffect(() => {
     if (
       profile.auth !== null &&
@@ -83,6 +87,7 @@ const Library = ({ model, urlParams, queryParams }: LibraryProps) => {
       scrollContainerRef.current.scrollTop = 0
     }
   }, [profile.auth, library.selected])
+
   return (
     <MainNavBars className={styles["library-container"]} route={model}>
       <div className={styles["library-content"]}>

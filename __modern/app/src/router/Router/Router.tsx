@@ -33,6 +33,7 @@ const Router = ({
   const [views, setViews] = useState(() => {
     return Array(viewsConfig.length).fill(null)
   })
+
   useLayoutEffect(() => {
     const onLocationHashChange = () => {
       const { pathname, query } = UrlUtils.parse(window.location.hash.slice(1))
@@ -43,9 +44,11 @@ const Router = ({
         viewsConfig,
         typeof pathname === "string" ? pathname : "",
       )
+
       if (routeConfig === null) {
         if (typeof onPathNotMatch === "function") {
           const component = onPathNotMatch()
+
           if (ReactIs.isValidElementType(component)) {
             setViews((views) => {
               return views.slice(0, viewsConfig.length).concat({
@@ -72,6 +75,7 @@ const Router = ({
       const handled =
         typeof onRouteChange === "function" &&
         onRouteChange(routeConfig, urlParams, queryParams)
+
       if (!handled) {
         setViews((views) => {
           return views.slice(0, viewsConfig.length).map((view, index) => {
@@ -101,12 +105,15 @@ const Router = ({
         })
       }
     }
+
     window.addEventListener("hashchange", onLocationHashChange)
     onLocationHashChange()
+
     return () => {
       window.removeEventListener("hashchange", onLocationHashChange)
     }
   }, [onPathNotMatch, onRouteChange])
+
   return (
     <div className={classnames(className, "routes-container")}>
       {views

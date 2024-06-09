@@ -168,6 +168,7 @@ const Player = ({ urlParams, queryParams }: PlayerProps) => {
       nextVideo()
 
       const deepLinks = player.nextVideo.deepLinks
+
       if (deepLinks.metaDetailsStreams && deepLinks.player) {
         window.location.replace(deepLinks.metaDetailsStreams)
         window.location.href = deepLinks.player
@@ -316,18 +317,23 @@ const Player = ({ urlParams, queryParams }: PlayerProps) => {
     if (!event.nativeEvent.optionsMenuClosePrevented) {
       closeOptionsMenu()
     }
+
     if (!event.nativeEvent.subtitlesMenuClosePrevented) {
       closeSubtitlesMenu()
     }
+
     if (!event.nativeEvent.infoMenuClosePrevented) {
       closeInfoMenu()
     }
+
     if (!event.nativeEvent.speedMenuClosePrevented) {
       closeSpeedMenu()
     }
+
     if (!event.nativeEvent.videosMenuClosePrevented) {
       closeVideosMenu()
     }
+
     if (!event.nativeEvent.statisticsMenuClosePrevented) {
       closeStatisticsMenu()
     }
@@ -409,6 +415,7 @@ const Player = ({ urlParams, queryParams }: PlayerProps) => {
         ...subtitles,
         label: subtitles.url,
       }))
+
       video.addExtraSubtitlesTracks(tracks)
     }
   }, [player.subtitles, video.state.stream])
@@ -572,6 +579,7 @@ const Player = ({ urlParams, queryParams }: PlayerProps) => {
 
   useEffect(() => {
     const toastFilter = (item) => item?.dataset?.type === "CoreEvent"
+
     toast.addFilter(toastFilter)
     const onCastStateChange = () => {
       setCasting(
@@ -580,6 +588,7 @@ const Player = ({ urlParams, queryParams }: PlayerProps) => {
             cast.framework.CastState.CONNECTED,
       )
     }
+
     const onChromecastServiceStateChange = () => {
       onCastStateChange()
       if (chromecast.active) {
@@ -589,14 +598,17 @@ const Player = ({ urlParams, queryParams }: PlayerProps) => {
         )
       }
     }
+
     const onCoreEvent = ({ event }) => {
       if (event === "PlayingOnDevice") {
         onPauseRequested()
       }
     }
+
     chromecast.on("stateChanged", onChromecastServiceStateChange)
     core.transport.on("CoreEvent", onCoreEvent)
     onChromecastServiceStateChange()
+
     return () => {
       toast.removeFilter(toastFilter)
       chromecast.off("stateChanged", onChromecastServiceStateChange)
@@ -628,26 +640,31 @@ const Player = ({ urlParams, queryParams }: PlayerProps) => {
 
           break
         }
+
         case "ArrowRight": {
           if (!menusOpen && !nextVideoPopupOpen && video.state.time !== null) {
             const seekDuration = event.shiftKey
               ? settings.seekShortTimeDuration
               : settings.seekTimeDuration
+
             onSeekRequested(video.state.time + seekDuration)
           }
 
           break
         }
+
         case "ArrowLeft": {
           if (!menusOpen && !nextVideoPopupOpen && video.state.time !== null) {
             const seekDuration = event.shiftKey
               ? settings.seekShortTimeDuration
               : settings.seekTimeDuration
+
             onSeekRequested(video.state.time - seekDuration)
           }
 
           break
         }
+
         case "ArrowUp": {
           if (
             !menusOpen &&
@@ -659,6 +676,7 @@ const Player = ({ urlParams, queryParams }: PlayerProps) => {
 
           break
         }
+
         case "ArrowDown": {
           if (
             !menusOpen &&
@@ -670,6 +688,7 @@ const Player = ({ urlParams, queryParams }: PlayerProps) => {
 
           break
         }
+
         case "KeyS": {
           closeMenus()
           if (
@@ -685,6 +704,7 @@ const Player = ({ urlParams, queryParams }: PlayerProps) => {
 
           break
         }
+
         case "KeyI": {
           closeMenus()
           if (player.metaItem !== null && player.metaItem.type === "Ready") {
@@ -693,6 +713,7 @@ const Player = ({ urlParams, queryParams }: PlayerProps) => {
 
           break
         }
+
         case "KeyR": {
           closeMenus()
           if (video.state.playbackSpeed !== null) {
@@ -701,6 +722,7 @@ const Player = ({ urlParams, queryParams }: PlayerProps) => {
 
           break
         }
+
         case "KeyV": {
           closeMenus()
           if (
@@ -713,6 +735,7 @@ const Player = ({ urlParams, queryParams }: PlayerProps) => {
 
           break
         }
+
         case "KeyD": {
           closeMenus()
           if (
@@ -727,12 +750,14 @@ const Player = ({ urlParams, queryParams }: PlayerProps) => {
 
           break
         }
+
         case "Escape": {
           closeMenus()
           break
         }
       }
     }
+
     const onWheel = ({ deltaY }) => {
       if (deltaY > 0) {
         if (!menusOpen && video.state.volume !== null) {
@@ -744,10 +769,12 @@ const Player = ({ urlParams, queryParams }: PlayerProps) => {
         }
       }
     }
+
     if (routeFocused) {
       window.addEventListener("keydown", onKeyDown)
       window.addEventListener("wheel", onWheel)
     }
+
     return () => {
       window.removeEventListener("keydown", onKeyDown)
       window.removeEventListener("wheel", onWheel)

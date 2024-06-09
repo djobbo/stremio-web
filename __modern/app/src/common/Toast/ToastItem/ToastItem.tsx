@@ -52,6 +52,7 @@ const ToastItem = ({
           nativeEvent: event.nativeEvent,
         })
       }
+
       if (
         !event.nativeEvent.closeToastPrevented &&
         typeof onClose === "function"
@@ -80,6 +81,7 @@ const ToastItem = ({
     },
     [dataset, onClose],
   )
+
   return (
     <Button
       className={classnames(styles["toast-item-container"], styles[type])}

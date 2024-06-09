@@ -59,6 +59,7 @@ const HorizontalNavBar = memo(
       ),
       [],
     )
+
     return (
       <nav
         {...props}

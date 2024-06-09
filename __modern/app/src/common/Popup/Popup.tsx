@@ -17,6 +17,7 @@ const getAnchorElement = (element) => {
   }
 
   const style = window.getComputedStyle(element)
+
   if (
     style.overflowY.indexOf("auto") !== -1 ||
     style.overflowY.indexOf("scroll") !== -1
@@ -52,6 +53,7 @@ const Popup = ({
   const menuOnMouseDown = useCallback((event) => {
     event.nativeEvent.closePopupPrevented = true
   }, [])
+
   useEffect(() => {
     const onCloseEvent = (event) => {
       if (!event.closePopupPrevented && typeof onCloseRequest === "function") {
@@ -60,6 +62,7 @@ const Popup = ({
           nativeEvent: event,
           dataset: dataset,
         }
+
         switch (event.type) {
           case "keydown":
             if (event.code === "Escape") {
@@ -85,11 +88,13 @@ const Popup = ({
         }
       }
     }
+
     if (routeFocused && open) {
       window.addEventListener("keydown", onCloseEvent)
       window.addEventListener("mousedown", onCloseEvent)
       window.addEventListener("pointerdown", onCloseEvent)
     }
+
     return () => {
       window.removeEventListener("keydown", onCloseEvent)
       window.removeEventListener("mousedown", onCloseEvent)
@@ -142,6 +147,7 @@ const Popup = ({
       setAutoDirection(null)
     }
   }, [open])
+
   return renderLabel({
     ...props,
     ref: labelRef,

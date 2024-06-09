@@ -23,6 +23,7 @@ const mapSelectableInputs = (installedAddons, remoteAddons, t) => {
             const selectableCatalog = remoteAddons.selectable.catalogs.find(
               ({ id }) => id === remoteAddons.selected.request.path.id,
             )
+
             return selectableCatalog
               ? t.stringWithPrefix(selectableCatalog.name, "ADDON_")
               : remoteAddons.selected.request.path.id
@@ -68,6 +69,7 @@ const mapSelectableInputs = (installedAddons, remoteAddons, t) => {
       window.location = event.value
     },
   }
+
   return [catalogSelect, typeSelect]
 }
 
@@ -76,6 +78,7 @@ const useSelectableInputs = (installedAddons, remoteAddons) => {
   const selectableInputs = useMemo(() => {
     return mapSelectableInputs(installedAddons, remoteAddons, t)
   }, [installedAddons, remoteAddons])
+
   return selectableInputs
 }
 

@@ -21,6 +21,7 @@ const useAddonDetails = (transportUrl) => {
       }
     }
   }, [transportUrl])
+
   return useModelState({ model: "addon_details", action })
 }
 

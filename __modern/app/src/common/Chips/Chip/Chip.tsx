@@ -20,6 +20,7 @@ const Chip = memo(({ label, value, active, onSelect }: Props) => {
   const onClick = useCallback(
     ({ currentTarget }: MouseEvent<HTMLElement>) => {
       const value = currentTarget.dataset["value"]
+
       value && onSelect(value)
     },
     [onselect],

@@ -41,6 +41,7 @@ export function App() {
       appVersion: import.meta.env.VERSION,
       shellVersion: null,
     })
+
     return {
       core,
       shell: new Shell(),
@@ -50,6 +51,7 @@ export function App() {
     }
   }, [])
   const [initialized, setInitialized] = useState(false)
+
   useEffect(() => {
     let prevPath = window.location.hash.slice(1)
     const onLocationHashChange = () => {
@@ -61,7 +63,9 @@ export function App() {
       }
       prevPath = window.location.hash.slice(1)
     }
+
     window.addEventListener("hashchange", onLocationHashChange)
+
     return () => {
       window.removeEventListener("hashchange", onLocationHashChange)
     }
@@ -73,12 +77,14 @@ export function App() {
           (services.shell.active || services.shell.error instanceof Error),
       )
     }
+
     const onShellStateChanged = () => {
       setInitialized(
         (services.core.active || services.core.error instanceof Error) &&
           (services.shell.active || services.shell.error instanceof Error),
       )
     }
+
     const onChromecastStateChange = () => {
       if (services.chromecast.active) {
         services.chromecast.transport.setOptions({
@@ -90,6 +96,7 @@ export function App() {
         })
       }
     }
+
     services.core.on("stateChanged", onCoreStateChanged)
     services.shell.on("stateChanged", onShellStateChanged)
     services.chromecast.on("stateChanged", onChromecastStateChange)
@@ -99,6 +106,7 @@ export function App() {
     services.keyboardShortcuts.start()
     services.dragAndDrop.start()
     window.services = services
+
     return () => {
       services.core.stop()
       services.shell.stop()
@@ -125,6 +133,7 @@ export function App() {
         }
       }
     }
+
     const onCtxState = (state) => {
       if (
         state &&
@@ -135,6 +144,7 @@ export function App() {
         i18n.changeLanguage(state.profile.settings.interfaceLanguage)
       }
     }
+
     const onWindowFocus = () => {
       services.core.transport.dispatch({
         action: "Ctx",
@@ -161,6 +171,7 @@ export function App() {
         },
       })
     }
+
     if (services.core.active) {
       onWindowFocus()
       window.addEventListener("focus", onWindowFocus)
@@ -170,6 +181,7 @@ export function App() {
         .then(onCtxState)
         .catch((e) => console.error(e))
     }
+
     return () => {
       if (services.core.active) {
         window.removeEventListener("focus", onWindowFocus)
@@ -177,6 +189,7 @@ export function App() {
       }
     }
   }, [initialized])
+
   return (
     <ServicesProvider services={services}>
       {initialized ? (

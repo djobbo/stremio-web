@@ -230,11 +230,13 @@ const Video = ({
       },
     [watched, toggleWatchedOnClick],
   )
+
   useEffect(() => {
     if (!routeFocused) {
       closeMenu()
     }
   }, [routeFocused])
+
   return (
     <Popup
       className={className}

@@ -31,9 +31,11 @@ const Image = ({
     },
     [props.onError],
   )
+
   useLayoutEffect(() => {
     setBroken(false)
   }, [src])
+
   return (broken || typeof src !== "string" || src.length === 0) &&
     (typeof renderFallback === "function" ||
       typeof fallbackSrc === "string") ? (

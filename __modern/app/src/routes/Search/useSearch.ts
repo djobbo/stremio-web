@@ -33,6 +33,7 @@ const useSearch = (queryParams) => {
   // }, [queryParams.get('search')]);
   const action = useMemo(() => {
     const query = queryParams.get("search") ?? queryParams.get("query")
+
     if (query?.length > 0) {
       return {
         action: "Load",
@@ -62,6 +63,7 @@ const useSearch = (queryParams) => {
     )
   }, [])
   const search = useModelState({ model: "search", action })
+
   return [search, loadRange]
 }
 

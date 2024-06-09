@@ -7,6 +7,7 @@ import { useServices } from "stremio/services"
 const ServicesToaster = () => {
   const { core, dragAndDrop } = useServices()
   const toast = useToast()
+
   useEffect(() => {
     const onCoreEvent = ({ event, args }) => {
       switch (event) {
@@ -47,6 +48,7 @@ const ServicesToaster = () => {
           })
           break
         }
+
         case "TorrentParsed": {
           toast.show({
             type: "success",
@@ -55,6 +57,7 @@ const ServicesToaster = () => {
           })
           break
         }
+
         case "MagnetParsed": {
           toast.show({
             type: "success",
@@ -63,6 +66,7 @@ const ServicesToaster = () => {
           })
           break
         }
+
         case "PlayingOnDevice": {
           toast.show({
             type: "success",
@@ -73,6 +77,7 @@ const ServicesToaster = () => {
         }
       }
     }
+
     const onDragAndDropError = (error) => {
       toast.show({
         type: "error",
@@ -81,13 +86,16 @@ const ServicesToaster = () => {
         timeout: 4000,
       })
     }
+
     core.transport.on("CoreEvent", onCoreEvent)
     dragAndDrop.on("error", onDragAndDropError)
+
     return () => {
       core.transport.off("CoreEvent", onCoreEvent)
       dragAndDrop.off("error", onDragAndDropError)
     }
   }, [])
+
   return null
 }
 

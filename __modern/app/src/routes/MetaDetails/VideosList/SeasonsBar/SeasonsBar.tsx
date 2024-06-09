@@ -42,6 +42,7 @@ const SeasonsBar = ({
               ? seasonIndex - 1
               : 0
         const value = seasons[valueIndex]
+
         onSelect({
           type: "select",
           value: value,
@@ -55,6 +56,7 @@ const SeasonsBar = ({
   const seasonOnSelect = useCallback(
     (event) => {
       const value = parseFloat(event.value)
+
       if (typeof onSelect === "function") {
         onSelect({
           type: "select",
@@ -66,6 +68,7 @@ const SeasonsBar = ({
     },
     [onSelect],
   )
+
   return (
     <div className={classnames(className, styles["seasons-bar-container"])}>
       <Button

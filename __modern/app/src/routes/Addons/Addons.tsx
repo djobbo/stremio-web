@@ -110,11 +110,13 @@ const Addons = ({ urlParams, queryParams }: AddonsProps) => {
     () => <Icon className={styles["icon"]} name="addons" />,
     [],
   )
+
   useLayoutEffect(() => {
     closeAddAddonModal()
     setSearch("")
     clearSharedAddon()
   }, [urlParams, queryParams])
+
   return (
     <MainNavBars className={styles["addons-container"]} route="addons">
       <div className={styles["addons-content"]}>

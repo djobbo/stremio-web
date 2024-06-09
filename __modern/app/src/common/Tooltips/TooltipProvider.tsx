@@ -34,6 +34,7 @@ const TooltipProvider = ({ children, className }: TooltipProviderProps) => {
             ...state,
           }
         }
+
         return tooltip
       }),
     )

@@ -9,6 +9,7 @@ const useAddonDetailsTransportUrl = (urlParams, queryParams) => {
   const setTransportUrl = useCallback(
     (transportUrl) => {
       const nextQueryParams = new URLSearchParams(queryParams)
+
       if (typeof transportUrl === "string") {
         nextQueryParams.set("addon", transportUrl)
       } else {
@@ -19,6 +20,7 @@ const useAddonDetailsTransportUrl = (urlParams, queryParams) => {
     },
     [urlParams, queryParams],
   )
+
   return [transportUrl, setTransportUrl]
 }
 

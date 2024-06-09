@@ -27,6 +27,7 @@ const InfoMenu = ({ className, ...props }: InfoMenuProps) => {
   const onMouseDown = useCallback((event) => {
     event.nativeEvent.infoMenuClosePrevented = true
   }, [])
+
   return (
     <div
       className={classnames(className, styles["info-menu-container"])}

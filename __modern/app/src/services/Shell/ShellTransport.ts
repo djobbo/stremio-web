@@ -26,12 +26,14 @@ window.initShellComm = function () {
 
 const initialize = () => {
   if (!window.qt) return Promise.reject("Qt API not found")
+
   return new Promise<void>((resolve) => {
     function onShellAvailabilityChanged() {
       shellEvents.off("availabilityChanged", onShellAvailabilityChanged)
       shellAvailable = true
       resolve()
     }
+
     if (shellAvailable) {
       onShellAvailabilityChanged()
     } else {
@@ -46,12 +48,15 @@ function ShellTransport() {
   this.props = {}
 
   const shell = this
+
   initialize()
     .then(() => {
       const transport = window.qt && window.qt.webChannelTransport
+
       if (!transport) throw "no viable transport found (qt.webChannelTransport)"
 
       let id = 0
+
       function send(msg) {
         msg.id = id++
         transport.send(JSON.stringify(msg))
@@ -59,6 +64,7 @@ function ShellTransport() {
 
       transport.onmessage = function (message) {
         const msg = JSON.parse(message.data)
+
         if (msg.id === 0) {
           const obj = msg.data[QtObjId]
 
@@ -111,9 +117,11 @@ function ShellTransport() {
   this.on = function (name, listener) {
     events.on(name, listener)
   }
+
   this.off = function (name, listener) {
     events.off(name, listener)
   }
+
   this.removeAllListeners = function () {
     events.removeAllListeners()
   }

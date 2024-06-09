@@ -48,6 +48,7 @@ const SeekBar = ({
     },
     [onSeekRequested],
   )
+
   useLayoutEffect(() => {
     if (!routeFocused || disabled) {
       resetTimeDebounced.cancel()
@@ -59,6 +60,7 @@ const SeekBar = ({
       resetTimeDebounced.cancel()
     }
   }, [])
+
   return (
     <div
       className={classnames(className, styles["seek-bar-container"], {

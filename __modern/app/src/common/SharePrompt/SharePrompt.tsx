@@ -37,6 +37,7 @@ const SharePrompt = ({ className, url }: SharePromptProps) => {
       })
     }
   }, [])
+
   useEffect(() => {
     if (routeFocused && inputRef.current !== null) {
       inputRef.current.select()
@@ -50,6 +51,7 @@ const SharePrompt = ({ className, url }: SharePromptProps) => {
       },
     })
   }, [url])
+
   return (
     <div className={classnames(className, styles["share-prompt-container"])}>
       <div className={styles["buttons-container"]}>

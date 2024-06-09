@@ -17,6 +17,7 @@ type ColorPickerProps = {
 const ColorPicker = ({ className, value, onInput }: ColorPickerProps) => {
   const pickerRef = useRef(null)
   const pickerElementRef = useRef(null)
+
   useLayoutEffect(() => {
     pickerRef.current = AColorPicker.createPicker(pickerElementRef.current, {
       color: parseColor(value),
@@ -28,6 +29,7 @@ const ColorPicker = ({ className, value, onInput }: ColorPickerProps) => {
     const pickerClipboard = pickerElementRef.current.querySelector(
       ".a-color-picker-clipbaord",
     )
+
     if (pickerClipboard instanceof HTMLElement) {
       pickerClipboard.tabIndex = -1
     }
@@ -41,16 +43,19 @@ const ColorPicker = ({ className, value, onInput }: ColorPickerProps) => {
         })
       })
     }
+
     return () => {
       pickerRef.current.off("change")
     }
   }, [onInput])
   useLayoutEffect(() => {
     const nextValue = parseColor(value)
+
     if (nextValue !== parseColor(pickerRef.current.color)) {
       pickerRef.current.color = nextValue
     }
   }, [value])
+
   return (
     <div
       ref={pickerElementRef}

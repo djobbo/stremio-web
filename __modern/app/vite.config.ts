@@ -51,5 +51,5 @@ export default defineConfig({
   },
   optimizeDeps: {
     exclude: ["@stremio/stremio-core-web"],
-  }
+  },
 })

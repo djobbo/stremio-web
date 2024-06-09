@@ -32,6 +32,7 @@ const mapSelectableInputs = (library, t) => {
       window.location = value
     },
   }
+
   return [typeSelect, sortChips, library.selectable.nextPage]
 }
 
@@ -40,6 +41,7 @@ const useSelectableInputs = (library) => {
   const selectableInputs = useMemo(() => {
     return mapSelectableInputs(library, t)
   }, [library])
+
   return selectableInputs
 }
 

@@ -11,11 +11,13 @@ const useSeason = (urlParams, queryParams) => {
   const setSeason = useCallback(
     (season) => {
       const nextQueryParams = new URLSearchParams(queryParams)
+
       nextQueryParams.set("season", season)
       window.location.replace(`#${urlParams.path}?${nextQueryParams}`)
     },
     [urlParams, queryParams],
   )
+
   return [season, setSeason]
 }
 

@@ -22,6 +22,7 @@ const useSettings = () => {
     },
     [profile],
   )
+
   return [profile.settings, updateSettings]
 }
 

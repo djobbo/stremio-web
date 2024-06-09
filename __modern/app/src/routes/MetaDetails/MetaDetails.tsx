@@ -105,6 +105,7 @@ const MetaDetails = ({ urlParams, queryParams }: MetaDetailsProps) => {
     [setSeason],
   )
   const renderBackgroundImageFallback = useCallback(() => null, [])
+
   return (
     <div className={styles["metadetails-container"]}>
       <HorizontalNavBar

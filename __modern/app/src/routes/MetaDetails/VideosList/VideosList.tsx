@@ -57,6 +57,7 @@ const VideosList = ({
     }
 
     const nonSpecialSeasons = seasons.filter((season) => season !== 0)
+
     if (nonSpecialSeasons.length > 0) {
       return nonSpecialSeasons[nonSpecialSeasons.length - 1]
     }
@@ -80,6 +81,7 @@ const VideosList = ({
   const searchInputOnChange = useCallback((event) => {
     setSearch(event.currentTarget.value)
   }, [])
+
   return (
     <div className={classnames(className, styles["videos-list-container"])}>
       {!metaItem || metaItem.content.type === "Loading" ? (

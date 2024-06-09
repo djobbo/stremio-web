@@ -11,6 +11,7 @@ import styles from "./styles.module.less"
 
 const parseColor = (value) => {
   const color = AColorPicker.parseColor(value, "hexcss4")
+
   return typeof color === "string" ? color : "#ffffffff"
 }
 
@@ -72,6 +73,7 @@ const ColorInput = ({
 
       closeModal()
     }
+
     return [
       {
         label: "Select",
@@ -85,9 +87,11 @@ const ColorInput = ({
   const colorPickerOnInput = useCallback((event) => {
     setTempValue(parseColor(event.value))
   }, [])
+
   useLayoutEffect(() => {
     setTempValue(parseColor(value))
   }, [value, modalOpen])
+
   return (
     <Button
       title={isTransparent ? t("BUTTON_COLOR_TRANSPARENT") : value}

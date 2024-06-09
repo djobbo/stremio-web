@@ -30,6 +30,7 @@ const useModelState = ({ action, ...args }: useModelStateArgs): any => {
         result[key] = isEqual(prevState[key], nextState[key])
           ? prevState[key]
           : nextState[key]
+
         return result
       }, {})
     },
@@ -42,6 +43,7 @@ const useModelState = ({ action, ...args }: useModelStateArgs): any => {
       }
     },
   )
+
   useInsertionEffect(() => {
     if (action) {
       core.transport.dispatch(action, model)
@@ -62,6 +64,7 @@ const useModelState = ({ action, ...args }: useModelStateArgs): any => {
       }
 
       const state = await core.transport.getState(model)
+
       if (typeof map === "function") {
         setState(map(state))
       } else {
@@ -69,12 +72,14 @@ const useModelState = ({ action, ...args }: useModelStateArgs): any => {
       }
     }
     const onNewStateThrottled = throttle(onNewState, timeout)
+
     if (routeFocused) {
       core.transport.on("NewState", onNewStateThrottled)
       if (mountedRef.current) {
         onNewState([model])
       }
     }
+
     return () => {
       onNewStateThrottled.cancel()
       core.transport.off("NewState", onNewStateThrottled)
@@ -83,6 +88,7 @@ const useModelState = ({ action, ...args }: useModelStateArgs): any => {
   useInsertionEffect(() => {
     mountedRef.current = true
   }, [])
+
   return state
 }
 

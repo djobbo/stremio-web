@@ -38,6 +38,7 @@ const Tooltip = ({ label, position, margin = 15 }: TooltipProps) => {
   useLayoutEffect(() => {
     if (element.current && element.current.parentElement) {
       const parentElement = element.current.parentElement
+
       tooltip.add({
         id: id.current,
         label,
@@ -53,6 +54,7 @@ const Tooltip = ({ label, position, margin = 15 }: TooltipProps) => {
     return () => {
       if (element.current && element.current.parentElement) {
         const parentElement = element.current.parentElement
+
         parentElement.removeEventListener("mouseenter", onMouseEnter)
         parentElement.removeEventListener("mouseleave", onMouseLeave)
 

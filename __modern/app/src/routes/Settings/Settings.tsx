@@ -138,6 +138,7 @@ const Settings = () => {
   }, [isTraktAuthenticated, profile.auth])
   const subscribeCalendarOnClick = useCallback(() => {
     const url = `webcal://www.strem.io/calendar/${profile.auth.user._id}.ics`
+
     window.open(url)
     toast.show({
       type: "success",
@@ -206,6 +207,7 @@ const Settings = () => {
     const section = sections.find((section) => {
       return section.id === event.currentTarget.dataset.section
     })
+
     sectionsContainerRef.current.scrollTo({
       top:
         section.ref.current.offsetTop - sectionsContainerRef.current.offsetTop,
@@ -218,6 +220,7 @@ const Settings = () => {
     }, 50),
     [],
   )
+
   useEffect(() => {
     if (isTraktAuthenticated && traktAuthStarted) {
       core.transport.dispatch({
@@ -243,6 +246,7 @@ const Settings = () => {
     }
     closeConfigureServerUrlModal()
   }, [routeFocused])
+
   return (
     <MainNavBars className={styles["settings-container"]} route="settings">
       <div

@@ -32,6 +32,7 @@ const AddonDetails = ({
     () => <Icon className={styles["icon"]} name="addons" />,
     [],
   )
+
   return (
     <div className={classnames(className, styles["addon-details-container"])}>
       <div className={styles["title-container"]}>

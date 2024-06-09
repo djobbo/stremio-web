@@ -22,6 +22,7 @@ const useOnScrollToBottom = (cb, threshold = 0) => {
     },
     [cb],
   )
+
   return onScroll
 }
 

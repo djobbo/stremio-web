@@ -13,6 +13,7 @@ const useTorrent = () => {
   const createTorrentTimeout = useRef(null)
   const createTorrentFromMagnet = useCallback((text) => {
     const parsed = magnet.decode(text)
+
     if (parsed && typeof parsed.infoHash === "string") {
       core.transport.dispatch({
         action: "StreamingServer",
@@ -31,9 +32,11 @@ const useTorrent = () => {
       }, 10000)
     }
   }, [])
+
   useEffect(() => {
     if (streamingServer.torrent !== null) {
       const [, { type }] = streamingServer.torrent
+
       if (type === "Ready") {
         clearTimeout(createTorrentTimeout.current)
       }
@@ -42,6 +45,7 @@ const useTorrent = () => {
   useEffect(() => {
     return () => clearTimeout(createTorrentTimeout.current)
   }, [])
+
   return {
     createTorrentFromMagnet,
   }

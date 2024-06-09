@@ -98,6 +98,7 @@ const Multiselect = ({
     [dataset, onSelect],
   )
   const mountedRef = useRef(false)
+
   useLayoutEffect(() => {
     if (mountedRef.current) {
       if (menuOpen) {
@@ -143,6 +144,7 @@ const Multiselect = ({
                         const option = options.find(
                           (option) => option.value === value,
                         )
+
                         return option && typeof option.label === "string"
                           ? option.label
                           : value
@@ -216,6 +218,7 @@ const Multiselect = ({
     },
     [props, className, renderLabel],
   )
+
   return mode === "modal" ? (
     renderLabel({
       ...props,

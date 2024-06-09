@@ -70,6 +70,7 @@ const useMetaDetails = (urlParams) => {
       }
     }
   }, [urlParams])
+
   return useModelState({ model: "meta_details", action, map })
 }
 

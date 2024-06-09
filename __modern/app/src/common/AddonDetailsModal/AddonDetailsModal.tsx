@@ -15,6 +15,7 @@ function withRemoteAndLocalAddon(AddonDetails) {
         : localAddon !== null
           ? localAddon
           : null
+
     if (addon === null) {
       return null
     }
@@ -34,7 +35,9 @@ function withRemoteAndLocalAddon(AddonDetails) {
       />
     )
   }
+
   withRemoteAndLocalAddon.displayName = "withRemoteAndLocalAddon"
+
   return withRemoteAndLocalAddon
 }
 
@@ -139,6 +142,7 @@ const AddonDetailsModal = ({
               },
             }
           : null
+
     return toggleButton !== null
       ? configureButton
         ? [cancelButton, configureButton, toggleButton]
@@ -150,6 +154,7 @@ const AddonDetailsModal = ({
       ? addonDetails.remoteAddon.content.content.manifest.background
       : null
   }, [addonDetails.remoteAddon])
+
   return (
     <ModalDialog
       className={styles["addon-details-modal-container"]}

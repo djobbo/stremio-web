@@ -11,6 +11,7 @@ const ModalsContainerProvider = ({
   children,
 }: ModalsContainerProviderProps) => {
   const [container, setContainer] = useState(null)
+
   return (
     <ModalsContainerContext.Provider value={container}>
       {container instanceof HTMLElement ? children : null}

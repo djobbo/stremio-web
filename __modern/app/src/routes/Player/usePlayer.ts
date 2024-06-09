@@ -146,6 +146,7 @@ const usePlayer = (urlParams) => {
     )
   }, [])
   const player = useModelState({ model: "player", action, map })
+
   return [
     player,
     videoParamsChanged,

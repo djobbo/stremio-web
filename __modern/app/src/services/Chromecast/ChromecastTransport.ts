@@ -8,6 +8,7 @@ const CHUNK_SIZE = 20000
 
 let castAPIAvailable = null
 const castAPIEvents = new EventEmitter()
+
 window["__onGCastApiAvailable"] = function (available) {
   delete window["__onGCastApiAvailable"]
   castAPIAvailable = !!available
@@ -24,6 +25,7 @@ const initialize = () => {
         reject(new Error("window.cast api not available"))
       }
     }
+
     if (castAPIAvailable !== null) {
       onCastAPIAvailabilityChanged()
     } else {
@@ -61,10 +63,12 @@ function ChromecastTransport() {
   function onMessage(_, message) {
     try {
       const { id, chunk, index, length } = JSON.parse(message)
+
       messages[id] = messages[id] || []
       messages[id][index] = chunk
       if (Object.keys(messages[id]).length === length) {
         const parsedMessage = JSON.parse(messages[id].join(""))
+
         delete messages[id]
         events.emit("message", parsedMessage)
       }
@@ -72,24 +76,31 @@ function ChromecastTransport() {
       events.emit("message-error", error)
     }
   }
+
   function onApplicationStatusChanged(event) {
     events.emit(cast.framework.CastSession.APPLICATION_STATUS_CHANGED, event)
   }
+
   function onApplicationMetadataChanged(event) {
     events.emit(cast.framework.CastSession.APPLICATION_METADATA_CHANGED, event)
   }
+
   function onActiveInputStateChanged(event) {
     events.emit(cast.framework.CastSession.ACTIVE_INPUT_STATE_CHANGED, event)
   }
+
   function onVolumeChanged(event) {
     events.emit(cast.framework.CastSession.VOLUME_CHANGED, event)
   }
+
   function onMediaSessionChanged(event) {
     events.emit(cast.framework.CastSession.MEDIA_SESSION, event)
   }
+
   function onCastStateChanged(event) {
     events.emit(cast.framework.CastContextEventType.CAST_STATE_CHANGED, event)
   }
+
   function onSesstionStateChanged(event) {
     events.emit(
       cast.framework.CastContextEventType.SESSION_STATE_CHANGED,
@@ -120,6 +131,7 @@ function ChromecastTransport() {
         )
         break
       }
+
       case cast.framework.SessionState.SESSION_ENDED: {
         event.session.removeMessageListener(MESSAGE_NAMESPACE, onMessage)
         event.session.removeEventListener(
@@ -150,48 +162,62 @@ function ChromecastTransport() {
   this.on = function (name, listener) {
     events.on(name, listener)
   }
+
   this.off = function (name, listener) {
     events.off(name, listener)
   }
+
   this.removeAllListeners = function () {
     events.removeAllListeners()
   }
+
   this.getCastState = function () {
     return cast.framework.CastContext.getInstance().getCastState()
   }
+
   this.getSessionState = function () {
     return cast.framework.CastContext.getInstance().getSessionState()
   }
+
   this.getCastDevice = function () {
     const session = cast.framework.CastContext.getInstance().getCurrentSession()
+
     if (session !== null) {
       return session.getCastDevice()
     }
 
     return null
   }
+
   this.setOptions = function (options) {
     cast.framework.CastContext.getInstance().setOptions(options)
   }
+
   this.requestSession = function () {
     return cast.framework.CastContext.getInstance().requestSession()
   }
+
   this.endCurrentSession = function (stopCasting) {
     cast.framework.CastContext.getInstance().endCurrentSession(stopCasting)
   }
+
   this.sendMessage = function (message) {
     const castSession =
       cast.framework.CastContext.getInstance().getCurrentSession()
+
     if (castSession !== null) {
       const serializedMessage = JSON.stringify(message)
       const chunksCount = Math.ceil(serializedMessage.length / CHUNK_SIZE)
       const chunks = []
+
       for (let i = 0; i < chunksCount; i++) {
         const start = i * CHUNK_SIZE
         const chunk = serializedMessage.slice(start, start + CHUNK_SIZE)
+
         chunks.push(chunk)
       }
       const id = hat()
+
       return Promise.all(
         chunks.map((chunk, index) => {
           return castSession.sendMessage(MESSAGE_NAMESPACE, {

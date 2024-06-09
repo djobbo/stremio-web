@@ -52,6 +52,7 @@ const Intro = ({ queryParams }: IntroProps) => {
               error: "",
             }
           }
+
           return state
         case "change-credentials":
           return {
@@ -140,10 +141,13 @@ const Intro = ({ queryParams }: IntroProps) => {
       !emailRef.current.validity.valid
     ) {
       dispatch({ type: "error", error: "Invalid email" })
+
       return
     }
+
     if (typeof state.password !== "string" || state.password.length === 0) {
       dispatch({ type: "error", error: "Invalid password" })
+
       return
     }
     openLoaderModal()
@@ -162,6 +166,7 @@ const Intro = ({ queryParams }: IntroProps) => {
   const loginAsGuest = useCallback(() => {
     if (!state.termsAccepted) {
       dispatch({ type: "error", error: "You must accept the Terms of Service" })
+
       return
     }
     window.location = "#/"
@@ -173,22 +178,31 @@ const Intro = ({ queryParams }: IntroProps) => {
       !emailRef.current.validity.valid
     ) {
       dispatch({ type: "error", error: "Invalid email" })
+
       return
     }
+
     if (typeof state.password !== "string" || state.password.length === 0) {
       dispatch({ type: "error", error: "Invalid password" })
+
       return
     }
+
     if (state.password !== state.confirmPassword) {
       dispatch({ type: "error", error: "Passwords do not match" })
+
       return
     }
+
     if (!state.termsAccepted) {
       dispatch({ type: "error", error: "You must accept the Terms of Service" })
+
       return
     }
+
     if (!state.privacyPolicyAccepted) {
       dispatch({ type: "error", error: "You must accept the Privacy Policy" })
+
       return
     }
     openLoaderModal()
@@ -264,8 +278,10 @@ const Intro = ({ queryParams }: IntroProps) => {
     const queryParams = new URLSearchParams([
       ["form", state.form === SIGNUP_FORM ? LOGIN_FORM : SIGNUP_FORM],
     ])
+
     window.location = `#/intro?${queryParams.toString()}`
   }, [state.form])
+
   useEffect(() => {
     if ([LOGIN_FORM, SIGNUP_FORM].includes(queryParams.get("form"))) {
       dispatch({ type: "set-form", form: queryParams.get("form") })
@@ -295,6 +311,7 @@ const Intro = ({ queryParams }: IntroProps) => {
           }
           break
         }
+
         case "Error": {
           if (args.source.event === "UserAuthenticated") {
             closeLoaderModal()
@@ -304,11 +321,14 @@ const Intro = ({ queryParams }: IntroProps) => {
         }
       }
     }
+
     core.transport.on("CoreEvent", onCoreEvent)
+
     return () => {
       core.transport.off("CoreEvent", onCoreEvent)
     }
   }, [routeFocused])
+
   return (
     <div className={styles["intro-container"]}>
       <div className={styles["background-container"]} />

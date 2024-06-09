@@ -30,6 +30,7 @@ const SpeedMenu = ({
     },
     [onPlaybackSpeedChanged],
   )
+
   return (
     <div
       className={classnames(className, styles["speed-menu-container"])}

@@ -67,6 +67,7 @@ const ModalDialog = ({
   const onModalDialogContainerMouseDown = useCallback((event) => {
     event.nativeEvent.closeModalDialogPrevented = true
   }, [])
+
   useEffect(() => {
     const onKeyDown = (event) => {
       // its `-2` because focus lock render locking divs around its content
@@ -84,13 +85,16 @@ const ModalDialog = ({
         }
       }
     }
+
     if (routeFocused) {
       window.addEventListener("keydown", onKeyDown)
     }
+
     return () => {
       window.removeEventListener("keydown", onKeyDown)
     }
   }, [routeFocused, dataset, onCloseRequest])
+
   return (
     <Modal
       ref={modalContainerRef}

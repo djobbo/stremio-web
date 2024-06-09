@@ -39,6 +39,7 @@ const mapSelectableInputs = (discover, t) => {
             const selectableCatalog = discover.selectable.catalogs.find(
               ({ id }) => id === discover.selected.request.path.id,
             )
+
             return selectableCatalog
               ? t.catalogTitle(selectableCatalog, false)
               : discover.selected.request.path.id
@@ -77,10 +78,12 @@ const mapSelectableInputs = (discover, t) => {
         : null,
       onSelect: (event) => {
         const { href } = JSON.parse(event.value)
+
         window.location = href
       },
     }),
   )
+
   return [
     [typeSelect, catalogSelect, ...extraSelects],
     discover.selectable.nextPage,
@@ -92,6 +95,7 @@ const useSelectableInputs = (discover) => {
   const selectableInputs = useMemo(() => {
     return mapSelectableInputs(discover, t)
   }, [discover.selected, discover.selectable])
+
   return selectableInputs
 }
 

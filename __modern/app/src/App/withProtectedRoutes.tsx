@@ -8,6 +8,7 @@ const withProtectedRoutes = (Component) => {
   return function withProtectedRoutes(props) {
     const profile = useProfile()
     const previousAuthRef = useRef(profile.auth)
+
     useEffect(() => {
       if (previousAuthRef.current !== null && profile.auth === null) {
         window.location = "#/intro"
@@ -18,11 +19,13 @@ const withProtectedRoutes = (Component) => {
       (routeConfig) => {
         if (profile.auth !== null && routeConfig.component === Intro) {
           window.location.replace("#/")
+
           return true
         }
       },
       [profile],
     )
+
     return <Component {...props} onRouteChange={onRouteChange} />
   }
 }
