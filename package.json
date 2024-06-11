@@ -8,7 +8,8 @@
   ],
   "scripts": {
     "postinstall": "patch-package",
-    "build": "turbo run build"
+    "build": "turbo run build",
+    "start": "turbo run preview"
   },
   "devDependencies": {
     "@types/bun": "latest",
