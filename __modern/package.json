@@ -6,8 +6,12 @@
     "app",
     "core-web"
   ],
+  "scripts": {
+    "postinstall": "patch-package"
+  },
   "devDependencies": {
-    "@types/bun": "latest"
+    "@types/bun": "latest",
+    "patch-package": "^8.0.0"
   },
   "peerDependencies": {
     "typescript": "^5.0.0"
