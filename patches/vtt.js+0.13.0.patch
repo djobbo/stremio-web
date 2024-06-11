@@ -1,0 +1,101 @@
+diff --git a/node_modules/vtt.js/lib/vtt.js b/node_modules/vtt.js/lib/vtt.js
+index 0f2a64f..cc32032 100644
+--- a/node_modules/vtt.js/lib/vtt.js
++++ b/node_modules/vtt.js/lib/vtt.js
+@@ -17,7 +17,7 @@
+ /* -*- Mode: Java; tab-width: 2; indent-tabs-mode: nil; c-basic-offset: 2 -*- */
+ /* vim: set shiftwidth=2 tabstop=2 autoindent cindent expandtab: */
+ 
+-(function(global) {
++module.exports = (function(global) {
+   function makeColorSet(color, opacity) {
+     if(opacity === undefined) {
+       opacity = 1;
+@@ -1433,4 +1433,5 @@
+ 
+   global.WebVTT = WebVTT;
+ 
++  return global;
+ }(this));
+diff --git a/node_modules/vtt.js/lib/vttcue-extended.js b/node_modules/vtt.js/lib/vttcue-extended.js
+index 6b46175..cbd95ee 100644
+--- a/node_modules/vtt.js/lib/vttcue-extended.js
++++ b/node_modules/vtt.js/lib/vttcue-extended.js
+@@ -24,7 +24,7 @@ if (typeof module !== "undefined" && module.exports) {
+ // VTTCue from an options object. The primary purpose of this is for use in the
+ // vtt.js test suite (for testing only properties that we care about). It's also
+ // useful if you need to work with VTTCues in JSON format.
+-(function(root) {
++module.exports = (function(root) {
+ 
+   root.VTTCue.prototype.toJSON = function() {
+     var cue = {},
+@@ -57,4 +57,5 @@ if (typeof module !== "undefined" && module.exports) {
+     return this.create(JSON.parse(json));
+   };
+ 
++  return root;
+ }(this));
+diff --git a/node_modules/vtt.js/lib/vttcue.js b/node_modules/vtt.js/lib/vttcue.js
+index d838635..cba9e6e 100644
+--- a/node_modules/vtt.js/lib/vttcue.js
++++ b/node_modules/vtt.js/lib/vttcue.js
+@@ -14,7 +14,7 @@
+  * limitations under the License.
+  */
+ 
+-(function(root) {
++module.exports = (function(root) {
+ 
+   var autoKeyword = "auto";
+   var directionSetting = {
+@@ -305,4 +305,6 @@
+   };
+ 
+   root.VTTCue = root.VTTCue || VTTCue;
++
++  return root;
+ }(this));
+diff --git a/node_modules/vtt.js/lib/vttregion-extended.js b/node_modules/vtt.js/lib/vttregion-extended.js
+index 8a379e6..9107d39 100644
+--- a/node_modules/vtt.js/lib/vttregion-extended.js
++++ b/node_modules/vtt.js/lib/vttregion-extended.js
+@@ -24,7 +24,7 @@ if (typeof module !== "undefined" && module.exports) {
+ // VTTRegion from an options object. The primary purpose of this is for use in the
+ // vtt.js test suite. It's also useful if you need to work with VTTRegions in
+ // JSON format.
+-(function(root) {
++module.exports = (function(root) {
+ 
+   root.VTTRegion.create = function(options) {
+     var region = new root.VTTRegion();
+@@ -40,4 +40,5 @@ if (typeof module !== "undefined" && module.exports) {
+     return this.create(JSON.parse(json));
+   };
+ 
++  return root;
+ }(this));
+diff --git a/node_modules/vtt.js/lib/vttregion.js b/node_modules/vtt.js/lib/vttregion.js
+index e58ccf1..8044a8f 100644
+--- a/node_modules/vtt.js/lib/vttregion.js
++++ b/node_modules/vtt.js/lib/vttregion.js
+@@ -13,8 +13,7 @@
+  * See the License for the specific language governing permissions and
+  * limitations under the License.
+  */
+-
+-(function(root) {
++module.exports = (function(root) {
+ 
+   var scrollSetting = {
+     "": true,
+@@ -133,5 +132,9 @@
+     });
+   }
+ 
++  console.log('vtt', VTTRegion)
++
+   root.VTTRegion = root.VTTRegion || VTTRegion;
++
++  return root;
+ }(this));

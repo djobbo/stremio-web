@@ -1,0 +1,34 @@
+{
+  "name": "@stremio/stremio-core-web",
+  "private": true,
+  "version": "0.0.0",
+  "description": "Bridge between stremio-core and stremio-web",
+  "author": "Smart Code OOD",
+  "main": "dist/stremio_core_web.js",
+  "exports": {
+    ".": {
+      "import": "./dist/stremio_core_web.js",
+      "require": "./dist/stremio_core_web.js"
+    },
+    "./worker": {
+      "import": "./dist/worker.js",
+      "require": "./dist/worker.js"
+    },
+    "./bridge": {
+      "import": "./dist/bridge.js",
+      "require": "./dist/bridge.js"
+    }
+  },
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "./scripts/build.sh"
+  },
+  "dependencies": {
+    "@babel/runtime": "7.24.1"
+  },
+  "devDependencies": {
+    "typescript": "^5.2.2",
+    "wasm-pack": "^0.12.1"
+  }
+}
