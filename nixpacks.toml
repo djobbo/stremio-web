@@ -1,5 +1,5 @@
 [phases.setup]
-aptPkgs = ["...", "curl"]
+aptPkgs = ["...", "curl", "build-essential"]
 
 [phases.build]
 cmds = [
