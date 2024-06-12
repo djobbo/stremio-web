@@ -14,7 +14,7 @@ cacheDirectories = ['node_modules/.cache']
 [phases.install]
 dependsOn = ['setup']
 cmds = [
-    "curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y",
+    'curl --proto "=https" --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y',
     'npm install -g corepack@0.24.1 && corepack enable',
     'bun i --no-save',
 ]
